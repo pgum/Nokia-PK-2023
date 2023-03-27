@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="Common"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\BTS\;CMake Files\BTS\Application\;CMake Files\BTS\ApplicationEnvironment\;CMake Files\BTS\QtApplicationEnvironment\;CMake Files\BTS\QtApplicationEnvironment\Console\;CMake Files\BTS\QtApplicationEnvironment\Transport\;CMake Files\BTS\Tests\;CMake Files\BTS\Tests\Application\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\usr\;CMake Files\..\..\..\..\usr\lib\;CMake Files\..\..\..\..\usr\lib\i386-linux-gnu\;CMake Files\..\..\..\..\usr\lib\i386-linux-gnu\cmake\;CMake Files\..\..\..\..\usr\lib\i386-linux-gnu\cmake\Qt5Widgets\;CMake Files\..\..\..\..\usr\lib\i386-linux-gnu\cmake\Qt5Gui\;CMake Files\..\..\..\..\usr\lib\i386-linux-gnu\cmake\Qt5Core\;CMake Files\..\..\..\..\usr\lib\i386-linux-gnu\cmake\Qt5Network\;CMake Files\COMMON\;CMake Files\COMMON\Tests\;CMake Files\COMMON\Tests\Mocks\;CMake Files\googletest\;CMake Files\googletest\googlemock\;CMake Files\googletest\googlemock\cmake\;CMake Files\googletest\googletest\;CMake Files\googletest\googletest\cmake\;CMake Files\UE\;CMake Files\UE\Application\;CMake Files\UE\ApplicationEnvironment\;CMake Files\UE\QtApplicationEnvironment\;CMake Files\UE\QtApplicationEnvironment\GUI\;CMake Files\UE\QtApplicationEnvironment\Transport\;CMake Files\UE\Tests\;CMake Files\UE\Tests\Application\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/student/Nokia-PK-2023/build-src-Desktop-Default/COMMON"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/student/Nokia-PK-2023/build-src-Desktop-Default/COMMON/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/student/Nokia-PK-2023/build-src-Desktop-Default/COMMON/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/student/Nokia-PK-2023/build-src-Desktop-Default/COMMON/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/student/Nokia-PK-2023/build-src-Desktop-Default/COMMON/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Common">
+				<Option output="/home/student/Nokia-PK-2023/build-src-Desktop-Default/COMMON/libCommon.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/student/Nokia-PK-2023/build-src-Desktop-Default/COMMON"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/student/Nokia-PK-2023/build-src-Desktop-Default/COMMON"/>
+					<Add directory="/home/student/Nokia-PK-2023/src/COMMON"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/i386-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/i686-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/i686-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/i386-linux-gnu"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/lib/gcc/i686-linux-gnu/8/include"/>
+					<Add directory="/usr/lib/gcc/i686-linux-gnu/8/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/student/Nokia-PK-2023/build-src-Desktop-Default/COMMON/Makefile&quot;  VERBOSE=1 Common"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/student/Nokia-PK-2023/build-src-Desktop-Default/COMMON/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/student/Nokia-PK-2023/build-src-Desktop-Default/COMMON/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/student/Nokia-PK-2023/build-src-Desktop-Default/COMMON/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Common/fast">
+				<Option output="/home/student/Nokia-PK-2023/build-src-Desktop-Default/COMMON/libCommon.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/student/Nokia-PK-2023/build-src-Desktop-Default/COMMON"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/student/Nokia-PK-2023/build-src-Desktop-Default/COMMON"/>
+					<Add directory="/home/student/Nokia-PK-2023/src/COMMON"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/i386-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/i686-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/i686-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/i386-linux-gnu"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/lib/gcc/i686-linux-gnu/8/include"/>
+					<Add directory="/usr/lib/gcc/i686-linux-gnu/8/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/student/Nokia-PK-2023/build-src-Desktop-Default/COMMON/Makefile&quot;  VERBOSE=1 Common/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/student/Nokia-PK-2023/build-src-Desktop-Default/COMMON/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/student/Nokia-PK-2023/build-src-Desktop-Default/COMMON/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/student/Nokia-PK-2023/build-src-Desktop-Default/COMMON/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="COMMON_UT">
+				<Option output="/home/student/Nokia-PK-2023/build-src-Desktop-Default/COMMON/Tests/COMMON_UT" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/student/Nokia-PK-2023/build-src-Desktop-Default/COMMON/Tests"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/student/Nokia-PK-2023/build-src-Desktop-Default/COMMON/Tests"/>
+					<Add directory="/home/student/Nokia-PK-2023/src/COMMON/Tests"/>
+					<Add directory="/home/student/Nokia-PK-2023/src/COMMON"/>
+					<Add directory="/home/student/Nokia-PK-2023/src/googletest/googletest/include"/>
+					<Add directory="/home/student/Nokia-PK-2023/src/googletest/googlemock/include"/>
+					<Add directory="/home/student/Nokia-PK-2023/src/googletest/googletest"/>
+					<Add directory="/home/student/Nokia-PK-2023/src/googletest/googlemock"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/i386-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/i686-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/i686-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/i386-linux-gnu"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/lib/gcc/i686-linux-gnu/8/include"/>
+					<Add directory="/usr/lib/gcc/i686-linux-gnu/8/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/student/Nokia-PK-2023/build-src-Desktop-Default/COMMON/Tests/Makefile&quot;  VERBOSE=1 COMMON_UT"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/student/Nokia-PK-2023/build-src-Desktop-Default/COMMON/Tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/student/Nokia-PK-2023/build-src-Desktop-Default/COMMON/Tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/student/Nokia-PK-2023/build-src-Desktop-Default/COMMON/Tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="COMMON_UT/fast">
+				<Option output="/home/student/Nokia-PK-2023/build-src-Desktop-Default/COMMON/Tests/COMMON_UT" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/student/Nokia-PK-2023/build-src-Desktop-Default/COMMON/Tests"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/student/Nokia-PK-2023/build-src-Desktop-Default/COMMON/Tests"/>
+					<Add directory="/home/student/Nokia-PK-2023/src/COMMON/Tests"/>
+					<Add directory="/home/student/Nokia-PK-2023/src/COMMON"/>
+					<Add directory="/home/student/Nokia-PK-2023/src/googletest/googletest/include"/>
+					<Add directory="/home/student/Nokia-PK-2023/src/googletest/googlemock/include"/>
+					<Add directory="/home/student/Nokia-PK-2023/src/googletest/googletest"/>
+					<Add directory="/home/student/Nokia-PK-2023/src/googletest/googlemock"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/i386-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/i686-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/i686-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/i386-linux-gnu"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/lib/gcc/i686-linux-gnu/8/include"/>
+					<Add directory="/usr/lib/gcc/i686-linux-gnu/8/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/student/Nokia-PK-2023/build-src-Desktop-Default/COMMON/Tests/Makefile&quot;  VERBOSE=1 COMMON_UT/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/student/Nokia-PK-2023/build-src-Desktop-Default/COMMON/Tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/student/Nokia-PK-2023/build-src-Desktop-Default/COMMON/Tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/student/Nokia-PK-2023/build-src-Desktop-Default/COMMON/Tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="CommonUtMocks">
+				<Option output="/home/student/Nokia-PK-2023/build-src-Desktop-Default/COMMON/Tests/Mocks/libCommonUtMocks.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/student/Nokia-PK-2023/build-src-Desktop-Default/COMMON/Tests/Mocks"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/student/Nokia-PK-2023/build-src-Desktop-Default/COMMON/Tests/Mocks"/>
+					<Add directory="/home/student/Nokia-PK-2023/src/COMMON/Tests/Mocks"/>
+					<Add directory="/home/student/Nokia-PK-2023/src/COMMON"/>
+					<Add directory="/home/student/Nokia-PK-2023/src/googletest/googletest/include"/>
+					<Add directory="/home/student/Nokia-PK-2023/src/googletest/googlemock/include"/>
+					<Add directory="/home/student/Nokia-PK-2023/src/googletest/googletest"/>
+					<Add directory="/home/student/Nokia-PK-2023/src/googletest/googlemock"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/i386-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/i686-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/i686-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/i386-linux-gnu"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/lib/gcc/i686-linux-gnu/8/include"/>
+					<Add directory="/usr/lib/gcc/i686-linux-gnu/8/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/student/Nokia-PK-2023/build-src-Desktop-Default/COMMON/Tests/Mocks/Makefile&quot;  VERBOSE=1 CommonUtMocks"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/student/Nokia-PK-2023/build-src-Desktop-Default/COMMON/Tests/Mocks/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/student/Nokia-PK-2023/build-src-Desktop-Default/COMMON/Tests/Mocks/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/student/Nokia-PK-2023/build-src-Desktop-Default/COMMON/Tests/Mocks/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="CommonUtMocks/fast">
+				<Option output="/home/student/Nokia-PK-2023/build-src-Desktop-Default/COMMON/Tests/Mocks/libCommonUtMocks.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/student/Nokia-PK-2023/build-src-Desktop-Default/COMMON/Tests/Mocks"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/student/Nokia-PK-2023/build-src-Desktop-Default/COMMON/Tests/Mocks"/>
+					<Add directory="/home/student/Nokia-PK-2023/src/COMMON/Tests/Mocks"/>
+					<Add directory="/home/student/Nokia-PK-2023/src/COMMON"/>
+					<Add directory="/home/student/Nokia-PK-2023/src/googletest/googletest/include"/>
+					<Add directory="/home/student/Nokia-PK-2023/src/googletest/googlemock/include"/>
+					<Add directory="/home/student/Nokia-PK-2023/src/googletest/googletest"/>
+					<Add directory="/home/student/Nokia-PK-2023/src/googletest/googlemock"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/i386-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/i686-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/i686-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/i386-linux-gnu"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/lib/gcc/i686-linux-gnu/8/include"/>
+					<Add directory="/usr/lib/gcc/i686-linux-gnu/8/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/student/Nokia-PK-2023/build-src-Desktop-Default/COMMON/Tests/Mocks/Makefile&quot;  VERBOSE=1 CommonUtMocks/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/student/Nokia-PK-2023/build-src-Desktop-Default/COMMON/Tests/Mocks/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/student/Nokia-PK-2023/build-src-Desktop-Default/COMMON/Tests/Mocks/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/student/Nokia-PK-2023/build-src-Desktop-Default/COMMON/Tests/Mocks/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/student/Nokia-PK-2023/src/COMMON/CommonEnvironment/ITransport.cpp">
+			<Option target="Common"/>
+		</Unit>
+		<Unit filename="/home/student/Nokia-PK-2023/src/COMMON/CommonEnvironment/ITransport.hpp">
+			<Option target="Common"/>
+		</Unit>
+		<Unit filename="/home/student/Nokia-PK-2023/src/COMMON/Config/MultiLineConfig.cpp">
+			<Option target="Common"/>
+		</Unit>
+		<Unit filename="/home/student/Nokia-PK-2023/src/COMMON/Config/MultiLineConfig.hpp">
+			<Option target="Common"/>
+		</Unit>
+		<Unit filename="/home/student/Nokia-PK-2023/src/COMMON/Logger/ILogger.cpp">
+			<Option target="Common"/>
+		</Unit>
+		<Unit filename="/home/student/Nokia-PK-2023/src/COMMON/Logger/ILogger.hpp">
+			<Option target="Common"/>
+		</Unit>
+		<Unit filename="/home/student/Nokia-PK-2023/src/COMMON/Logger/Logger.cpp">
+			<Option target="Common"/>
+		</Unit>
+		<Unit filename="/home/student/Nokia-PK-2023/src/COMMON/Logger/Logger.hpp">
+			<Option target="Common"/>
+		</Unit>
+		<Unit filename="/home/student/Nokia-PK-2023/src/COMMON/Logger/PrefixedLogger.cpp">
+			<Option target="Common"/>
+		</Unit>
+		<Unit filename="/home/student/Nokia-PK-2023/src/COMMON/Logger/PrefixedLogger.hpp">
+			<Option target="Common"/>
+		</Unit>
+		<Unit filename="/home/student/Nokia-PK-2023/src/COMMON/Messages.cpp">
+			<Option target="Common"/>
+		</Unit>
+		<Unit filename="/home/student/Nokia-PK-2023/src/COMMON/Messages.hpp">
+			<Option target="Common"/>
+		</Unit>
+		<Unit filename="/home/student/Nokia-PK-2023/src/COMMON/Messages/BinaryMessage.cpp">
+			<Option target="Common"/>
+		</Unit>
+		<Unit filename="/home/student/Nokia-PK-2023/src/COMMON/Messages/BinaryMessage.hpp">
+			<Option target="Common"/>
+		</Unit>
+		<Unit filename="/home/student/Nokia-PK-2023/src/COMMON/Messages/BtsId.cpp">
+			<Option target="Common"/>
+		</Unit>
+		<Unit filename="/home/student/Nokia-PK-2023/src/COMMON/Messages/BtsId.hpp">
+			<Option target="Common"/>
+		</Unit>
+		<Unit filename="/home/student/Nokia-PK-2023/src/COMMON/Messages/IncomingMessage.cpp">
+			<Option target="Common"/>
+		</Unit>
+		<Unit filename="/home/student/Nokia-PK-2023/src/COMMON/Messages/IncomingMessage.hpp">
+			<Option target="Common"/>
+		</Unit>
+		<Unit filename="/home/student/Nokia-PK-2023/src/COMMON/Messages/LimitedVector.cpp">
+			<Option target="Common"/>
+		</Unit>
+		<Unit filename="/home/student/Nokia-PK-2023/src/COMMON/Messages/LimitedVector.hpp">
+			<Option target="Common"/>
+		</Unit>
+		<Unit filename="/home/student/Nokia-PK-2023/src/COMMON/Messages/MessageHeader.cpp">
+			<Option target="Common"/>
+		</Unit>
+		<Unit filename="/home/student/Nokia-PK-2023/src/COMMON/Messages/MessageHeader.hpp">
+			<Option target="Common"/>
+		</Unit>
+		<Unit filename="/home/student/Nokia-PK-2023/src/COMMON/Messages/MessageId.cpp">
+			<Option target="Common"/>
+		</Unit>
+		<Unit filename="/home/student/Nokia-PK-2023/src/COMMON/Messages/MessageId.hpp">
+			<Option target="Common"/>
+		</Unit>
+		<Unit filename="/home/student/Nokia-PK-2023/src/COMMON/Messages/OutgoingMessage.cpp">
+			<Option target="Common"/>
+		</Unit>
+		<Unit filename="/home/student/Nokia-PK-2023/src/COMMON/Messages/OutgoingMessage.hpp">
+			<Option target="Common"/>
+		</Unit>
+		<Unit filename="/home/student/Nokia-PK-2023/src/COMMON/Messages/PhoneNumber.cpp">
+			<Option target="Common"/>
+		</Unit>
+		<Unit filename="/home/student/Nokia-PK-2023/src/COMMON/Messages/PhoneNumber.hpp">
+			<Option target="Common"/>
+		</Unit>
+		<Unit filename="/home/student/Nokia-PK-2023/src/COMMON/TestCommands/TestCommands.cpp">
+			<Option target="Common"/>
+		</Unit>
+		<Unit filename="/home/student/Nokia-PK-2023/src/COMMON/TestCommands/TestCommands.hpp">
+			<Option target="Common"/>
+		</Unit>
+		<Unit filename="/home/student/Nokia-PK-2023/src/COMMON/Tests/EnumTraitsTestSuite.cpp">
+			<Option target="COMMON_UT"/>
+		</Unit>
+		<Unit filename="/home/student/Nokia-PK-2023/src/COMMON/Tests/ILoggerTestSuite.cpp">
+			<Option target="COMMON_UT"/>
+		</Unit>
+		<Unit filename="/home/student/Nokia-PK-2023/src/COMMON/Tests/IncomingMessageTestSuite.cpp">
+			<Option target="COMMON_UT"/>
+		</Unit>
+		<Unit filename="/home/student/Nokia-PK-2023/src/COMMON/Tests/LoggerTestSuite.cpp">
+			<Option target="COMMON_UT"/>
+		</Unit>
+		<Unit filename="/home/student/Nokia-PK-2023/src/COMMON/Tests/Mocks/ILoggerMock.cpp">
+			<Option target="CommonUtMocks"/>
+		</Unit>
+		<Unit filename="/home/student/Nokia-PK-2023/src/COMMON/Tests/Mocks/ILoggerMock.hpp">
+			<Option target="CommonUtMocks"/>
+		</Unit>
+		<Unit filename="/home/student/Nokia-PK-2023/src/COMMON/Tests/Mocks/ITransportMock.cpp">
+			<Option target="CommonUtMocks"/>
+		</Unit>
+		<Unit filename="/home/student/Nokia-PK-2023/src/COMMON/Tests/Mocks/ITransportMock.hpp">
+			<Option target="CommonUtMocks"/>
+		</Unit>
+		<Unit filename="/home/student/Nokia-PK-2023/src/COMMON/Tests/MultiLineConfigTestSuite.cpp">
+			<Option target="COMMON_UT"/>
+		</Unit>
+		<Unit filename="/home/student/Nokia-PK-2023/src/COMMON/Tests/OutgoingMessageTestSuite.cpp">
+			<Option target="COMMON_UT"/>
+		</Unit>
+		<Unit filename="/home/student/Nokia-PK-2023/src/COMMON/Tests/PrefixedLoggerTestSuite.cpp">
+			<Option target="COMMON_UT"/>
+		</Unit>
+		<Unit filename="/home/student/Nokia-PK-2023/src/COMMON/Traits/EnumTraits.cpp">
+			<Option target="Common"/>
+		</Unit>
+		<Unit filename="/home/student/Nokia-PK-2023/src/COMMON/Traits/EnumTraits.hpp">
+			<Option target="Common"/>
+		</Unit>
+		<Unit filename="/home/student/Nokia-PK-2023/src/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/student/Nokia-PK-2023/src/internal_commands.cmake">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/student/Nokia-PK-2023/src/BTS/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\BTS\"/>
+		</Unit>
+		<Unit filename="/home/student/Nokia-PK-2023/src/BTS/Application/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\BTS\Application\"/>
+		</Unit>
+		<Unit filename="/home/student/Nokia-PK-2023/src/BTS/ApplicationEnvironment/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\BTS\ApplicationEnvironment\"/>
+		</Unit>
+		<Unit filename="/home/student/Nokia-PK-2023/src/BTS/QtApplicationEnvironment/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\BTS\QtApplicationEnvironment\"/>
+		</Unit>
+		<Unit filename="/home/student/Nokia-PK-2023/src/BTS/QtApplicationEnvironment/Console/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\BTS\QtApplicationEnvironment\Console\"/>
+		</Unit>
+		<Unit filename="/home/student/Nokia-PK-2023/src/BTS/QtApplicationEnvironment/Transport/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\BTS\QtApplicationEnvironment\Transport\"/>
+		</Unit>
+		<Unit filename="/home/student/Nokia-PK-2023/src/BTS/Tests/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\BTS\Tests\"/>
+		</Unit>
+		<Unit filename="/home/student/Nokia-PK-2023/src/BTS/Tests/Application/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\BTS\Tests\Application\"/>
+		</Unit>
+		<Unit filename="/home/student/Nokia-PK-2023/src/../../../../usr/lib/i386-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\i386-linux-gnu\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="/home/student/Nokia-PK-2023/src/../../../../usr/lib/i386-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfigExtras.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\i386-linux-gnu\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="/home/student/Nokia-PK-2023/src/../../../../usr/lib/i386-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\i386-linux-gnu\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="/home/student/Nokia-PK-2023/src/../../../../usr/lib/i386-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\i386-linux-gnu\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="/home/student/Nokia-PK-2023/src/../../../../usr/lib/i386-linux-gnu/cmake/Qt5Gui/Qt5GuiConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\i386-linux-gnu\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/student/Nokia-PK-2023/src/../../../../usr/lib/i386-linux-gnu/cmake/Qt5Gui/Qt5GuiConfigExtras.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\i386-linux-gnu\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/student/Nokia-PK-2023/src/../../../../usr/lib/i386-linux-gnu/cmake/Qt5Gui/Qt5GuiConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\i386-linux-gnu\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="/home/student/Nokia-PK-2023/src/../../../../usr/lib/i386-linux-gnu/cmake/Qt5Core/Qt5CoreConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\i386-linux-gnu\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="/home/student/Nokia-PK-2023/src/../../../../usr/lib/i386-linux-gnu/cmake/Qt5Core/Qt5CoreConfigExtras.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\i386-linux-gnu\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="/home/student/Nokia-PK-2023/src/../../../../usr/lib/i386-linux-gnu/cmake/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\i386-linux-gnu\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="/home/student/Nokia-PK-2023/src/../../../../usr/lib/i386-linux-gnu/cmake/Qt5Core/Qt5CoreConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\i386-linux-gnu\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="/home/student/Nokia-PK-2023/src/../../../../usr/lib/i386-linux-gnu/cmake/Qt5Core/Qt5CoreMacros.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\i386-linux-gnu\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="/home/student/Nokia-PK-2023/src/../../../../usr/lib/i386-linux-gnu/cmake/Qt5Network/Qt5NetworkConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\i386-linux-gnu\cmake\Qt5Network\"/>
+		</Unit>
+		<Unit filename="/home/student/Nokia-PK-2023/src/../../../../usr/lib/i386-linux-gnu/cmake/Qt5Network/Qt5NetworkConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\i386-linux-gnu\cmake\Qt5Network\"/>
+		</Unit>
+		<Unit filename="/home/student/Nokia-PK-2023/src/COMMON/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\COMMON\"/>
+		</Unit>
+		<Unit filename="/home/student/Nokia-PK-2023/src/COMMON/Tests/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\COMMON\Tests\"/>
+		</Unit>
+		<Unit filename="/home/student/Nokia-PK-2023/src/COMMON/Tests/Mocks/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\COMMON\Tests\Mocks\"/>
+		</Unit>
+		<Unit filename="/home/student/Nokia-PK-2023/src/googletest/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\googletest\"/>
+		</Unit>
+		<Unit filename="/home/student/Nokia-PK-2023/src/googletest/googlemock/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\googletest\googlemock\"/>
+		</Unit>
+		<Unit filename="/home/student/Nokia-PK-2023/src/googletest/googlemock/cmake/gmock.pc.in">
+			<Option virtualFolder="CMake Files\googletest\googlemock\cmake\"/>
+		</Unit>
+		<Unit filename="/home/student/Nokia-PK-2023/src/googletest/googlemock/cmake/gmock_main.pc.in">
+			<Option virtualFolder="CMake Files\googletest\googlemock\cmake\"/>
+		</Unit>
+		<Unit filename="/home/student/Nokia-PK-2023/src/googletest/googletest/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\googletest\googletest\"/>
+		</Unit>
+		<Unit filename="/home/student/Nokia-PK-2023/src/googletest/googletest/cmake/Config.cmake.in">
+			<Option virtualFolder="CMake Files\googletest\googletest\cmake\"/>
+		</Unit>
+		<Unit filename="/home/student/Nokia-PK-2023/src/googletest/googletest/cmake/gtest.pc.in">
+			<Option virtualFolder="CMake Files\googletest\googletest\cmake\"/>
+		</Unit>
+		<Unit filename="/home/student/Nokia-PK-2023/src/googletest/googletest/cmake/gtest_main.pc.in">
+			<Option virtualFolder="CMake Files\googletest\googletest\cmake\"/>
+		</Unit>
+		<Unit filename="/home/student/Nokia-PK-2023/src/googletest/googletest/cmake/internal_utils.cmake">
+			<Option virtualFolder="CMake Files\googletest\googletest\cmake\"/>
+		</Unit>
+		<Unit filename="/home/student/Nokia-PK-2023/src/UE/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\UE\"/>
+		</Unit>
+		<Unit filename="/home/student/Nokia-PK-2023/src/UE/Application/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\UE\Application\"/>
+		</Unit>
+		<Unit filename="/home/student/Nokia-PK-2023/src/UE/ApplicationEnvironment/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\UE\ApplicationEnvironment\"/>
+		</Unit>
+		<Unit filename="/home/student/Nokia-PK-2023/src/UE/QtApplicationEnvironment/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\UE\QtApplicationEnvironment\"/>
+		</Unit>
+		<Unit filename="/home/student/Nokia-PK-2023/src/UE/QtApplicationEnvironment/GUI/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\UE\QtApplicationEnvironment\GUI\"/>
+		</Unit>
+		<Unit filename="/home/student/Nokia-PK-2023/src/UE/QtApplicationEnvironment/Transport/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\UE\QtApplicationEnvironment\Transport\"/>
+		</Unit>
+		<Unit filename="/home/student/Nokia-PK-2023/src/UE/Tests/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\UE\Tests\"/>
+		</Unit>
+		<Unit filename="/home/student/Nokia-PK-2023/src/UE/Tests/Application/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\UE\Tests\Application\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
