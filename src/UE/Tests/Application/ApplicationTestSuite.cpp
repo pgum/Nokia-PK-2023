@@ -16,8 +16,8 @@ using namespace ::testing;
 class ApplicationTestSuite : public Test
 {
 protected:
-    const common::PhoneNumber PHONE_NUMBER{69};
-    const common::BtsId BTS_ID{420};
+    const common::PhoneNumber PHONE_NUMBER{112};
+    const common::BtsId BTS_ID{211};
     NiceMock<common::ILoggerMock> loggerMock;
     StrictMock<IBtsPortMock> btsPortMock;
     StrictMock<IUserPortMock> userPortMock;
@@ -62,7 +62,7 @@ ApplicationConnectingTestSuite::ApplicationConnectingTestSuite()
 }
 
 //this test is troublesome
-TEST_F(ApplicationNotConnectedTestSuite, shallConnectOnAttachAccept)
+TEST_F(ApplicationConnectingTestSuite, shallConnectOnAttachAccept)
 {
     EXPECT_CALL(userPortMock, showConnected());
     EXPECT_CALL(timerPortMock, stopTimer());

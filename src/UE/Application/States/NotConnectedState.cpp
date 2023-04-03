@@ -13,9 +13,8 @@ NotConnectedState::NotConnectedState(Context &context)
 void NotConnectedState::handleSib(common::BtsId btsId)
 {
  logger.logDebug("(btsId) SIB: ", btsId);
-
- using namespace std::chrono_literals;
  context.bts.sendAttachRequest(btsId);
+ using namespace std::chrono_literals;
  context.timer.startTimer(1000ms);
 
  context.setState<ConnectingState>();
