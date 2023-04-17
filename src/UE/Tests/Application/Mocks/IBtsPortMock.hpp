@@ -1,12 +1,12 @@
 #pragma once
 
-#include "Ports/IBtsPort.hpp"
 #include <gmock/gmock.h>
+#include "Ports/IBtsPort.hpp"
 
 namespace ue {
 
 class IBtsEventsHandlerMock : public IBtsEventsHandler {
-public:
+ public:
   IBtsEventsHandlerMock();
   ~IBtsEventsHandlerMock() override;
 
@@ -14,14 +14,15 @@ public:
   MOCK_METHOD(void, handleSib, (common::BtsId), (final));
   MOCK_METHOD(void, handleAttachAccept, (), (final));
   MOCK_METHOD(void, handleAttachReject, (), (final));
+  MOCK_METHOD(void, handleSms, (const Sms& sms), (final));
 };
 
 class IBtsPortMock : public IBtsPort {
-public:
+ public:
   IBtsPortMock();
   ~IBtsPortMock() override;
 
   MOCK_METHOD(void, sendAttachRequest, (common::BtsId), (final));
 };
 
-} // namespace ue
+}  // namespace ue

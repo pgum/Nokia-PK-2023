@@ -31,5 +31,8 @@ void UserPort::showConnected() {
   menu.addSelectionListItem("Compose SMS", "");
   menu.addSelectionListItem("View SMS", "");
 }
+void UserPort::showNewSmsNotification() {
+  gui.showNewSms(true);
+}
 
 }  // namespace ue

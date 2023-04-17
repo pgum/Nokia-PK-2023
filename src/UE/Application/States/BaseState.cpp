@@ -1,4 +1,5 @@
 #include "BaseState.hpp"
+#include "Sms.hpp"
 
 namespace ue {
 
@@ -29,6 +30,9 @@ void BaseState::handleAttachReject() {
 
 void BaseState::handleDisconnected() {
   logger.logError("Uexpected: handleDisconnected");
+}
+void BaseState::handleSms(const Sms& sms) {
+  logger.logError("Uexpected: handleSms");
 }
 
 }  // namespace ue

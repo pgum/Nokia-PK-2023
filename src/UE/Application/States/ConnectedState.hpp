@@ -5,9 +5,10 @@
 namespace ue {
 
 class ConnectedState : public BaseState {
-public:
-  ConnectedState(Context &context);
+ public:
+  ConnectedState(Context& context);
   void handleDisconnected() final;
+  void handleSms(const Sms& sms) final;
 };
 
-} // namespace ue
+}  // namespace ue

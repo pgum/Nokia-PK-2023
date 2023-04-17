@@ -1,23 +1,20 @@
 #pragma once
 
+namespace ue {
 
-namespace ue
-{
-
-class IUserEventsHandler
-{
-public:
-    virtual ~IUserEventsHandler() = default;
+class IUserEventsHandler {
+ public:
+  virtual ~IUserEventsHandler() = default;
 };
 
-class IUserPort
-{
-public:
-    virtual ~IUserPort() = default;
+class IUserPort {
+ public:
+  virtual ~IUserPort() = default;
 
-    virtual void showNotConnected() = 0;
-    virtual void showConnecting() = 0;
-    virtual void showConnected() = 0;
+  virtual void showNotConnected() = 0;
+  virtual void showConnecting() = 0;
+  virtual void showConnected() = 0;
+  virtual void showNewSmsNotification() = 0;
 };
 
-}
+}  // namespace ue

@@ -94,5 +94,12 @@ TEST_F(ApplicationConnectedTestSuite, shallReattach) {
   sendAttachRequestOnSib();
   makeConnected();
 }
+TEST_F(ApplicationConnectedTestSuite, shallHandleSms) {
+  Sms sms{PHONE_NUMBER, "example sms message"};
+
+  EXPECT_CALL(userPortMock, showNewSmsNotification());
+  // todo ISmsDbPortMock, EXPECT_CALL(smsDbPort, addReceivedSms(sms));
+  objectUnderTest.handleSms(sms);
+}
 
 }  // namespace ue
