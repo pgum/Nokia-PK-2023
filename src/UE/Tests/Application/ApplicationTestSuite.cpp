@@ -6,6 +6,7 @@
 #include "Messages/PhoneNumber.hpp"
 #include "Mocks/IBtsPortMock.hpp"
 #include "Mocks/ILoggerMock.hpp"
+#include "Mocks/ISmsDbMock.hpp"
 #include "Mocks/ITimerPortMock.hpp"
 #include "Mocks/IUserPortMock.hpp"
 
@@ -20,12 +21,13 @@ class ApplicationTestSuite : public Test {
   StrictMock<IBtsPortMock> btsPortMock;
   StrictMock<IUserPortMock> userPortMock;
   StrictMock<ITimerPortMock> timerPortMock;
+  StrictMock<ISmsDbMock> smsDbMock;
 
   Expectation expectNotConnectedOnStart =
       EXPECT_CALL(userPortMock, showNotConnected());
 
-  Application objectUnderTest{PHONE_NUMBER, loggerMock, btsPortMock,
-                              userPortMock, timerPortMock};
+  Application objectUnderTest{PHONE_NUMBER, loggerMock,    btsPortMock,
+                              userPortMock, timerPortMock, smsDbMock};
 };
 
 struct ApplicationNotConnectedTestSuite : ApplicationTestSuite {
@@ -98,7 +100,7 @@ TEST_F(ApplicationConnectedTestSuite, shallHandleSms) {
   Sms sms{PHONE_NUMBER, "example sms message"};
 
   EXPECT_CALL(userPortMock, showNewSmsNotification());
-  // todo ISmsDbPortMock, EXPECT_CALL(smsDbPort, addReceivedSms(sms));
+  EXPECT_CALL(smsDbMock, addReceivedSms(sms));
   objectUnderTest.handleSms(sms);
 }
 

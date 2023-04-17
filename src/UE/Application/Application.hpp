@@ -16,7 +16,8 @@ class Application : public IEventsHandler {
               ILogger& iLogger,
               IBtsPort& bts,
               IUserPort& user,
-              ITimerPort& timer);
+              ITimerPort& timer,
+              ISmsDb& smsDB);
   ~Application();
 
   // ITimerEventsHandler interface
