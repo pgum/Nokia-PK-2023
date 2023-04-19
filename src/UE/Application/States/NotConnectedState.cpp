@@ -13,6 +13,7 @@ NotConnectedState::NotConnectedState(Context &context)
     {
         using Duration = std::chrono::milliseconds;
         context.bts.sendAttachRequest(btsId);
+        context.user.showConnecting();
         context.timer.startTimer(Duration(500));
         context.setState<ConnectingState>();
     }
