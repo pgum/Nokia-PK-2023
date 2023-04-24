@@ -15,6 +15,7 @@ public:
     void start(IBtsEventsHandler& handler);
     void stop();
 
+    void registerBTSDropConnection(ITransport::DisconnectedCallback) override;
     void sendAttachRequest(common::BtsId) override;
 
 private:

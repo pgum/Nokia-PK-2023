@@ -23,8 +23,15 @@ ConnectingState::ConnectingState(Context &context)
         context.setState<NotConnectedState>();
     }
 
-    void ConnectedState::handleTimeout()
+    void ConnectingState::handleTimeout()
     {
+        context.user.showNotConnected();
+        context.setState<NotConnectedState>();
+    }
+
+    void ConnectingState::handleBTSDisconnected()
+    {
+        context.timer.stopTimer();
         context.user.showNotConnected();
         context.setState<NotConnectedState>();
     }

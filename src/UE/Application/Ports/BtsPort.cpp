@@ -73,4 +73,9 @@ void BtsPort::sendAttachRequest(common::BtsId btsId)
 
 }
 
+void BtsPort::registerBTSDropConnection(ITransport::DisconnectedCallback callback)
+{
+    transport.registerDisconnectedCallback(callback);
+}
+
 }

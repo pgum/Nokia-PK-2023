@@ -9,8 +9,7 @@ class ConnectedState : public BaseState
 {
 public:
     ConnectedState(Context& context);
-
-    void handleTimeout() override;
+    void handleBTSDisconnected() override;
 };
 
 }

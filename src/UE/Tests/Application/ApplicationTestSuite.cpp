@@ -29,6 +29,8 @@ using namespace ::testing;
                                     btsPortMock,
                                     userPortMock,
                                     timerPortMock};
+
+
     };
 
     //********************************************************************************************
@@ -75,6 +77,14 @@ using namespace ::testing;
            EXPECT_CALL(userPortMock, showNotConnected());
            EXPECT_CALL(timerPortMock, stopTimer());
            objectUnderTest.handleAttachReject();
+    }
+
+    //RE-ATTACH
+    TEST_F(ApplicationConnectingTestSuite, shallNotConnectOnConnectionDrop)
+    {
+           EXPECT_CALL(userPortMock, showNotConnected());
+           EXPECT_CALL(timerPortMock, stopTimer());
+           objectUnderTest.handleBTSDisconnected();
     }
     //********************************************************************************************
 
