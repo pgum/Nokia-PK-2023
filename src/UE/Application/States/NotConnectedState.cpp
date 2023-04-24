@@ -9,12 +9,14 @@ NotConnectedState::NotConnectedState(Context &context)
 {
 
 }
-    void NotConnectedState::handleSib(common::BtsId btsId)
-    {
-        using Duration = std::chrono::milliseconds;
-        context.bts.sendAttachRequest(btsId);
-        context.user.showConnecting();
-        context.timer.startTimer(Duration(500));
-        context.setState<ConnectingState>();
-    }
+void NotConnectedState::handleSib(common::BtsId btsId)
+{
+    using Duration = std::chrono::milliseconds;
+    Duration timeForBtsResponse = Duration(500);
+
+    context.bts.sendAttachRequest(btsId);
+    context.user.showConnecting();
+    context.timer.startTimer(timeForBtsResponse);
+    context.setState<ConnectingState>();
+}
 }

@@ -9,10 +9,10 @@ ConnectedState::ConnectedState(Context &context)
 {
 }
 
-    void ConnectedState::handleBTSDisconnected()
-    {
-        context.user.showNotConnected();
-        context.setState<NotConnectedState>();
-    }
+void ConnectedState::handleBTSDisconnected()
+{
+    context.user.showNotConnected();
+    context.setState<NotConnectedState>();
+}
 
 }

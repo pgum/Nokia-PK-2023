@@ -24,7 +24,6 @@ protected:
     common::ITransport::MessageCallback messageCallback;
     common::ITransport::DisconnectedCallback disconnectedCallback;
 
-
     BtsPort objectUnderTest{loggerMock, transportMock, PHONE_NUMBER};
 
     BtsPortTestSuite()
@@ -37,7 +36,6 @@ protected:
     }
     ~BtsPortTestSuite()
     {
-
         EXPECT_CALL(transportMock, registerMessageCallback(IsNull()));
         objectUnderTest.stop();
     }
@@ -45,7 +43,6 @@ protected:
 
 TEST_F(BtsPortTestSuite, shallRegisterHandlersBetweenStartStop)
 {
-
 }
 
 TEST_F(BtsPortTestSuite, shallIgnoreWrongMessage)
