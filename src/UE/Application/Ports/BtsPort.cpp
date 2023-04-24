@@ -65,7 +65,7 @@ void BtsPort::sendAttachRequest(common::BtsId btsId) {
   transport.sendMessage(msg.getMessage());
 }
 
-void sendAcceptCall(common::PhoneNumber anwserNum) {
+void BtsPort::sendAcceptCall(common::PhoneNumber anwserNum) {
   logger.logDebug("sendCallAccepted to: ", anwserNum);
 
   common::OutgoingMessage msg{common::MessageId::CallAccepted, phoneNumber,

@@ -88,11 +88,11 @@ TEST_F(ApplicationConnectedTestSuite,
   EXPECT_CALL(userPortMock, showNotConnected());
   objectUnderTest.handleDisconnected();
 }
-/*TEST_F(ApplicationConnectedTestSuite, shallReattach) {
+TEST_F(ApplicationConnectedTestSuite, shallReattach) {
   EXPECT_CALL(userPortMock, showNotConnected());
   objectUnderTest.handleDisconnected();
   sendAttachRequestOnSib();
   makeConnected();
-}*/
+}
 
 } // namespace ue
