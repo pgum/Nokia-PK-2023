@@ -58,7 +58,15 @@ using namespace ::testing;
     struct ApplicationConnectingTestSuite : ApplicationNotConnectedTestSuite
     {
         ApplicationConnectingTestSuite();
+        void connectOnAttachAccept();
     };
+
+    void ApplicationConnectingTestSuite::connectOnAttachAccept()
+    {
+        EXPECT_CALL(userPortMock, showConnected());
+        EXPECT_CALL(timerPortMock, stopTimer());
+        objectUnderTest.handleAttachAccept();
+    }
 
     ApplicationConnectingTestSuite::ApplicationConnectingTestSuite()
     {
@@ -67,9 +75,7 @@ using namespace ::testing;
 
     TEST_F(ApplicationConnectingTestSuite, shallConnectOnAttachAccept)
     {
-           EXPECT_CALL(userPortMock, showConnected());
-           EXPECT_CALL(timerPortMock, stopTimer());
-           objectUnderTest.handleAttachAccept();
+        connectOnAttachAccept();
     }
 
     TEST_F(ApplicationConnectingTestSuite, shallNotConnectOnAttachReject)
@@ -87,6 +93,22 @@ using namespace ::testing;
            objectUnderTest.handleBTSDisconnected();
     }
     //********************************************************************************************
+    struct ApplicationConnectedTestSuite : ApplicationConnectingTestSuite
+    {
+        ApplicationConnectedTestSuite();
+    };
+
+    ApplicationConnectedTestSuite::ApplicationConnectedTestSuite()
+    {
+        connectOnAttachAccept();
+    }
+
+    //RE-ATTACH
+    TEST_F(ApplicationConnectedTestSuite, shallDisconnectOnConnectionDrop)
+    {
+           EXPECT_CALL(userPortMock, showNotConnected());
+           objectUnderTest.handleBTSDisconnected();
+    }
 
 
 

@@ -14,7 +14,6 @@ Application::Application(common::PhoneNumber phoneNumber,
 {
     logger.logInfo("Started");
     context.setState<NotConnectedState>();
-    context.bts.registerBTSDropConnection([&]{context.state->handleBTSDisconnected();});
 }
 
 Application::~Application()
