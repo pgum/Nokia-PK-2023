@@ -89,4 +89,19 @@ TEST_F(BtsPortTestSuite, shallHandleDisconnected) {
   EXPECT_CALL(handlerMock, handleDisconnected());
   disconnectCallback();
 }
+TEST_F(BtsPortTestSuite, shallSendCallAccepted) {
+  constexpr common::PhoneNumber to_phone_number{199};
+  common::BinaryMessage msg;
+  EXPECT_CALL(transportMock, sendMessage(_)).WillOnce([&msg](auto param) {
+    msg = std::move(param);
+    return true;
+  });
+  objectUnderTest.sendAcceptCall(to_phone_number);
+  common::IncomingMessage reader(msg);
+  ASSERT_NO_THROW(
+      EXPECT_EQ(common::MessageId::CallAccepted, reader.readMessageId()));
+  ASSERT_NO_THROW(EXPECT_EQ(PHONE_NUMBER, reader.readPhoneNumber()));
+  ASSERT_NO_THROW(EXPECT_EQ(to_phone_number, reader.readPhoneNumber()));
+  ASSERT_NO_THROW(reader.checkEndOfMessage());
+}
 } // namespace ue

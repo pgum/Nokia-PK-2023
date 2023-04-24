@@ -1,27 +1,30 @@
 #pragma once
 
 #include "Messages/BtsId.hpp"
+#include "Messages/PhoneNumber.hpp"
 
-namespace ue
-{
+namespace ue {
 
-class IBtsEventsHandler
-{
+class IBtsEventsHandler {
 public:
-    virtual ~IBtsEventsHandler() = default;
+  virtual ~IBtsEventsHandler() = default;
 
-    virtual void handleSib(common::BtsId) = 0;
-    virtual void handleAttachAccept() = 0;
-    virtual void handleAttachReject() = 0;
-    virtual void handleDisconnected() = 0;
+  virtual void handleSib(common::BtsId) = 0;
+  virtual void handleAttachAccept() = 0;
+  virtual void handleAttachReject() = 0;
+  virtual void handleDisconnected() = 0;
+  virtual void handleCallRequest(common::PhoneNumber requestNum) = 0;
+  virtual void handleCallAccepted(common::PhoneNumber anwserNum) = 0;
+  virtual void handleCallReject(common::PhoneNumber anwserNum) = 0;
 };
 
-class IBtsPort
-{
+class IBtsPort {
 public:
-    virtual ~IBtsPort() = default;
+  virtual ~IBtsPort() = default;
 
-    virtual void sendAttachRequest(common::BtsId) = 0;
+  virtual void sendAttachRequest(common::BtsId) = 0;
+  virtual void sendAcceptCall(common::PhoneNumber anwserNum) = 0;
+  virtual void sendRejectCall(common::PhoneNumber anwserNum) = 0;
 };
 
-}
+} // namespace ue
