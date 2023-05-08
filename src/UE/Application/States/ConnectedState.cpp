@@ -1,5 +1,6 @@
 #include "ConnectedState.hpp"
 #include "NotConnectedState.hpp"
+#include "SendingSmsState.hpp"
 
 namespace ue {
 
@@ -15,6 +16,10 @@ void ConnectedState::handleDisconnected() {
 void ConnectedState::handleSms(const Sms& sms) {
   context.user.showNewSmsNotification();
   context.smsDb.addReceivedSms(sms);
+}
+
+void ConnectedState::showSmsButton() {
+  context.setState<SendingSmsState>();
 }
 
 }  // namespace ue
