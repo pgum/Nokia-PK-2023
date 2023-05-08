@@ -8,7 +8,7 @@ Application::Application(common::PhoneNumber phoneNumber,
                          IBtsPort& bts,
                          IUserPort& user,
                          ITimerPort& timer,
-                         ISmsDb& smsDb)
+                         SmsDb& smsDb)
     : context{iLogger, bts, user, timer, smsDb}, logger(iLogger, "[APP] ") {
   logger.logInfo("Started");
   context.setState<NotConnectedState>();
@@ -39,6 +39,10 @@ void Application::handleAttachReject() {
 }
 void Application::handleSms(const Sms& sms) {
   context.state->handleSms(sms);
+}
+
+void Application::handleFailedSendingSms() {
+  context.state->handleFailedSendingSms();
 }
 
 }  // namespace ue

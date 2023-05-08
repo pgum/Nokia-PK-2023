@@ -1,31 +1,33 @@
 #pragma once
 
 #include "IBtsPort.hpp"
-#include "Logger/PrefixedLogger.hpp"
 #include "ITransport.hpp"
+#include "Logger/PrefixedLogger.hpp"
 #include "Messages/PhoneNumber.hpp"
 
-namespace ue
-{
+namespace ue {
 
-class BtsPort : public IBtsPort
-{
-public:
-    BtsPort(common::ILogger& logger, common::ITransport& transport, common::PhoneNumber phoneNumber);
-    void start(IBtsEventsHandler& handler);
-    void stop();
+class BtsPort : public IBtsPort {
+ public:
+  BtsPort(common::ILogger& logger,
+          common::ITransport& transport,
+          common::PhoneNumber phoneNumber);
+  void start(IBtsEventsHandler& handler);
+  void stop();
 
-    void sendAttachRequest(common::BtsId) override;
+  void sendAttachRequest(common::BtsId) override;
+  common::PhoneNumber getOwnPhoneNumber() override;
+  void sendSms(common::PhoneNumber, std::string);
 
-private:
-    void handleDisconnected();
-    void handleMessage(BinaryMessage msg);
+ private:
+  void handleDisconnected();
+  void handleMessage(BinaryMessage msg);
 
-    common::PrefixedLogger logger;
-    common::ITransport& transport;
-    common::PhoneNumber phoneNumber;
+  common::PrefixedLogger logger;
+  common::ITransport& transport;
+  common::PhoneNumber phoneNumber;
 
-    IBtsEventsHandler* handler = nullptr;
+  IBtsEventsHandler* handler = nullptr;
 };
 
-}
+}  // namespace ue

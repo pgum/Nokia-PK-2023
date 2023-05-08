@@ -4,6 +4,7 @@
 #include "IEventsHandler.hpp"
 #include "Logger/PrefixedLogger.hpp"
 #include "Messages/PhoneNumber.hpp"
+#include "SmsDb.hpp"
 
 namespace ue {
 
@@ -17,7 +18,7 @@ class Application : public IEventsHandler {
               IBtsPort& bts,
               IUserPort& user,
               ITimerPort& timer,
-              ISmsDb& smsDB);
+              SmsDb& smsDB);
   ~Application();
 
   // ITimerEventsHandler interface
@@ -29,6 +30,7 @@ class Application : public IEventsHandler {
   void handleAttachAccept() override;
   void handleAttachReject() override;
   void handleSms(const Sms& sms) override;
+  void handleFailedSendingSms() override;
 
  private:
   Context context;

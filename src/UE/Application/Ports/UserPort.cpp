@@ -35,4 +35,8 @@ void UserPort::showNewSmsNotification() {
   gui.showNewSms(true);
 }
 
+IUeGui::ISmsComposeMode& UserPort::composeSms() {
+  return gui.setSmsComposeMode();
+}
+
 }  // namespace ue

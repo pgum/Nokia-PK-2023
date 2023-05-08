@@ -1,7 +1,8 @@
 #pragma once
 
+#include "../Sms.hpp"
 #include "Messages/BtsId.hpp"
-#include "SmsDb.hpp"
+#include "Messages/PhoneNumber.hpp"
 
 namespace ue {
 
@@ -14,6 +15,9 @@ class IBtsEventsHandler {
   virtual void handleAttachReject() = 0;
   virtual void handleDisconnected() = 0;
   virtual void handleSms(const Sms& sms) = 0;
+  virtual void handleFailedSendingSms() = 0;
+  virtual void showSmsButton() = 0;
+  virtual void closeSmsButton() = 0;
 };
 
 class IBtsPort {
@@ -21,6 +25,8 @@ class IBtsPort {
   virtual ~IBtsPort() = default;
 
   virtual void sendAttachRequest(common::BtsId) = 0;
+  virtual common::PhoneNumber getOwnPhoneNumber() = 0;
+  virtual void sendSms(const Sms& sms) = 0;
 };
 
 }  // namespace ue

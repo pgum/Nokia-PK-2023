@@ -4,7 +4,7 @@
 #include "UeGui/ISmsComposeMode.hpp"
 
 namespace ue {
-class SendingSmsState : ConnectedState {
+class SendingSmsState : public ConnectedState {
  private:
   IUeGui::ISmsComposeMode& iSmsComposeMode;
 

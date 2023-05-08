@@ -19,6 +19,7 @@ class UserPort : public IUserPort {
   void showConnecting() override;
   void showConnected() override;
   void showNewSmsNotification() override;
+  IUeGui::ISmsComposeMode& composeSms() override;
 
  private:
   common::PrefixedLogger logger;

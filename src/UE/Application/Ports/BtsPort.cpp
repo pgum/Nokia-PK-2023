@@ -1,6 +1,8 @@
 #include "BtsPort.hpp"
+#include <chrono>
 #include "Messages/IncomingMessage.hpp"
 #include "Messages/OutgoingMessage.hpp"
+#include "Sms.hpp"
 
 namespace ue {
 
@@ -50,7 +52,7 @@ void BtsPort::handleMessage(BinaryMessage msg) {
         break;
       }
       case common::MessageId::Sms: {
-        const auto sms = Sms{from, reader.readRemainingText()};
+        const auto sms = Sms{reader.readRemainingText(), from, to, false, true};
         handler->handleSms(sms);
       }
       default:
@@ -67,6 +69,20 @@ void BtsPort::sendAttachRequest(common::BtsId btsId) {
                               common::PhoneNumber{}};
   msg.writeBtsId(btsId);
   transport.sendMessage(msg.getMessage());
+}
+
+common::PhoneNumber BtsPort::getOwnPhoneNumber() {
+  return phoneNumber;
+}
+
+void BtsPort::sendSms(common::PhoneNumber toPhoneNumber, std::string text) {
+  common::OutgoingMessage outgoingMessage = common::OutgoingMessage(
+      common::MessageId::Sms, phoneNumber, toPhoneNumber);
+  outgoingMessage.writeNumber(static_cast<uint8_t>(0));
+
+  outgoingMessage.writeText(text);
+
+  transport.sendMessage(outgoingMessage.getMessage());
 }
 
 }  // namespace ue
