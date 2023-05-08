@@ -15,7 +15,6 @@ class IBtsEventsHandlerMock : public IBtsEventsHandler {
   MOCK_METHOD(void, handleAttachAccept, (), (final));
   MOCK_METHOD(void, handleAttachReject, (), (final));
   MOCK_METHOD(void, handleSms, (const Sms& sms), (final));
-  MOCK_METHOD(void, handleFailedSendingSms, (), (final));
 };
 
 class IBtsPortMock : public IBtsPort {
@@ -24,6 +23,8 @@ class IBtsPortMock : public IBtsPort {
   ~IBtsPortMock() override;
 
   MOCK_METHOD(void, sendAttachRequest, (common::BtsId), (final));
+  MOCK_METHOD(common::PhoneNumber, getOwnPhoneNumber, (), (final));
+  MOCK_METHOD(void, sendSms, (const Sms& sms), (final));
 };
 
 }  // namespace ue

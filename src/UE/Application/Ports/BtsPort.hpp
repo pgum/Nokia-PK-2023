@@ -17,7 +17,7 @@ class BtsPort : public IBtsPort {
 
   void sendAttachRequest(common::BtsId) override;
   common::PhoneNumber getOwnPhoneNumber() override;
-  void sendSms(common::PhoneNumber, std::string);
+  void sendSms(const Sms& sms) override;
 
  private:
   void handleDisconnected();

@@ -41,8 +41,4 @@ void Application::handleSms(const Sms& sms) {
   context.state->handleSms(sms);
 }
 
-void Application::handleFailedSendingSms() {
-  context.state->handleFailedSendingSms();
-}
-
 }  // namespace ue

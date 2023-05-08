@@ -2,7 +2,6 @@
 #include <chrono>
 #include "Messages/IncomingMessage.hpp"
 #include "Messages/OutgoingMessage.hpp"
-#include "Sms.hpp"
 
 namespace ue {
 
@@ -52,7 +51,9 @@ void BtsPort::handleMessage(BinaryMessage msg) {
         break;
       }
       case common::MessageId::Sms: {
-        const auto sms = Sms{reader.readRemainingText(), from, to, false, true};
+        const auto sms =
+            Sms{reader.readRemainingText(),      from, to, false, true,
+                std::chrono::system_clock::now()};
         handler->handleSms(sms);
       }
       default:
@@ -75,12 +76,12 @@ common::PhoneNumber BtsPort::getOwnPhoneNumber() {
   return phoneNumber;
 }
 
-void BtsPort::sendSms(common::PhoneNumber toPhoneNumber, std::string text) {
+void BtsPort::sendSms(const Sms& sms) {
   common::OutgoingMessage outgoingMessage = common::OutgoingMessage(
-      common::MessageId::Sms, phoneNumber, toPhoneNumber);
+      common::MessageId::Sms, sms.getFrom(), sms.getTo());
   outgoingMessage.writeNumber(static_cast<uint8_t>(0));
 
-  outgoingMessage.writeText(text);
+  outgoingMessage.writeText(sms.getText());
 
   transport.sendMessage(outgoingMessage.getMessage());
 }
