@@ -46,4 +46,23 @@ void Application::handleBTSDisconnected()
     context.state->handleBTSDisconnected();
 }
 
+void Application::handleCallRequest(common::PhoneNumber from)
+{
+    context.state->handleCallRequest(from);
+}
+
+void Application::handleCallAccept()
+{
+    context.state->handleCallAccept();
+}
+
+void Application::handleCallDrop()
+{
+    context.state->handleCallDrop();
+}
+
+void Application::handleUnknownRecipient()
+{
+    context.state->handleUnknownRecipient();
+}
 }

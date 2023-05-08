@@ -177,7 +177,17 @@ void QtUeGui::onHomeClicked()
 
 void QtUeGui::onItemSelected()
 {
-    onAcceptClicked();
+    IUeGui::IListViewMode::OptionalSelection selected = listViewMode.getCurrentItemIndex();
+    std::string selectedItemLabel = listViewMode.getLabelNameFromIndex(selected.second);
+    if(selectedItemLabel == "Call")
+    {
+        logger.logInfo("CALL CLIDKED");
+        setDialMode();
+
+    } else if(selectedItemLabel == "Compose SMS")
+    {
+        logger.logInfo("Compose SMS");
+    }
 }
 
 void QtUeGui::onTextEntered()

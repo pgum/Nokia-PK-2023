@@ -1,6 +1,6 @@
 #pragma once
 
-
+#include "Messages/PhoneNumber.hpp"
 namespace ue
 {
 
@@ -8,6 +8,9 @@ class IUserEventsHandler
 {
 public:
     virtual ~IUserEventsHandler() = default;
+    //call
+    virtual void handleCallAccept() = 0;
+    virtual void handleCallDrop() = 0;
 };
 
 class IUserPort
@@ -18,6 +21,14 @@ public:
     virtual void showNotConnected() = 0;
     virtual void showConnecting() = 0;
     virtual void showConnected() = 0;
+    virtual void showCalling(common::PhoneNumber from) = 0;
+    virtual void showTalking() = 0;
+    virtual void setCallerNumber(common::PhoneNumber& number) = 0;
+    virtual common::PhoneNumber getCallerNumber() = 0;
+    virtual void setReceivingCall(bool) = 0;
+    virtual bool isReceivingCall() = 0;
+    virtual void showPartnerNotAvailable() = 0;
+
 };
 
 }

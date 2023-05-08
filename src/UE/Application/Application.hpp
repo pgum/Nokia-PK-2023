@@ -25,15 +25,24 @@ public:
     void handleTimeout() override;
 
     // IBtsEventsHandler interface
+    //attach, re-attach
     void handleSib(common::BtsId btsId) override;
     void handleAttachAccept() override;
     void handleAttachReject() override;
     void handleBTSDisconnected() override;
 
+    //call
+    void handleCallRequest(common::PhoneNumber from) override;
+
+    //IUserEventsHandler interface
+    //call
+    void handleCallAccept() override;
+    void handleCallDrop() override;
+    void handleUnknownRecipient() override;
+
 private:
     Context context;
     common::PrefixedLogger logger;
-
 };
 
 }

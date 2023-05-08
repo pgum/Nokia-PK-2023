@@ -40,4 +40,24 @@ void BaseState::handleBTSDisconnected()
     logger.logError("Uexpected: handleBTSDisconnected");
 }
 
+void BaseState::handleCallRequest(common::PhoneNumber from)
+{
+    logger.logError("Unexcepted: handleCallRequest");
+}
+
+void BaseState::handleCallAccept()
+{
+    logger.logError("Unexcepted: handleCallAccept");
+
+}
+
+void BaseState::handleCallDrop()
+{
+    logger.logError("Unexcepted: handleCallDrop");
+}
+
+void BaseState::handleUnknownRecipient()
+{
+    logger.logError("Unexcepted: handleUnknownRecipient");
+}
 }
