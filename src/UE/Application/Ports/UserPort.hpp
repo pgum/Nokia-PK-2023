@@ -5,6 +5,10 @@
 #include "Logger/PrefixedLogger.hpp"
 #include "Messages/PhoneNumber.hpp"
 
+namespace {
+int NO_ACTION = -1;
+}
+
 namespace ue {
 
 class UserPort : public IUserPort {
@@ -20,12 +24,17 @@ class UserPort : public IUserPort {
   void showConnected() override;
   void showNewSmsNotification() override;
   IUeGui::ISmsComposeMode& composeSms() override;
+  int getAction() override;
+  void acceptCallback(IUeGui::Callback acceptCallback) override;
 
  private:
   common::PrefixedLogger logger;
   IUeGui& gui;
   common::PhoneNumber phoneNumber;
   IUserEventsHandler* handler = nullptr;
+  int action = NO_ACTION;
+  IUeGui::Callback callback;
+  void onAcceptCallback(IUeGui::IListViewMode& menu);
 };
 
 }  // namespace ue

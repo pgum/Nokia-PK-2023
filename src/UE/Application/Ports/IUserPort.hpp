@@ -18,6 +18,8 @@ class IUserPort {
   virtual void showConnected() = 0;
   virtual IUeGui::ISmsComposeMode& composeSms() = 0;
   virtual void showNewSmsNotification() = 0;
+  virtual int getAction() = 0;
+  virtual void acceptCallback(IUeGui::Callback acceptCallback) = 0;
 };
 
 }  // namespace ue

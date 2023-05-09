@@ -21,6 +21,8 @@ class IUserPortMock : public IUserPort {
   MOCK_METHOD(void, showConnected, (), (final));
   MOCK_METHOD(void, showNewSmsNotification, (), (final));
   MOCK_METHOD(IUeGui::ISmsComposeMode&, composeSms, (), (final));
+  MOCK_METHOD(int, getAction, (), (final));
+  MOCK_METHOD(void, acceptCallback, (IUeGui::Callback), (final));
 };
 
 }  // namespace ue
