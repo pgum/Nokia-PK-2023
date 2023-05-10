@@ -19,6 +19,8 @@ void ConnectedState::handleDisconnected() {
   context.setState<NotConnectedState>();
 }
 void ConnectedState::handleSms(const Sms& sms) {
+  logger.logInfo("sms: from ", sms.getFrom(), " message: ", sms.getText(),
+                 " is being handled");
   context.user.showNewSmsNotification();
   context.smsDb.addReceivedSms(sms);
 }

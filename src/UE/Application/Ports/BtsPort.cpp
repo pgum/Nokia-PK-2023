@@ -51,10 +51,14 @@ void BtsPort::handleMessage(BinaryMessage msg) {
         break;
       }
       case common::MessageId::Sms: {
-        const auto sms =
-            Sms{reader.readRemainingText(),      from, to, false, true,
-                std::chrono::system_clock::now()};
-        handler->handleSms(sms);
+        auto action = reader.readNumber<std::uint8_t>();
+        if (action == 0) {
+          const auto sms =
+              Sms{reader.readRemainingText(),      from, to, false, true,
+                  std::chrono::system_clock::now()};
+          handler->handleSms(sms);
+        }
+        break;
       }
       default:
         logger.logError("unknow message: ", msgId, ", from: ", from);
