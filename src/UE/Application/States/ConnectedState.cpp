@@ -11,6 +11,7 @@ namespace ue {
 ConnectedState::ConnectedState(Context& context)
     : BaseState(context, "ConnectedState") {
   context.user.acceptCallback([this] { showSmsButton(); });
+  context.user.rejectCallback([this] { closeSmsButton(); });
   // this should show connected status
   context.user.showConnected();
 }
@@ -31,6 +32,14 @@ void ConnectedState::showSmsButton() {
       context.setState<SendingSmsState>();
       break;
   }
+}
+
+void ConnectedState::closeSmsButton() {
+  //    switch (context.user.getAction()) {
+  //      case SENDING_SMS:
+  //        context.setState<NotConnectedState>();
+  //        break;
+  //    }
 }
 
 void ConnectedState::handleFailedSmsSend() {

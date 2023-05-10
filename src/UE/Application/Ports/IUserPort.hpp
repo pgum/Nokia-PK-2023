@@ -20,6 +20,7 @@ class IUserPort {
   virtual void showNewSmsNotification() = 0;
   virtual int getAction() = 0;
   virtual void acceptCallback(IUeGui::Callback acceptCallback) = 0;
+  virtual void rejectCallback(IUeGui::Callback rejectCallback) = 0;
 };
 
 }  // namespace ue

@@ -26,6 +26,7 @@ class UserPort : public IUserPort {
   IUeGui::ISmsComposeMode& composeSms() override;
   int getAction() override;
   void acceptCallback(IUeGui::Callback acceptCallback) override;
+  void rejectCallback(IUeGui::Callback rejectCallback) override;
 
  private:
   common::PrefixedLogger logger;

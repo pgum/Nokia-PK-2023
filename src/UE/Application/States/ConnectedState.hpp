@@ -10,6 +10,7 @@ class ConnectedState : public BaseState {
   void handleDisconnected() final;
   void handleSms(const Sms& sms) final;
   virtual void showSmsButton();
+  virtual void closeSmsButton();
   void handleFailedSmsSend();
 };
 

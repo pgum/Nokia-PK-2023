@@ -66,4 +66,8 @@ void UserPort::onAcceptCallback(IUeGui::IListViewMode& menu) {
   callback();
 }
 
+void UserPort::rejectCallback(IUeGui::Callback rejectCallback) {
+  gui.setRejectCallback(rejectCallback);
+}
+
 }  // namespace ue

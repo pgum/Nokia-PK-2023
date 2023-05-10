@@ -17,4 +17,8 @@ void SendingSmsState::showSmsButton() {
   context.setState<ConnectedState>();
 }
 
+void SendingSmsState::closeSmsButton() {
+  context.setState<ConnectedState>();
+}
+
 }  // namespace ue

@@ -23,6 +23,7 @@ class IUserPortMock : public IUserPort {
   MOCK_METHOD(IUeGui::ISmsComposeMode&, composeSms, (), (final));
   MOCK_METHOD(int, getAction, (), (final));
   MOCK_METHOD(void, acceptCallback, (IUeGui::Callback), (final));
+  MOCK_METHOD(void, rejectCallback, (IUeGui::Callback), (final));
 };
 
 }  // namespace ue
