@@ -30,6 +30,7 @@ class Application : public IEventsHandler {
   void handleAttachAccept() override;
   void handleAttachReject() override;
   void handleSms(const Sms& sms) override;
+  void handleFailedSmsSend() override;
 
  private:
   Context context;

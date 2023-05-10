@@ -15,6 +15,7 @@ class IBtsEventsHandlerMock : public IBtsEventsHandler {
   MOCK_METHOD(void, handleAttachAccept, (), (final));
   MOCK_METHOD(void, handleAttachReject, (), (final));
   MOCK_METHOD(void, handleSms, (const Sms& sms), (final));
+  MOCK_METHOD(void, handleFailedSmsSend, (), (final));
 };
 
 class IBtsPortMock : public IBtsPort {

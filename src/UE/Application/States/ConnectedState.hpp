@@ -10,6 +10,7 @@ class ConnectedState : public BaseState {
   void handleDisconnected() final;
   void handleSms(const Sms& sms) final;
   virtual void showSmsButton();
+  void handleFailedSmsSend();
 };
 
 }  // namespace ue

@@ -11,6 +11,7 @@ class ISmsDb {
 
   virtual void addReceivedSms(const Sms& sms) = 0;
   virtual void addSms(const Sms& sms) = 0;
+  virtual void markLastSmsSentAsFailed() = 0;
 };
 
 }  // namespace ue

@@ -13,6 +13,7 @@ class ISmsDbMock : public ISmsDb {
 
   MOCK_METHOD(void, addReceivedSms, (const Sms&), (final));
   MOCK_METHOD(void, addSms, (const Sms&), (final));
+  MOCK_METHOD(void, markLastSmsSentAsFailed, (), (final));
 };
 
 }  // namespace ue

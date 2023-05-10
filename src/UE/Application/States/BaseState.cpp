@@ -35,4 +35,8 @@ void BaseState::handleSms(const Sms& sms) {
   logger.logError("Uexpected: handleSms");
 }
 
+void BaseState::handleFailedSmsSend() {
+  logger.logError("Unexpected: handleFailedSmsSend");
+}
+
 }  // namespace ue

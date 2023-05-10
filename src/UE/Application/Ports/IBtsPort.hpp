@@ -15,6 +15,7 @@ class IBtsEventsHandler {
   virtual void handleAttachReject() = 0;
   virtual void handleDisconnected() = 0;
   virtual void handleSms(const Sms& sms) = 0;
+  virtual void handleFailedSmsSend() = 0;
 };
 
 class IBtsPort {

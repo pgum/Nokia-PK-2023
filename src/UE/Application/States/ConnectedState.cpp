@@ -33,4 +33,8 @@ void ConnectedState::showSmsButton() {
   }
 }
 
+void ConnectedState::handleFailedSmsSend() {
+  context.smsDb.markLastSmsSentAsFailed();
+}
+
 }  // namespace ue
