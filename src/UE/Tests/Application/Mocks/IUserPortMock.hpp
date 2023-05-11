@@ -11,6 +11,7 @@ class IUserEventsHandlerMock : public IUserEventsHandler {
   ~IUserEventsHandlerMock() override;
   MOCK_METHOD(void, handleSendCallRequest, (common::PhoneNumber), (final));
   MOCK_METHOD(void, handleSendCallDrop, (common::PhoneNumber), (final));
+  MOCK_METHOD(void, handleSendCallAccept, (common::PhoneNumber), (final));
 };
 
 class IUserPortMock : public IUserPort {
@@ -27,6 +28,8 @@ class IUserPortMock : public IUserPort {
   MOCK_METHOD(void, acceptCallback, (IUeGui::Callback), (final));
   MOCK_METHOD(void, rejectCallback, (IUeGui::Callback), (final));
   MOCK_METHOD(void, showEnterPhoneNumber, (), (final));
+  MOCK_METHOD(void, showDialing, (common::PhoneNumber phoneNumber), (final));
+  MOCK_METHOD(void, callAchieved, (common::PhoneNumber phoneNumber), (final));
 };
 
 }  // namespace ue

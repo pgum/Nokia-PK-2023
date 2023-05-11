@@ -44,9 +44,29 @@ void ConnectedState::handleFailedSmsSend() {
 }
 
 void ConnectedState::handleSendCallRequest(
-    common::PhoneNumber receiverPhoneNumber) {}
+    common::PhoneNumber receiverPhoneNumber) {
+  using namespace std::chrono_literals;
+  context.timer.startTimer(60000ms);
+  context.bts.sendCallRequest(receiverPhoneNumber);
+  setSenderPhoneNumber(receiverPhoneNumber);
+  context.user.showDialing(receiverPhoneNumber);
+}
 
 void ConnectedState::handleSendCallDrop(
     common::PhoneNumber receiverPhoneNumber) {}
+
+void ConnectedState::handleSendCallAccept(common::PhoneNumber phoneNumber) {
+  context.timer.stopTimer();
+  setSenderPhoneNumber({});
+  context.user.callAchieved(phoneNumber);
+  context.bts.sendCallAccept(phoneNumber);
+  // context.setState<TalkingState>(phoneNumber);
+}
+
+void ConnectedState::setSenderPhoneNumber(common::PhoneNumber phoneNumber) {
+  this->senderPhoneNumber = phoneNumber;
+}
+
+void ConnectedState::handleCallRequest(common::PhoneNumber phoneNumber) {}
 
 }  // namespace ue

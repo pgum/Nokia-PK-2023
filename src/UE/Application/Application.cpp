@@ -54,4 +54,12 @@ void Application::handleSendCallDrop(common::PhoneNumber receiverPhoneNumber) {
   context.state->handleSendCallDrop(receiverPhoneNumber);
 }
 
+void Application::handleCallRequest(common::PhoneNumber phoneNumber) {
+  context.state->handleCallRequest(phoneNumber);
+}
+
+void Application::handleSendCallAccept(common::PhoneNumber phoneNumber) {
+  context.state->handleSendCallAccept(phoneNumber);
+}
+
 }  // namespace ue

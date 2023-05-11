@@ -5,6 +5,9 @@
 namespace ue {
 
 class ConnectedState : public BaseState {
+ private:
+  common::PhoneNumber senderPhoneNumber;
+
  public:
   ConnectedState(Context& context);
   void handleDisconnected() final;
@@ -14,6 +17,9 @@ class ConnectedState : public BaseState {
   void handleFailedSmsSend();
   void handleSendCallRequest(common::PhoneNumber) override;
   void handleSendCallDrop(common::PhoneNumber) override;
+  void handleCallRequest(common::PhoneNumber) override;
+  void setSenderPhoneNumber(common::PhoneNumber senderPhoneNumber);
+  void handleSendCallAccept(common::PhoneNumber) override;
 };
 
 }  // namespace ue

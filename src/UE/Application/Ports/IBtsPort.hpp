@@ -16,6 +16,7 @@ class IBtsEventsHandler {
   virtual void handleDisconnected() = 0;
   virtual void handleSms(const Sms& sms) = 0;
   virtual void handleFailedSmsSend() = 0;
+  virtual void handleCallRequest(common::PhoneNumber) = 0;
 };
 
 class IBtsPort {
@@ -25,6 +26,8 @@ class IBtsPort {
   virtual void sendAttachRequest(common::BtsId) = 0;
   virtual common::PhoneNumber getOwnPhoneNumber() = 0;
   virtual void sendSms(const Sms& sms) = 0;
+  virtual void sendCallRequest(common::PhoneNumber) = 0;
+  virtual void sendCallAccept(common::PhoneNumber) = 0;
 };
 
 }  // namespace ue

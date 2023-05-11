@@ -28,6 +28,8 @@ class UserPort : public IUserPort {
   void acceptCallback(IUeGui::Callback acceptCallback) override;
   void rejectCallback(IUeGui::Callback rejectCallback) override;
   void showEnterPhoneNumber() override;
+  void showDialing(common::PhoneNumber) override;
+  void callAchieved(common::PhoneNumber) override;
 
  private:
   common::PrefixedLogger logger;

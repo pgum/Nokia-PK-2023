@@ -2,6 +2,7 @@
 #include "UeGui/IDialMode.hpp"
 #include "UeGui/IListViewMode.hpp"
 #include "UeGui/ISmsComposeMode.hpp"
+#include "UeGui/ITextMode.hpp"
 
 namespace ue {
 
@@ -78,6 +79,22 @@ void UserPort::showEnterPhoneNumber() {
       [&]() { handler->handleSendCallRequest(dialModeMenu.getPhoneNumber()); });
   gui.setRejectCallback(
       [&]() { handler->handleSendCallDrop(dialModeMenu.getPhoneNumber()); });
+}
+
+void UserPort::showDialing(common::PhoneNumber senderPhoneNumber) {
+  logger.logDebug("Trying to connect with: ", senderPhoneNumber);
+  IUeGui::ITextMode& dialModeMenu = gui.setAlertMode();
+  dialModeMenu.setText("Trying to\nconnect with:\n" +
+                       to_string(senderPhoneNumber));
+  gui.setAcceptCallback([&]() {});
+  gui.setRejectCallback(
+      [&]() { handler->handleSendCallDrop(senderPhoneNumber); });
+}
+
+void UserPort::callAchieved(common::PhoneNumber senderPhoneNumber) {
+  logger.logDebug("Talking mode with: ", senderPhoneNumber);
+  auto& callMode = gui.setAlertMode();
+  callMode.setText("Call from: " + to_string(senderPhoneNumber));
 }
 
 }  // namespace ue
