@@ -28,6 +28,7 @@ class IBtsPort {
   virtual void sendSms(const Sms& sms) = 0;
   virtual void sendCallRequest(common::PhoneNumber) = 0;
   virtual void sendCallAccept(common::PhoneNumber) = 0;
+  virtual void sendCallDrop(common::PhoneNumber) = 0;
 };
 
 }  // namespace ue

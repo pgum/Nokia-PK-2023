@@ -118,4 +118,11 @@ void BtsPort::sendCallAccept(common::PhoneNumber receiverPhoneNumber) {
   transport.sendMessage(msg.getMessage());
 }
 
+void BtsPort::sendCallDrop(common::PhoneNumber receiverPhoneNumber) {
+  logger.logDebug("sendCallDrop: ", receiverPhoneNumber);
+  common::OutgoingMessage msg{common::MessageId::CallDropped, phoneNumber,
+                              receiverPhoneNumber};
+  transport.sendMessage(msg.getMessage());
+}
+
 }  // namespace ue

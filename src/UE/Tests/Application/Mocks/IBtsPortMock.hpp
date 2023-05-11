@@ -29,6 +29,7 @@ class IBtsPortMock : public IBtsPort {
   MOCK_METHOD(void, sendSms, (const Sms& sms), (final));
   MOCK_METHOD(void, sendCallRequest, (common::PhoneNumber), (final));
   MOCK_METHOD(void, sendCallAccept, (common::PhoneNumber), (final));
+  MOCK_METHOD(void, sendCallDrop, (common::PhoneNumber), (final));
 };
 
 }  // namespace ue

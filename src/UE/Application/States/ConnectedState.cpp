@@ -52,9 +52,6 @@ void ConnectedState::handleSendCallRequest(
   context.user.showDialing(receiverPhoneNumber);
 }
 
-void ConnectedState::handleSendCallDrop(
-    common::PhoneNumber receiverPhoneNumber) {}
-
 void ConnectedState::handleSendCallAccept(common::PhoneNumber phoneNumber) {
   context.timer.stopTimer();
   setSenderPhoneNumber({});
@@ -68,5 +65,13 @@ void ConnectedState::setSenderPhoneNumber(common::PhoneNumber phoneNumber) {
 }
 
 void ConnectedState::handleCallRequest(common::PhoneNumber phoneNumber) {}
+
+void ConnectedState::handleSendCallDrop(
+    common::PhoneNumber receiverPhoneNumber) {
+  context.timer.stopTimer();
+  context.bts.sendCallDrop(senderPhoneNumber);
+  setSenderPhoneNumber({});
+  context.user.showConnected();
+}
 
 }  // namespace ue
