@@ -30,6 +30,7 @@ class UserPort : public IUserPort {
   void showEnterPhoneNumber() override;
   void showDialing(common::PhoneNumber) override;
   void callAchieved(common::PhoneNumber) override;
+  void showPartnerNotAvailable(common::PhoneNumber) override;
 
  private:
   common::PrefixedLogger logger;

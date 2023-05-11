@@ -30,6 +30,10 @@ class IUserPortMock : public IUserPort {
   MOCK_METHOD(void, showEnterPhoneNumber, (), (final));
   MOCK_METHOD(void, showDialing, (common::PhoneNumber phoneNumber), (final));
   MOCK_METHOD(void, callAchieved, (common::PhoneNumber phoneNumber), (final));
+  MOCK_METHOD(void,
+              showPartnerNotAvailable,
+              (common::PhoneNumber phoneNumber),
+              (final));
 };
 
 }  // namespace ue

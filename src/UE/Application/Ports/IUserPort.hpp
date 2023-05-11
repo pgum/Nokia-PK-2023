@@ -27,6 +27,7 @@ class IUserPort {
   virtual void showEnterPhoneNumber() = 0;
   virtual void showDialing(common::PhoneNumber) = 0;
   virtual void callAchieved(common::PhoneNumber) = 0;
+  virtual void showPartnerNotAvailable(common::PhoneNumber) = 0;
 };
 
 }  // namespace ue

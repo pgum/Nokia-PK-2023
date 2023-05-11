@@ -20,6 +20,8 @@ class ConnectedState : public BaseState {
   void handleCallRequest(common::PhoneNumber) override;
   void setSenderPhoneNumber(common::PhoneNumber senderPhoneNumber);
   void handleSendCallAccept(common::PhoneNumber) override;
+  void handleUnknownRecipientCallRequest(
+      common::PhoneNumber phoneNumber) override;
 };
 
 }  // namespace ue

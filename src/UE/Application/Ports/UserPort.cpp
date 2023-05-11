@@ -97,4 +97,12 @@ void UserPort::callAchieved(common::PhoneNumber senderPhoneNumber) {
   callMode.setText("Call from: " + to_string(senderPhoneNumber));
 }
 
+void UserPort::showPartnerNotAvailable(common::PhoneNumber phoneNumber) {
+  gui.showPeerUserNotAvailable(phoneNumber);
+  auto accept = [&]() { showConnected(); };
+  auto reject = [&]() { showConnected(); };
+  gui.setAcceptCallback(accept);
+  gui.setRejectCallback(reject);
+}
+
 }  // namespace ue

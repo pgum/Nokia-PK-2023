@@ -62,4 +62,8 @@ void Application::handleSendCallAccept(common::PhoneNumber phoneNumber) {
   context.state->handleSendCallAccept(phoneNumber);
 }
 
+void Application::handleUnknownRecipientCallRequest(
+    common::PhoneNumber phoneNumber) {
+  context.state->handleUnknownRecipientCallRequest(phoneNumber);
+}
 }  // namespace ue

@@ -74,6 +74,9 @@ void BtsPort::handleMessage(BinaryMessage msg) {
         auto failHeader = reader.readMessageHeader();
         if (failHeader.messageId == common::MessageId::Sms)
           handler->handleFailedSmsSend();
+        else
+          handler->handleUnknownRecipientCallRequest(from);
+        logger.logInfo("Handle for unknown recipient");
       }
       default:
         logger.logError("unknow message: ", msgId, ", from: ", from);

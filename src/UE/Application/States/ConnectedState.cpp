@@ -74,4 +74,11 @@ void ConnectedState::handleSendCallDrop(
   context.user.showConnected();
 }
 
+void ConnectedState::handleUnknownRecipientCallRequest(
+    common::PhoneNumber phoneNumber) {
+  context.timer.stopTimer();
+  context.user.showPartnerNotAvailable(senderPhoneNumber);
+  setSenderPhoneNumber({});
+}
+
 }  // namespace ue
