@@ -21,6 +21,8 @@ class BaseState : public IEventsHandler {
   void handleAttachReject() override;
   void handleSms(const Sms& sms) override;
   void handleFailedSmsSend() override;
+  void handleSendCallRequest(common::PhoneNumber) override;
+  void handleSendCallDrop(common::PhoneNumber) override;
 
  protected:
   Context& context;

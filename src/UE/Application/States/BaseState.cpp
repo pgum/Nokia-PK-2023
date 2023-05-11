@@ -39,4 +39,12 @@ void BaseState::handleFailedSmsSend() {
   logger.logError("Unexpected: handleFailedSmsSend");
 }
 
+void BaseState::handleSendCallRequest(common::PhoneNumber receiverPhoneNumber) {
+  logger.logError("Uexpected: handleCallRequest: ", receiverPhoneNumber);
+}
+
+void BaseState::handleSendCallDrop(common::PhoneNumber receiverPhoneNumber) {
+  logger.logError("Uexpected: handleCallDropSender: ", receiverPhoneNumber);
+}
+
 }  // namespace ue

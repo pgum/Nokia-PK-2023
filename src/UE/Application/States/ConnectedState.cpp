@@ -10,8 +10,8 @@ namespace ue {
 
 ConnectedState::ConnectedState(Context& context)
     : BaseState(context, "ConnectedState") {
-  context.user.acceptCallback([this] { showSmsButton(); });
-  context.user.rejectCallback([this] { closeSmsButton(); });
+  context.user.acceptCallback([this] { acceptButton(); });
+  context.user.rejectCallback([this] { rejectButton(); });
   // this should show connected status
   context.user.showConnected();
 }
@@ -26,24 +26,27 @@ void ConnectedState::handleSms(const Sms& sms) {
   context.smsDb.addReceivedSms(sms);
 }
 
-void ConnectedState::showSmsButton() {
+void ConnectedState::acceptButton() {
   switch (context.user.getAction()) {
     case SENDING_SMS:
       context.setState<SendingSmsState>();
       break;
+    case DIAL:
+      context.user.showEnterPhoneNumber();
+      break;
   }
 }
 
-void ConnectedState::closeSmsButton() {
-  //    switch (context.user.getAction()) {
-  //      case SENDING_SMS:
-  //        context.setState<NotConnectedState>();
-  //        break;
-  //    }
-}
+void ConnectedState::rejectButton() {}
 
 void ConnectedState::handleFailedSmsSend() {
   context.smsDb.markLastSmsSentAsFailed();
 }
+
+void ConnectedState::handleSendCallRequest(
+    common::PhoneNumber receiverPhoneNumber) {}
+
+void ConnectedState::handleSendCallDrop(
+    common::PhoneNumber receiverPhoneNumber) {}
 
 }  // namespace ue
