@@ -6,8 +6,9 @@ namespace ue
 {
 
 ConnectingState::ConnectingState(Context &context)
-    : BaseState(context, "ConnectingState")
+    : NotConnectedState(context, "ConnectingState")
 {
+
 }
 void ConnectingState::handleAttachAccept()
 {

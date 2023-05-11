@@ -65,16 +65,6 @@ void UserPort::showTalking()
     IUeGui::ICallMode& callView = gui.setCallMode();
 }
 
-bool UserPort::isReceivingCall()
-{
-    return receivingCall;
-}
-
-void UserPort::setReceivingCall(bool v)
-{
-    receivingCall = v;
-}
-
 void UserPort::showPartnerNotAvailable()
 {
     IUeGui::ITextMode& textMode = gui.setViewTextMode();

@@ -4,7 +4,7 @@
 
 namespace ue
 {
-TalkingState::TalkingState(Context &context) : BaseState(context, "TalkingState")
+TalkingState::TalkingState(Context &context) : CallState(context, "TalkingState")
 {
 
 }

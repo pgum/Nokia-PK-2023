@@ -14,7 +14,6 @@ public:
 
     MOCK_METHOD(void, handleCallAccept, (), (final));
     MOCK_METHOD(void, handleCallDrop, (), (final));
-
 };
 
 class IUserPortMock : public IUserPort
@@ -30,11 +29,7 @@ public:
     MOCK_METHOD(void, showTalking, (), (final));
     MOCK_METHOD(void, setCallerNumber, (common::PhoneNumber&), (final));
     MOCK_METHOD(common::PhoneNumber, getCallerNumber, (), (final));
-    MOCK_METHOD(void, setReceivingCall, (bool), (final));
-    MOCK_METHOD(bool, isReceivingCall, (), (final));
     MOCK_METHOD(void, showPartnerNotAvailable, (), (final));
-
-
 };
 
 }

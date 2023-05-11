@@ -16,10 +16,7 @@ public:
     void stop();
 
     void setCallerNumber(common::PhoneNumber& number) override;
-    void setReceivingCall(bool) override;
-
     common::PhoneNumber getCallerNumber() override;
-    bool isReceivingCall() override;
 
     void showNotConnected() override;
     void showConnecting() override;

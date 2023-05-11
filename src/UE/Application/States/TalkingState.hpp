@@ -2,11 +2,11 @@
 
 #include <thread>
 
-#include "BaseState.hpp"
+#include "CallState.hpp"
 
 namespace ue
 {
-class TalkingState : public BaseState
+class TalkingState : public CallState
 {
 public:
     TalkingState(Context& context);

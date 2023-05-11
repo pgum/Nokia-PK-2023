@@ -1,11 +1,11 @@
 #pragma once
 
-#include "BaseState.hpp"
+#include "NotConnectedState.hpp"
 
 namespace ue
 {
 
-class ConnectingState : public BaseState
+class ConnectingState : public NotConnectedState
 {
 public:
     ConnectingState(Context& context);

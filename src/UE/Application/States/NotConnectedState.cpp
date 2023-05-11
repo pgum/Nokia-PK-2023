@@ -9,6 +9,13 @@ NotConnectedState::NotConnectedState(Context &context)
 {
 
 }
+
+NotConnectedState::NotConnectedState(Context &context, const std::string &name)
+    : BaseState(context, name)
+{
+
+}
+
 void NotConnectedState::handleSib(common::BtsId btsId)
 {
     using Duration = std::chrono::milliseconds;

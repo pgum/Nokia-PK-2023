@@ -25,8 +25,6 @@ public:
     virtual void showTalking() = 0;
     virtual void setCallerNumber(common::PhoneNumber& number) = 0;
     virtual common::PhoneNumber getCallerNumber() = 0;
-    virtual void setReceivingCall(bool) = 0;
-    virtual bool isReceivingCall() = 0;
     virtual void showPartnerNotAvailable() = 0;
 
 };
