@@ -81,4 +81,9 @@ void ConnectedState::handleUnknownRecipientCallRequest(
   setSenderPhoneNumber({});
 }
 
+void ConnectedState::handleTimeout() {
+  context.user.showConnected();
+  handleSendCallDrop({});
+}
+
 }  // namespace ue
