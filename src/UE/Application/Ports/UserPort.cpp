@@ -1,6 +1,7 @@
 #include "UserPort.hpp"
 #include "UeGui/IListViewMode.hpp"
 #include "UeGui/ISmsComposeMode.hpp"
+#include "UeGui/ITextMode.hpp"
 
 namespace ue {
 
@@ -30,10 +31,15 @@ void UserPort::showConnected() {
   IUeGui::IListViewMode& menu = gui.setListViewMode();
   menu.clearSelectionList();
   menu.addSelectionListItem("Compose SMS", "");
-  menu.addSelectionListItem("View SMS", "");
+  if (smsDb.isUnreadSms()) {
+    menu.addSelectionListItem("View SMS (New!)", "");
+  } else {
+    menu.addSelectionListItem("View SMS", "");
+  }
 
   gui.setAcceptCallback([this, &menu] { onAcceptCallback(menu); });
 }
+
 void UserPort::showNewSmsNotification() {
   gui.showNewSms(true);
 }
@@ -45,6 +51,33 @@ IUeGui::ISmsComposeMode& UserPort::composeSms() {
   smsComposer.getSmsText();
 
   return smsComposer;
+}
+
+void UserPort::showSms(size_t index) {
+  auto sms = smsDb.retrieveSms(index);
+  IUeGui::ITextMode& textMode = gui.setViewTextMode();
+  if (sms) {
+    textMode.setText(sms.get()->getText());
+  }
+}
+
+void UserPort::showSmsList() {
+  gui.showNewSms(false);
+  IUeGui::IListViewMode& listMode = gui.setListViewMode();
+  listMode.clearSelectionList();
+  for (const auto& sms : smsDb.getSmsMessages()) {
+    std::string header = "from " + common::to_string(sms.first.getFrom()) +
+                         " to " + common::to_string(sms.first.getTo());
+    if (!sms.first.isReceived()) {
+      header = "Fail! " + header;
+    }
+    listMode.addSelectionListItem(header, "");
+  }
+  gui.setAcceptCallback([this, &listMode] { onAcceptCallback(listMode); });
+}
+
+SmsDb& UserPort::getSmsDb() {
+  return smsDb;
 }
 
 int UserPort::getAction() {
