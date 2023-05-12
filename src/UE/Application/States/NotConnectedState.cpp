@@ -11,12 +11,11 @@ NotConnectedState::NotConnectedState(Context &context)
 }
 void NotConnectedState::handleSib(common::BtsId btsId)
 {
-    using Duration = std::chrono::milliseconds;
-    Duration timeForBtsResponse = Duration(500);
+    const long bts_response_time_ms = 500;
 
     context.bts.sendAttachRequest(btsId);
     context.user.showConnecting();
-    context.timer.startTimer(timeForBtsResponse);
+    context.timer.startTimer(ITimerPort::Duration(bts_response_time_ms));
     context.setState<ConnectingState>();
 }
 }

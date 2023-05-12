@@ -31,7 +31,6 @@ protected:
                 timerPortMock};
 };
 
-//********************************************************************************************
 struct ApplicationNotConnectedTestSuite : ApplicationTestSuite
 {
     void sendAttachRequestOnSib();
@@ -39,12 +38,11 @@ struct ApplicationNotConnectedTestSuite : ApplicationTestSuite
 
 void ApplicationNotConnectedTestSuite::sendAttachRequestOnSib()
 {
-    using Duration = std::chrono::milliseconds;
-    Duration timeForBtsResponse = Duration(500);
+    const long bts_response_time_ms = 500;
 
     EXPECT_CALL(btsPortMock, sendAttachRequest(btsId));
     EXPECT_CALL(userPortMock, showConnecting());
-    EXPECT_CALL(timerPortMock, startTimer(timeForBtsResponse));
+    EXPECT_CALL(timerPortMock, startTimer(ITimerPort::Duration(bts_response_time_ms)));
     objectUnderTest.handleSib(btsId);
 
 }
@@ -54,7 +52,6 @@ TEST_F(ApplicationNotConnectedTestSuite, shallSendAttachRequestOnSib)
     sendAttachRequestOnSib();
 }
 
-//********************************************************************************************
 struct ApplicationConnectingTestSuite : ApplicationNotConnectedTestSuite
 {
     ApplicationConnectingTestSuite();
@@ -85,14 +82,14 @@ TEST_F(ApplicationConnectingTestSuite, shallNotConnectOnAttachReject)
     objectUnderTest.handleAttachReject();
 }
 
-//RE-ATTACH
+// RE-ATTACH
 TEST_F(ApplicationConnectingTestSuite, shallNotConnectOnConnectionDrop)
 {
     EXPECT_CALL(userPortMock, showNotConnected());
     EXPECT_CALL(timerPortMock, stopTimer());
     objectUnderTest.handleBTSDisconnected();
 }
-//********************************************************************************************
+
 struct ApplicationConnectedTestSuite : ApplicationConnectingTestSuite
 {
     ApplicationConnectedTestSuite();
@@ -103,11 +100,11 @@ ApplicationConnectedTestSuite::ApplicationConnectedTestSuite()
     connectOnAttachAccept();
 }
 
-//RE-ATTACH
+// RE-ATTACH
 TEST_F(ApplicationConnectedTestSuite, shallDisconnectOnConnectionDrop)
 {
     EXPECT_CALL(userPortMock, showNotConnected());
     objectUnderTest.handleBTSDisconnected();
 }
 
-} //namespace ue
+} // namespace ue

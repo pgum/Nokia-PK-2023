@@ -35,9 +35,10 @@ void TimerPort::stopTimer()
 void TimerPort::run(Duration duration)
 {
     std::unique_lock<std::mutex> cond_lock(mtx_stop);
-    if(isStopped.wait_for(cond_lock, duration) == std::cv_status::timeout)
+    if (isStopped.wait_for(cond_lock, duration) == std::cv_status::timeout)
+    {
         handler->handleTimeout();
+    }
 }
 
-
-}
+}// namespace ue
