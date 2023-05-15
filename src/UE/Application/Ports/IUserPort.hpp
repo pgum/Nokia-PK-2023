@@ -26,6 +26,8 @@ public:
     virtual void setCallerNumber(common::PhoneNumber& number) = 0;
     virtual common::PhoneNumber getCallerNumber() = 0;
     virtual void showPartnerNotAvailable() = 0;
+    virtual std::string getOutgoingMessage() = 0;
+    virtual void displayMessage(std::string message) = 0;
 
 };
 

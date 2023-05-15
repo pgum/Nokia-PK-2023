@@ -71,4 +71,19 @@ void UserPort::showPartnerNotAvailable()
     textMode.setText(common::to_string(getCallerNumber()) + " is currently not available.");
 }
 
+std::string UserPort::getOutgoingMessage()
+{
+    //TODO: consider caching callView instead of getting it from gui.setCallMode() every time
+    IUeGui::ICallMode& callView = gui.setCallMode();
+    callView.clearOutgoingText();
+
+    return callView.getOutgoingText();
+}
+
+void UserPort::displayMessage(std::string message)
+{
+    IUeGui::ICallMode& callView = gui.setCallMode();
+    callView.appendIncomingText(message);
+}
+
 }

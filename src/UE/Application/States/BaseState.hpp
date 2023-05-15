@@ -32,6 +32,10 @@ public:
     void handleCallDrop() override;
     void handleUnknownRecipient() override;
 
+    //call talk
+    void handleRecieveTalkMessage(std::string message) override;
+    void handleSendTalkMessage(common::PhoneNumber destNumber, std::string message) override;
+
 protected:
     Context& context;
     common::PrefixedLogger logger;

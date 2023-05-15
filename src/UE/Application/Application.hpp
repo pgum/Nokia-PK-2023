@@ -40,6 +40,10 @@ public:
     void handleCallDrop() override;
     void handleUnknownRecipient() override;
 
+    //callTalk
+    void handleRecieveTalkMessage(std::string message) override;
+    void handleSendTalkMessage(common::PhoneNumber destNumber, std::string message) override; //TODO: remove arguments, they are pointless currently
+
 private:
     Context context;
     common::PrefixedLogger logger;

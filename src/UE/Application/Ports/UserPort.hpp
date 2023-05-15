@@ -24,6 +24,8 @@ public:
     void showCalling(common::PhoneNumber from) override;
     void showTalking() override;
     void showPartnerNotAvailable() override;
+    std::string getOutgoingMessage() override;
+    void displayMessage(std::string message) override;
 
 
 private:

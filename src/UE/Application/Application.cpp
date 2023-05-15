@@ -65,4 +65,15 @@ void Application::handleUnknownRecipient()
 {
     context.state->handleUnknownRecipient();
 }
+
+void Application::handleRecieveTalkMessage(std::string message)
+{
+    context.state->handleRecieveTalkMessage(message);
+}
+
+void Application::handleSendTalkMessage(common::PhoneNumber destNumber, std::string message)
+{
+    context.logger.logError("Application is handling handleSendTalkMessage, this should not happen");
+}
+
 }

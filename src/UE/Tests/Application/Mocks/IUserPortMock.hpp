@@ -30,6 +30,8 @@ public:
     MOCK_METHOD(void, setCallerNumber, (common::PhoneNumber&), (final));
     MOCK_METHOD(common::PhoneNumber, getCallerNumber, (), (final));
     MOCK_METHOD(void, showPartnerNotAvailable, (), (final));
+    MOCK_METHOD(std::string, getOutgoingMessage, (), (final));
+    MOCK_METHOD(void, displayMessage, (std::string), (final));
 };
 
 }

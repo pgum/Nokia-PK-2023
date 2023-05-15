@@ -20,5 +20,24 @@ void TalkingState::handleUnknownRecipient()
     context.user.showConnected();
     context.setState<ConnectedState>();
 }
+
+void TalkingState::handleRecieveTalkMessage(std::string message)
+{
+    //should get invoked by BTS
+    //takes care of displaying Message on gui as part of converstaion
+    context.user.displayMessage(message);
+}
+
+
+void TalkingState::handleSendTalkMessage(common::PhoneNumber destNumber, std::string message)
+{
+    //should get invoked by gui somehow
+    //takes care of both displaying Message on gui as part of conversation
+    //+ takes care of sending message via BTS via CallTalk()
+    //TODO: cancel???
+
+    context.bts.callTalk(context.user.getCallerNumber(), context.user.getOutgoingMessage());
+}
+
 }
 

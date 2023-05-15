@@ -60,4 +60,16 @@ void BaseState::handleUnknownRecipient()
 {
     logger.logError("Unexcepted: handleUnknownRecipient");
 }
+
+void BaseState::handleRecieveTalkMessage(std::string message)
+{
+    logger.logError("Unexcepted: handleRecieveCallMessage()");
+}
+
+void BaseState::handleSendTalkMessage(common::PhoneNumber destNumber, std::string message)
+{
+    logger.logError("Unexcepted: handleSendCallMessage()");
+}
+
+
 }

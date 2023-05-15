@@ -60,10 +60,17 @@ void BtsPort::handleMessage(BinaryMessage msg)
             handler->handleUnknownRecipient();
             break;
         }
+        case common::MessageId::CallTalk:
+        {
+            handler->handleRecieveTalkMessage(reader.readRemainingText()); //TODO consider changing readRemainingText to readText, and pass message size somehow
+            break;
+        }
         default:
             logger.logError("unknow message: ", msgId, ", from: ", from);
 
         }
+        //TODO: case common::MessageId::CallTalk
+        //handler-> void TalkingState::handleRecieveTalkMessage()
     }
     catch (std::exception const& ex)
     {
@@ -81,7 +88,6 @@ void BtsPort::sendAttachRequest(common::BtsId btsId)
     msg.writeBtsId(btsId);
     transport.sendMessage(msg.getMessage());
 
-
 }
 
 void BtsPort::sendCallAccept(common::PhoneNumber destNumber)
@@ -95,6 +101,15 @@ void BtsPort::sendCallReject(common::PhoneNumber destNumber)
 {
     logger.logDebug("sendCalRejected: ");
     common::OutgoingMessage msg{common::MessageId::CallDropped, phoneNumber, destNumber};
+    transport.sendMessage(msg.getMessage());
+}
+
+//TODO: change this into CallTalk
+void BtsPort::callTalk(common::PhoneNumber destNumber, std::string message)
+{
+    logger.logDebug("sendMessage: "); //TODO: add message content to log info?
+    common::OutgoingMessage msg{common::MessageId::CallTalk, phoneNumber, destNumber};
+    msg.writeText(message);
     transport.sendMessage(msg.getMessage());
 }
 
