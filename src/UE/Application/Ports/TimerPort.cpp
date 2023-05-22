@@ -41,4 +41,4 @@ void TimerPort::run(Duration duration)
     }
 }
 
-}// namespace ue
+} // namespace ue

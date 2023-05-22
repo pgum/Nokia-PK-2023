@@ -31,8 +31,8 @@ public:
     void stopTimer() override;
 
 private:
-    std::mutex mtx_stop{};
-    std::condition_variable isStopped{};
+    std::mutex mtx_stop;
+    std::condition_variable isStopped;
     common::PrefixedLogger logger;
     ITimerEventsHandler* handler = nullptr;
     void run(Duration duration);

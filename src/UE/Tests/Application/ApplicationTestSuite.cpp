@@ -38,13 +38,13 @@ struct ApplicationNotConnectedTestSuite : ApplicationTestSuite
 
 void ApplicationNotConnectedTestSuite::sendAttachRequestOnSib()
 {
-    const long bts_response_time_ms = 500;
+    constexpr bts_response_time_ms = 500;
+    ITimerPort::Duration timerDuration = ITimerPort::Duration(bts_response_time_ms);
 
     EXPECT_CALL(btsPortMock, sendAttachRequest(btsId));
     EXPECT_CALL(userPortMock, showConnecting());
-    EXPECT_CALL(timerPortMock, startTimer(ITimerPort::Duration(bts_response_time_ms)));
+    EXPECT_CALL(timerPortMock, startTimer(timerDuration));
     objectUnderTest.handleSib(btsId);
-
 }
 
 TEST_F(ApplicationNotConnectedTestSuite, shallSendAttachRequestOnSib)
