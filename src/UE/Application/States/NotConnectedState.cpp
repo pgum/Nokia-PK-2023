@@ -11,7 +11,7 @@ NotConnectedState::NotConnectedState(Context &context)
 }
 void NotConnectedState::handleSib(common::BtsId btsId)
 {
-    constexpr bts_response_time_ms = 500;
+    constexpr long bts_response_time_ms = 500;
     ITimerPort::Duration timerDuration = ITimerPort::Duration(bts_response_time_ms);
 
     context.bts.sendAttachRequest(btsId);
