@@ -21,6 +21,7 @@ public:
     MOCK_METHOD(void, handleUnknownRecipient, (), (final));
     MOCK_METHOD(void, handleRecieveTalkMessage, (std::string), (final));
     MOCK_METHOD(void, handleSendTalkMessage, (common::PhoneNumber, std::string), (final));
+    MOCK_METHOD(void, handleBTSCallAccept, (common::PhoneNumber), (final));
     MOCK_METHOD(void, handleBTSCallDrop, (common::PhoneNumber), (final));
 };
 
@@ -35,7 +36,7 @@ public:
     MOCK_METHOD(void, sendCallReject,  (common::PhoneNumber), (final));
     MOCK_METHOD(void, callTalk, (common::PhoneNumber, std::string), (final));
     MOCK_METHOD(void, callDrop, (common::PhoneNumber), (final));
-
+    MOCK_METHOD(void, sendCallRequest,  (common::PhoneNumber), (final));
 };
 
 }

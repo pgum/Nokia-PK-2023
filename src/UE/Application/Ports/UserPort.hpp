@@ -27,6 +27,7 @@ public:
     std::string getOutgoingMessage() override;
     void displayMessage(std::string message) override;
     void showCallEnded() override;
+    PhoneNumber getEnteredPhoneNumber() override;
 
 
 private:

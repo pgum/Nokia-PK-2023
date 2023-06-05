@@ -33,19 +33,19 @@ public:
 
     //call
     void handleCallRequest(common::PhoneNumber from) override;
+    void handleBTSCallAccept(common::PhoneNumber from) override;
+    void handleBTSCallDrop(common::PhoneNumber from) override;
 
     //IUserEventsHandler interface
     //call
     void handleCallAccept() override;
     void handleCallDrop() override;
     void handleUnknownRecipient() override;
+    void handleDialModeAction() override;
 
     //callTalk
     void handleRecieveTalkMessage(std::string message) override;
     void handleSendTalkMessage(common::PhoneNumber destNumber, std::string message) override; //TODO: remove arguments, they are pointless currently
-
-    //callDrop
-    void handleBTSCallDrop(common::PhoneNumber) override;
 
 private:
     Context context;

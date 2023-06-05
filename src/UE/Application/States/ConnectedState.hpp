@@ -12,6 +12,7 @@ public:
     ConnectedState(Context& context, const std::string& name);
     void handleBTSDisconnected() override;
     void handleCallRequest(common::PhoneNumber from) override;
+    void handleDialModeAction() override;
 };
 
 }

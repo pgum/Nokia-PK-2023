@@ -43,6 +43,8 @@ public:
     void setCloseGuard(CloseGuard closeGuard) override;
     void setAcceptCallback(Callback) override;
     void setRejectCallback(Callback) override;
+    void setDialModeActionCallback(Callback) override;
+
 
     void setTitle(const std::string& title) override;
     void showConnected() override;
@@ -50,6 +52,7 @@ public:
     void showNotConnected() override;
     void showNewSms(bool present) override;
     void showPeerUserNotAvailable(PhoneNumber peer) override;
+    PhoneNumber getPhoneNumber() override;
 
 
     IListViewMode& setListViewMode() override;
@@ -74,6 +77,8 @@ private:
     IUeGui::Callback acceptCallback;
     IUeGui::Callback rejectCallback;
     IUeGui::Callback homeCallback;
+    IUeGui::Callback startDialCallback;
+
 
     void initGUI();
     void initInternalSignals();
