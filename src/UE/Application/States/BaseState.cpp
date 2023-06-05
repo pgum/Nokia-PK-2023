@@ -42,7 +42,7 @@ void BaseState::handleBTSDisconnected()
 
 void BaseState::handleSms(const Sms& sms)
 {
-    logger.logError("Uexpected: handleSms");
+    logger.logError("Unexpected: handleSms");
 }
 
 void BaseState::handleComposeSms()
@@ -50,7 +50,7 @@ void BaseState::handleComposeSms()
     logger.logError("Unexpected: handleComposeSms");
 }
 
-void BaseState::handleSendSms()
+void BaseState::handleSendSms(const Sms& sms)
 {
     logger.logError("Unexpected: handleSendSms");
 }
@@ -60,9 +60,13 @@ void BaseState::handleShowSmsList()
     logger.logError("Unexpected: handleShowSmsList");
 }
 
-void BaseState::handleShowSms(std::size_t)
-{
+void BaseState::handleShowSms(IUeGui::IListViewMode::Selection) {
     logger.logError("Unexpected: handleShowSms");
+}
+
+void BaseState::handleSmsDrop()
+{
+    logger.logError("Unexpected: handleSmsDrop");
 }
 
 } // namespace ue

@@ -52,24 +52,29 @@ void Application::handleSms(const Sms& sms)
     context.state->handleSms(sms);
 }
 
-void Application::handleComposeSms()
-{
-    context.state->handleComposeSms();
-}
-
-void Application::handleSendSms() 
-{
-    context.state->handleSendSms();
-}
-
 void Application::handleShowSmsList()
 {
     context.state->handleShowSmsList();
 }
 
-void Application::handleShowSms(std::size_t idx)
+void Application::handleShowSms(IUeGui::IListViewMode::Selection idx)
 {
     context.state->handleShowSms(idx);
+}
+
+void Application::handleComposeSms()
+{
+    context.state->handleComposeSms();
+}
+
+void Application::handleSendSms(const Sms& sms)
+{
+    context.state->handleSendSms(sms);
+}
+
+void Application::handleSmsDrop()
+{
+    context.state->handleSmsDrop();
 }
 
 } // namespace ue

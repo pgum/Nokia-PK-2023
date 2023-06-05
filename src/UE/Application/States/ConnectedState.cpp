@@ -1,5 +1,6 @@
 #include "ConnectedState.hpp"
 #include "NotConnectedState.hpp"
+#include "Sms.hpp"
 
 namespace ue
 {
@@ -16,7 +17,25 @@ void ConnectedState::handleBTSDisconnected()
 void ConnectedState::handleSms(const Sms& sms)
 {
     context.user.showNewSmsNotification();
-    context.smsDb.addReceivedSms(sms);
+    context.smsDb.addMessage(sms);
+}
+
+void ConnectedState::handleShowSmsList()
+{
+    const auto& smsMessages = context.smsDb.getAllMessages();
+    context.user.viewSmsList(smsMessages);
+}
+
+void ConnectedState::handleShowSms(IUeGui::IListViewMode::Selection indexOfSms)
+{
+    const auto& retrievedSms = context.smsDb.getMessage(indexOfSms);
+
+    if (retrievedSms.state == SmsState::NotViewed)
+    {
+        context.smsDb.setMessageState(indexOfSms, SmsState::Viewed);
+    }
+
+    context.user.viewSms(retrievedSms);
 }
 
 void ConnectedState::handleComposeSms()
@@ -24,25 +43,16 @@ void ConnectedState::handleComposeSms()
     context.user.showNewSmsToEdit();
 }
 
-void ConnectedState::handleSendSms()
+void ConnectedState::handleSendSms(const Sms& sms)
 {
-    auto [rcvNum, text] = context.user.getSms();
-    context.smsDb.addSms(rcvNum, text);
-    context.bts.sendSms(rcvNum, text);
+    context.smsDb.addMessage(sms);
+    context.bts.sendSms(sms);
     context.user.showConnected();
 }
 
-void ConnectedState::handleShowSmsList()
+void ConnectedState::handleSmsDrop()
 {
-    const auto& smsMessages = context.smsDb.getSmsMessages();
-    context.user.viewSmsList(smsMessages);
-}
-
-void ConnectedState::handleShowSms(std::size_t idx)
-{
-    context.smsDb.updateSmsState(idx);
-    const auto& retrivedSms = context.smsDb.getSms(idx);
-    context.user.viewSms(retrivedSms);
+    context.user.showConnected();
 }
 
 } // namespace ue

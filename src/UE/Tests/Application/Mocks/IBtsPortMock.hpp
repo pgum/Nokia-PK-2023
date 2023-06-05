@@ -17,9 +17,8 @@ public:
     MOCK_METHOD(void, handleSib, (common::BtsId), (final));
     MOCK_METHOD(void, handleAttachAccept, (), (final));
     MOCK_METHOD(void, handleAttachReject, (), (final));
-    MOCK_METHOD(void, handleSms, (const Sms& sms), (final));
     MOCK_METHOD(void, handleBTSDisconnected, (), (final));    
-
+    MOCK_METHOD(void, handleSms, (const Sms& sms), (final));
 };
 
 class IBtsPortMock : public IBtsPort
@@ -29,7 +28,6 @@ public:
     ~IBtsPortMock() override;
 
     MOCK_METHOD(void, sendAttachRequest, (common::BtsId), (final));
-    MOCK_METHOD(void, sendSms, (const common::PhoneNumber&, const std::string&), (final));
-};
+    MOCK_METHOD(void, sendSms, (const Sms&), (final));};
 
 } // namsespace ue

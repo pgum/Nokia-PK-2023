@@ -4,13 +4,19 @@
 
 namespace ue {
 
+enum class SmsState
+{
+    NotViewed,
+    Viewed,
+    Sent,
+    Failed
+};
+
 struct Sms
 {
-    common::PhoneNumber from;
+    common::PhoneNumber from{};
     std::string text;
-
-    Sms(const common::PhoneNumber& from, const std::string& text)
-            : from { from }, text { std::move(text) } {}
+    SmsState state{};
 };
 
 inline const auto operator==(const Sms& lhs, const Sms& rhs)

@@ -20,11 +20,13 @@ public:
     void handleAttachAccept() override;
     void handleAttachReject() override;
     void handleBTSDisconnected() override;
-    void handleSms(const Sms& sms) override;
-    void handleComposeSms() override;
-    void handleSendSms() override;
+
     void handleShowSmsList() override;
-    void handleShowSms(std::size_t) override;
+    void handleShowSms(IUeGui::IListViewMode::Selection) override;
+    void handleComposeSms() override;
+    void handleSendSms(const Sms& sms) override;
+    void handleSmsDrop() override;
+    void handleSms(const Sms& sms) override;
 
 protected:
     Context& context;

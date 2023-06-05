@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Messages/PhoneNumber.hpp"
+#include "Sms.hpp"
 #include <vector>
 
 namespace ue {
@@ -18,12 +19,11 @@ class ISmsDb {
 public:
     virtual ~ISmsDb() = default;
 
-    virtual void addReceivedSms(const Sms& sms) = 0;
-    virtual void addSms(const common::PhoneNumber& rcvNum,
-                        const std::string& text) = 0;
-    virtual const std::vector<std::pair<Sms, smsState>>& getSmsMessages() = 0;
-    virtual void updateSmsState(std::size_t) = 0;
-    virtual const Sms& getSms(std::size_t) = 0;
+    virtual void addMessage(const Sms& sms) = 0;
+    virtual void setMessageState(std::size_t i, SmsState state) = 0;
+    virtual const std::vector<Sms>& getAllMessages() = 0;
+    virtual const Sms& getMessage(std::size_t i) = 0;
+    virtual std::size_t getNumberOfMessages() = 0;
 };
 
 } // namespace ue

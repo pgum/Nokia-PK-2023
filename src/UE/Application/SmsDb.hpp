@@ -1,21 +1,23 @@
 #pragma once
 
+#include <vector>
+
 #include "ISmsDb.hpp"
 #include "Sms.hpp"
 
 namespace ue
 {
-
 class SmsDb : public ISmsDb
 {
 public:
-    void addReceivedSms(const Sms& sms) override;
-    const std::vector<std::pair<Sms, smsState>>& getSmsMessages() override;
-    const Sms& getSms(std::size_t) override;
-    void addSms(const common::PhoneNumber& rcvNum, const std::string& text) override;
-    void updateSmsState(std::size_t) override;
+    void addMessage(const Sms& sms) override;
+    void setMessageState(std::size_t i, SmsState state) override;
+    const std::vector<Sms>& getAllMessages() override;
+    const Sms& getMessage(std::size_t i) override;
+    std::size_t getNumberOfMessages() override;
+
 private:
-    std::vector<std::pair<Sms, smsState>> messages;
+    std::vector<Sms> messages;
 };
 
-} // namespace ue
+}  // namespace ue

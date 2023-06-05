@@ -3,6 +3,8 @@
 
 namespace ue
 {
+
     ISmsDbMock::ISmsDbMock() = default;
     ISmsDbMock::~ISmsDbMock() = default;
+
 } // namespace ue

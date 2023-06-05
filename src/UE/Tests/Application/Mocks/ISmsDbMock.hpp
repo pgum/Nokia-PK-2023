@@ -14,11 +14,17 @@ public:
     ISmsDbMock();
     ~ISmsDbMock() override;
 
-    MOCK_METHOD(void, addReceivedSms, (const Sms&), (final));
-    MOCK_METHOD(void, addSms, (const common::PhoneNumber&, const std::string&), (final));
-    MOCK_METHOD((const std::vector<std::pair<Sms, smsState>>&), getSmsMessages, (), (final));
-    MOCK_METHOD(void, updateSmsState, (std::size_t), (final));
-    MOCK_METHOD(const Sms&, getSms, (std::size_t), (final));
+    MOCK_METHOD(void, addMessage, (const Sms&), (final));
+    MOCK_METHOD(const std::vector<Sms>&, getAllMessages, (), (final));
+    MOCK_METHOD(void, setMessageState, (std::size_t i, SmsState state), (final));
+    MOCK_METHOD(const Sms&, getMessage, (std::size_t i), (final));
+    MOCK_METHOD(std::size_t, getNumberOfMessages, (), (final));
+
 };
+
+inline bool operator==(const std::vector<Sms>& lhs, const std::vector<Sms>& rhs)
+{
+    return lhs.data() == rhs.data() && lhs.size() == rhs.size();
+}
 
 } // namespace ue

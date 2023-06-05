@@ -35,21 +35,31 @@ void UserPort::showConnecting()
 
 void UserPort::showConnected()
 {
-    IUeGui::IListViewMode& menu = gui.setListViewMode();
+    auto& menu = gui.setListViewMode();
     menu.clearSelectionList();
     menu.addSelectionListItem("Compose SMS", "");
     menu.addSelectionListItem("View SMS", "");
-    menu.addSelectionListItem("Send SMS", "");
-    gui.setAcceptCallback([this, &menu]
-    {
-        switch (menu.getCurrentItemIndex().second) {
+    
+    gui.setAcceptCallback([this, &menu] {
+        const auto [isSelected, index] = menu.getCurrentItemIndex();
+
+        if (isSelected)
+        {
+            switch (index)
+            {
             case 0:
+                handler->handleComposeSms();
                 break;
             case 1:
                 handler->handleShowSmsList();
                 break;
+            default:
+                break;
+            }
         }
     });
+
+    gui.setRejectCallback([] {});
 }
 
 void UserPort::showNewSmsNotification()
@@ -59,50 +69,79 @@ void UserPort::showNewSmsNotification()
 
 void UserPort::showNewSmsToEdit()
 {
-    mode = &gui.setSmsComposeMode();
-    gui.setAcceptCallback([this]{
-        handler->handleSendSms();
+    auto& mode = gui.setSmsComposeMode();
+    gui.setAcceptCallback([this, &mode] {
+        auto phoneNum = mode.getPhoneNumber();
+        if(phoneNum.isValid()){
+            auto smsText = mode.getSmsText();
+            mode.clearSmsText();
+            handler->handleSendSms(Sms{phoneNum, smsText, SmsState::Sent});
+        }
+    });
+
+    gui.setRejectCallback([this, &mode] {
+        mode.clearSmsText();
+        handler->handleSmsDrop();
     });
 }
 
-std::pair<common::PhoneNumber, std::string> UserPort::getSms()
+std::string makeSmsLabel(const Sms& sms)
 {
-    auto phoneNum = mode->getPhoneNumber();
-    auto smsText = mode->getSmsText();
-    mode->clearSmsText();
-    return std::make_pair(phoneNum, smsText);
+    std::stringstream ss;
+
+    switch (sms.state)
+    {
+    case SmsState::NotViewed:
+        ss << "[New][From]: ";
+        break;
+    case SmsState::Viewed:
+        ss << "[From]: ";
+        break;
+    case SmsState::Sent:
+        ss << "[To]: ";
+        break;
+    case SmsState::Failed:
+        ss << "[Failed][To]: ";
+        break;
+    }
+
+    ss << static_cast<int>(sms.from.value);
+    return ss.str();
 }
 
-void UserPort::viewSmsList(const std::vector<std::pair<Sms, smsState>>& smsList)
+void UserPort::viewSmsList(const std::vector<Sms>& smsList)
 {
     auto& menu = gui.setListViewMode();
     menu.clearSelectionList();
-    for(const auto& sms : smsList){
-        std::string label =
-            sms.second == smsState::Viewed ? to_string(sms.first.from)
-                            : "[New] " +to_string(sms.first.from);
-        menu.addSelectionListItem(label, "");
-    }
-    gui.setAcceptCallback([this, &menu]
+
+    for (const auto& sms : smsList)
     {
-        const auto idx = menu.getCurrentItemIndex().second;
-        handler->handleShowSms(idx);
+        menu.addSelectionListItem(makeSmsLabel(sms), "");
+    }
+
+    gui.setAcceptCallback([this, &menu] {
+        const auto [isSelected, index] = menu.getCurrentItemIndex();
+
+        if (isSelected)
+        {
+            handler->handleShowSms(index);
+        }
     });
 
-    gui.setRejectCallback([this]
-    {
+    gui.setRejectCallback([this] {
         showConnected();
     });
 }
 
 void UserPort::viewSms(const Sms& sms)
 {
-    auto& display = gui.setViewTextMode();
+    auto& mode = gui.setViewTextMode();
+    mode.setText(sms.text);
 
-    display.setText(sms.text);
+    gui.setAcceptCallback([] {});
 
-    gui.setRejectCallback([this]
-    {
+    gui.setRejectCallback([this, &mode] {
+        mode.setText("");
         handler->handleShowSmsList();
     });
 }

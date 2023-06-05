@@ -23,15 +23,17 @@ public:
     ~Application();
 
     void handleTimeout() override;
-    void handleShowSmsList() override;
     void handleSib(common::BtsId btsId) override;
     void handleAttachAccept() override;
     void handleAttachReject() override;
     void handleBTSDisconnected() override;
-    void handleSms(const Sms& sms) override;
+
+    void handleShowSmsList() override;
+    void handleShowSms(IUeGui::IListViewMode::Selection) override;
+    void handleSmsDrop() override;
     void handleComposeSms() override;
-    void handleSendSms() override;
-    void handleShowSms(std::size_t) override;
+    void handleSendSms(const Sms& sms) override;
+    void handleSms(const Sms& sms) override;
 
 private:
     Context context;

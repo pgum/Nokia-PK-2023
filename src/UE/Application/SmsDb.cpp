@@ -1,32 +1,32 @@
 #include "SmsDb.hpp"
+
 #include "Sms.hpp"
 
 namespace ue
 {
-
-void SmsDb::addReceivedSms(const Sms& sms)
+void SmsDb::addMessage(const Sms& sms)
 {
-    messages.emplace_back(sms, smsState::Pending);
+    messages.push_back(sms);
 }
 
-void SmsDb::addSms(const common::PhoneNumber& rcvNum, const std::string& text)
-{
-    messages.emplace_back(Sms{rcvNum, text}, smsState::Send);
-}
-
-const std::vector<std::pair<Sms, smsState>>& SmsDb::getSmsMessages()
+const std::vector<Sms>& SmsDb::getAllMessages()
 {
     return messages;
 }
 
-void SmsDb::updateSmsState(std::size_t idx)
+void SmsDb::setMessageState(std::size_t i, SmsState state)
 {
-    messages.at(idx).second = smsState::Viewed;
+    messages.at(i).state = state;
 }
 
-const Sms& SmsDb::getSms(std::size_t idx)
+const Sms& SmsDb::getMessage(std::size_t i)
 {
-    return messages.at(idx).first;
+    return messages.at(i);
 }
 
-} // namespace ue
+std::size_t SmsDb::getNumberOfMessages()
+{
+    return messages.size();
+}
+
+}  // namespace ue

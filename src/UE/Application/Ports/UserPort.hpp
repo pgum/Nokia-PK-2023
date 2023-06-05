@@ -19,18 +19,17 @@ public:
     void showNotConnected() override;
     void showConnecting() override;
     void showConnected() override;
+
     void showNewSmsNotification() override;
-    void showNewSmsToEdit() override;
-    void viewSmsList(const std::vector<std::pair<Sms, smsState>>&) override;
+    void viewSmsList(const std::vector<Sms>&) override;
     void viewSms(const Sms&) override;
-    std::pair<common::PhoneNumber, std::string> getSms() override;
+    void showNewSmsToEdit() override;
 
 private:
     common::PrefixedLogger logger;
     IUeGui& gui;
     common::PhoneNumber phoneNumber;
     IUserEventsHandler* handler = nullptr;
-    IUeGui::ISmsComposeMode* mode = nullptr;
 };
 
 }

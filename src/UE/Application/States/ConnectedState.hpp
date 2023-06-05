@@ -11,11 +11,14 @@ public:
     ConnectedState(Context& context);
 
     void handleBTSDisconnected() override;
+    
     void handleSms(const Sms& sms) final;
-    void handleComposeSms() final;
-    void handleSendSms() final;
     void handleShowSmsList() final;
-    void handleShowSms(std::size_t) final;
+    void handleShowSms(IUeGui::IListViewMode::Selection) final;
+    void handleSmsDrop() final;
+
+    void handleComposeSms() final;
+    void handleSendSms(const Sms& sms) final;
 };
 
 }
