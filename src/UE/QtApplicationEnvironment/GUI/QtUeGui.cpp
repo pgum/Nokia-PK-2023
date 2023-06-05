@@ -232,6 +232,12 @@ void QtUeGui::showConnected()
     emit setConnectedStateSignal("Connected", true);
 }
 
+void QtUeGui::showNotAvailable()
+{
+    setAlertMode().setText("Not Available");
+    emit setConnectedStateSignal("Connected", true);
+}
+
 void QtUeGui::showConnecting()
 {
     setAlertMode().setText("Connecting");;

@@ -1,3 +1,4 @@
+#include <thread>
 #include "SendingState.hpp"
 #include "TalkingState.hpp"
 
@@ -43,6 +44,16 @@ void SendingState::handleBTSCallDrop(common::PhoneNumber from)
         context.timer.stopTimer();
         context.setState<ConnectedState>();
     }
+}
+
+void SendingState::handleUnknownRecipient()
+{
+   context.logger.logInfo("jestme");
+   context.timer.stopTimer();
+   context.user.showPartnerNotAvailable();
+   std::this_thread::sleep_for(std::chrono::milliseconds(5000));
+   context.user.showConnected();
+   context.setState<ConnectedState>();
 }
 
 }
