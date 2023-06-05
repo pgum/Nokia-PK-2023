@@ -33,6 +33,8 @@ public:
     virtual void showConnected() = 0;
     virtual void showConnecting() = 0;
     virtual void showNotConnected() = 0;
+    virtual void showNotAvailable() = 0;
+
     virtual void showNewSms(bool present) = 0;
     virtual void showPeerUserNotAvailable(PhoneNumber) = 0;
     virtual PhoneNumber getPhoneNumber() = 0;

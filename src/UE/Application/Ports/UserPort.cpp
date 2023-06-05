@@ -68,8 +68,7 @@ void UserPort::showTalking()
 
 void UserPort::showPartnerNotAvailable()
 {
-    IUeGui::ITextMode& textMode = gui.setViewTextMode();
-    textMode.setText(common::to_string(getCallerNumber()) + " is currently not available.");
+   gui.showNotAvailable();
 }
 
 std::string UserPort::getOutgoingMessage()

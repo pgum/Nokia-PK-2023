@@ -52,6 +52,7 @@ public:
     void showNotConnected() override;
     void showNewSms(bool present) override;
     void showPeerUserNotAvailable(PhoneNumber peer) override;
+    void showNotAvailable() override;
     PhoneNumber getPhoneNumber() override;
 
 
