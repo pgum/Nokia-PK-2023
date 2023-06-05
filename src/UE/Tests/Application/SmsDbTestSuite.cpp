@@ -28,4 +28,14 @@ TEST_F(SmsDbTestSuite, shallAddReceivedSms)
     ASSERT_EQ(sms.text, exampleSmsText);
 }
 
+TEST_F(SmsDbTestSuite, shallAddSms)
+{
+    objectUnderTest.addSms(PHONE_NUMBER, "sms message");
+
+    const auto& messages = objectUnderTest.getSmsMessages();
+    auto [sms, smsState] = messages.at(0);
+    ASSERT_EQ(smsState, smsState::Send);
+    ASSERT_EQ(sms.text, "sms message");
+}
+
 } // namespace ue

@@ -29,6 +29,7 @@ public:
     ~IBtsPortMock() override;
 
     MOCK_METHOD(void, sendAttachRequest, (common::BtsId), (final));
+    MOCK_METHOD(void, sendSms, (const common::PhoneNumber&, const std::string&), (final));
 };
 
 } // namsespace ue

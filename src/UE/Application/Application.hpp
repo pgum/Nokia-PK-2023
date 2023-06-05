@@ -29,8 +29,10 @@ public:
     void handleSib(common::BtsId btsId) override;
     void handleAttachAccept() override;
     void handleAttachReject() override;
-    void handleSms(const Sms& sms) override;
     void handleBTSDisconnected() override;
+    void handleSms(const Sms& sms) override;
+    void handleComposeSms() override;
+    void handleSendSms() override;
 
 private:
     Context context;
