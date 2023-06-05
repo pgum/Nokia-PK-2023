@@ -19,12 +19,14 @@ struct IUeGuiMock : public IUeGui
     MOCK_METHOD(void, setCloseGuard, (CloseGuard closeGuard), (final));
     MOCK_METHOD(void, setAcceptCallback, (Callback), (final));
     MOCK_METHOD(void, setRejectCallback, (Callback), (final));
+    MOCK_METHOD(void, setDialModeActionCallback, (Callback), (final));
     MOCK_METHOD(void, setTitle, (const std::string &title), (final));
     MOCK_METHOD(void, showConnected, (), (final));
     MOCK_METHOD(void, showConnecting, (), (final));
     MOCK_METHOD(void, showNotConnected, (), (final));
     MOCK_METHOD(void, showNewSms, (bool present), (final));
     MOCK_METHOD(void, showPeerUserNotAvailable, (common::PhoneNumber), (final));
+    MOCK_METHOD(common::PhoneNumber, getPhoneNumber, (), (final));
 
     MOCK_METHOD(IListViewMode&, setListViewMode, (), (final));
     MOCK_METHOD(ISmsComposeMode&, setSmsComposeMode, (), (final));

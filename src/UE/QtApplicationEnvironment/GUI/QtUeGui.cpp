@@ -182,6 +182,7 @@ void QtUeGui::onItemSelected()
     if(selectedItemLabel == "Call")
     {
         logger.logInfo("CALL CLIDKED");
+        startDialCallback();
         setDialMode();
 
     } else if(selectedItemLabel == "Compose SMS")
@@ -203,6 +204,11 @@ void QtUeGui::setCloseGuard(CloseGuard closeGuard)
 void QtUeGui::setAcceptCallback(Callback callback)
 {
     acceptCallback = callback;
+}
+
+void QtUeGui::setDialModeActionCallback(Callback callback)
+{
+    startDialCallback = callback;
 }
 
 void QtUeGui::setRejectCallback(Callback callback)
@@ -241,6 +247,11 @@ void QtUeGui::showNewSms(bool present)
 void QtUeGui::showPeerUserNotAvailable(PhoneNumber peer)
 {
     setAlertMode().setText("Not available: " + to_string(peer));
+}
+
+PhoneNumber QtUeGui::getPhoneNumber()
+{
+    return phoneNumberEdit.getPhoneNumber();
 }
 
 void QtUeGui::setConnectedStateSlot(QString text, bool connected)

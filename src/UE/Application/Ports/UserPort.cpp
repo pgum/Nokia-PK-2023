@@ -17,6 +17,7 @@ void UserPort::start(IUserEventsHandler &handler)
     this->handler = &handler;
     gui.setAcceptCallback([this]{this->handler->handleCallAccept();});
     gui.setRejectCallback([this]{this->handler->handleCallDrop();});
+    gui.setDialModeActionCallback([this]{this->handler->handleDialModeAction();});
     gui.setTitle("Nokia " + to_string(phoneNumber));
 }
 
@@ -84,6 +85,11 @@ void UserPort::displayMessage(std::string message)
 {
     IUeGui::ICallMode& callView = gui.setCallMode();
     callView.appendIncomingText(message);
+}
+
+PhoneNumber UserPort::getEnteredPhoneNumber()
+{
+    return gui.getPhoneNumber();
 }
 
 }

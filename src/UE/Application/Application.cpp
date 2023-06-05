@@ -76,4 +76,14 @@ void Application::handleSendTalkMessage(common::PhoneNumber destNumber, std::str
     context.logger.logError("Application is handling handleSendTalkMessage, this should not happen");
 }
 
+void Application::handleDialModeAction()
+{
+    context.state->handleDialModeAction();
+}
+
+void Application::handleBTSCallAccept(common::PhoneNumber from)
+{
+    context.state->handleBTSCallAccept(from);
+}
+
 }

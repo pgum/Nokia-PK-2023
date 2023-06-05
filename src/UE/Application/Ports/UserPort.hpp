@@ -26,6 +26,7 @@ public:
     void showPartnerNotAvailable() override;
     std::string getOutgoingMessage() override;
     void displayMessage(std::string message) override;
+    PhoneNumber getEnteredPhoneNumber() override;
 
 
 private:

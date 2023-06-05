@@ -1,6 +1,7 @@
 #include "ConnectedState.hpp"
 #include "NotConnectedState.hpp"
 #include "ReceivingState.hpp"
+#include "SendingState.hpp"
 #include "TalkingState.hpp"
 
 namespace ue
@@ -32,6 +33,11 @@ void ConnectedState::handleCallRequest(common::PhoneNumber from)
     context.user.showCalling(from);
     context.timer.startTimer(ITimerPort::Duration(reaction_time_ms));
     context.setState<ReceivingState>();
+}
+
+void ConnectedState::handleDialModeAction()
+{
+    context.setState<SendingState>();
 }
 
 }

@@ -65,6 +65,11 @@ void BtsPort::handleMessage(BinaryMessage msg)
             handler->handleRecieveTalkMessage(reader.readRemainingText()); //TODO consider changing readRemainingText to readText, and pass message size somehow
             break;
         }
+        case common::MessageId::CallAccepted:
+        {
+            handler->handleBTSCallAccept(from);
+            break;
+        }
         default:
             logger.logError("unknow message: ", msgId, ", from: ", from);
 
@@ -101,6 +106,13 @@ void BtsPort::sendCallReject(common::PhoneNumber destNumber)
 {
     logger.logDebug("sendCalRejected: ");
     common::OutgoingMessage msg{common::MessageId::CallDropped, phoneNumber, destNumber};
+    transport.sendMessage(msg.getMessage());
+}
+
+void BtsPort::sendCallRequest(common::PhoneNumber destNumber)
+{
+    logger.logDebug("sendCallRequest: ");
+    common::OutgoingMessage msg{common::MessageId::CallRequest, phoneNumber, destNumber};
     transport.sendMessage(msg.getMessage());
 }
 

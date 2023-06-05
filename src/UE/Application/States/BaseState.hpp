@@ -31,6 +31,8 @@ public:
     void handleCallAccept() override;
     void handleCallDrop() override;
     void handleUnknownRecipient() override;
+    void handleDialModeAction() override;
+    void handleBTSCallAccept(common::PhoneNumber number) override;
 
     //call talk
     void handleRecieveTalkMessage(std::string message) override;
