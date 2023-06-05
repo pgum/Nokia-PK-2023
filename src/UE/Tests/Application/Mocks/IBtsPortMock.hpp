@@ -6,6 +6,7 @@
 
 namespace ue
 {
+class Sms;
 
 class IBtsEventsHandlerMock : public IBtsEventsHandler
 {
@@ -17,6 +18,7 @@ public:
     MOCK_METHOD(void, handleAttachAccept, (), (final));
     MOCK_METHOD(void, handleAttachReject, (), (final));
     MOCK_METHOD(void, handleBTSDisconnected, (), (final));    
+
     MOCK_METHOD(void, handleCallRequest, (common::PhoneNumber), (final));
     MOCK_METHOD(void, handleUnknownRecipient, (), (final));
     MOCK_METHOD(void, handleRecieveTalkMessage, (std::string), (final));
@@ -25,6 +27,7 @@ public:
     MOCK_METHOD(void, handleBTSCallDrop, (common::PhoneNumber), (final));
     //MOCK_METHOD(void, handleSendTalkMessage, (std::string), (final));
 
+    MOCK_METHOD(void, handleSms, (const Sms& sms), (final));
 };
 
 class IBtsPortMock : public IBtsPort
@@ -39,6 +42,7 @@ public:
     MOCK_METHOD(void, callTalk, (common::PhoneNumber, std::string), (final));
     MOCK_METHOD(void, callDrop, (common::PhoneNumber), (final));
     MOCK_METHOD(void, sendCallRequest,  (common::PhoneNumber), (final));
+    MOCK_METHOD(void, sendSms, (const Sms&), (final));};
 };
 
-}
+} // namsespace ue

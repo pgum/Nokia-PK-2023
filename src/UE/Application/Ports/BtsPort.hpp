@@ -16,11 +16,14 @@ public:
     void stop();
 
     void sendAttachRequest(common::BtsId) override;
+    
     void sendCallAccept(common::PhoneNumber) override;
     void sendCallReject(common::PhoneNumber) override;
     void sendCallRequest(common::PhoneNumber) override;
     void callTalk(common::PhoneNumber destNumber, std::string message) override;
     void callDrop(common::PhoneNumber destNumber) override;
+
+    void sendSms(const Sms& sms) override;
 
 private:
     void handleMessage(BinaryMessage msg);

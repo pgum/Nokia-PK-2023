@@ -1,6 +1,7 @@
 #include "BtsPort.hpp"
 #include "Messages/IncomingMessage.hpp"
 #include "Messages/OutgoingMessage.hpp"
+#include "Sms.hpp"
 
 namespace ue
 {
@@ -50,6 +51,7 @@ void BtsPort::handleMessage(BinaryMessage msg)
                 handler->handleAttachReject();
             break;
         }
+
         case common::MessageId::CallRequest:
         {
             handler->handleCallRequest(from);
@@ -75,6 +77,11 @@ void BtsPort::handleMessage(BinaryMessage msg)
             handler->handleBTSCallDrop(from);
             break;
         }
+        case common::MessageId::Sms:
+        {
+            const auto sms = Sms { from, reader.readRemainingText() };
+            handler->handleSms(sms);
+        }
         default:
             logger.logError("unknown message: ", msgId, ", from: ", from);
 
@@ -88,7 +95,6 @@ void BtsPort::handleMessage(BinaryMessage msg)
     }
 }
 
-
 void BtsPort::sendAttachRequest(common::BtsId btsId)
 {
     logger.logDebug("sendAttachRequest: ", btsId);
@@ -97,7 +103,6 @@ void BtsPort::sendAttachRequest(common::BtsId btsId)
                                 common::PhoneNumber{}};
     msg.writeBtsId(btsId);
     transport.sendMessage(msg.getMessage());
-
 }
 
 void BtsPort::sendCallAccept(common::PhoneNumber destNumber)
@@ -137,4 +142,12 @@ void BtsPort::callDrop(common::PhoneNumber destNumber)
     transport.sendMessage(msg.getMessage());
 }
 
+void BtsPort::sendSms(const Sms& sms)
+{
+    logger.logDebug("send sms to: ", sms.text);
+    common::OutgoingMessage msg{common::MessageId::Sms, phoneNumber, sms.from};
+    msg.writeText(sms.text);
+    transport.sendMessage(msg.getMessage());
 }
+
+} // namespace ue

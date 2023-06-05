@@ -1,6 +1,7 @@
 #include "UserPort.hpp"
 #include "UeGui/IListViewMode.hpp"
 #include "UeGui/ICallMode.hpp"
+#include "UeGui/ISmsComposeMode.hpp"
 #include "UeGui/ITextMode.hpp"
 
 namespace ue
@@ -50,7 +51,7 @@ void UserPort::showConnecting()
 
 void UserPort::showConnected()
 {
-    IUeGui::IListViewMode& menu = gui.setListViewMode();
+    auto& menu = gui.setListViewMode();
     menu.clearSelectionList();
     menu.addSelectionListItem("Compose SMS", "");
     menu.addSelectionListItem("View SMS", "");
@@ -89,6 +90,7 @@ void UserPort::displayMessage(std::string message)
 
     callView.appendIncomingText(message);
 }
+
 void UserPort::showCallEnded()
 {
     //TODO: if possible, display some dialog, informing that call has ended before going back to menu
@@ -98,6 +100,111 @@ void UserPort::showCallEnded()
 PhoneNumber UserPort::getEnteredPhoneNumber()
 {
     return gui.getPhoneNumber();
+    
+    gui.setAcceptCallback([this, &menu] {
+        const auto [isSelected, index] = menu.getCurrentItemIndex();
+
+        if (isSelected)
+        {
+            switch (index)
+            {
+            case 0:
+                handler->handleComposeSms();
+                break;
+            case 1:
+                handler->handleShowSmsList();
+                break;
+            default:
+                break;
+            }
+        }
+    });
+
+    gui.setRejectCallback([] {});
 }
 
+void UserPort::showNewSmsNotification()
+{
+    gui.showNewSms(true);
 }
+
+void UserPort::showNewSmsToEdit()
+{
+    auto& mode = gui.setSmsComposeMode();
+    gui.setAcceptCallback([this, &mode] {
+        auto phoneNum = mode.getPhoneNumber();
+        if(phoneNum.isValid()){
+            auto smsText = mode.getSmsText();
+            mode.clearSmsText();
+            handler->handleSendSms(Sms{phoneNum, smsText, SmsState::Sent});
+        }
+    });
+
+    gui.setRejectCallback([this, &mode] {
+        mode.clearSmsText();
+        handler->handleSmsDrop();
+    });
+}
+
+std::string makeSmsLabel(const Sms& sms)
+{
+    std::stringstream ss;
+
+    switch (sms.state)
+    {
+    case SmsState::NotViewed:
+        ss << "[New][From]: ";
+        break;
+    case SmsState::Viewed:
+        ss << "[From]: ";
+        break;
+    case SmsState::Sent:
+        ss << "[To]: ";
+        break;
+    case SmsState::Failed:
+        ss << "[Failed][To]: ";
+        break;
+    }
+
+    ss << static_cast<int>(sms.from.value);
+    return ss.str();
+}
+
+void UserPort::viewSmsList(const std::vector<Sms>& smsList)
+{
+    auto& menu = gui.setListViewMode();
+    menu.clearSelectionList();
+
+    for (const auto& sms : smsList)
+    {
+        menu.addSelectionListItem(makeSmsLabel(sms), "");
+    }
+
+    gui.setAcceptCallback([this, &menu] {
+        const auto [isSelected, index] = menu.getCurrentItemIndex();
+
+        if (isSelected)
+        {
+            handler->handleShowSms(index);
+        }
+    });
+
+    gui.setRejectCallback([this] {
+        showConnected();
+    });
+}
+
+void UserPort::viewSms(const Sms& sms)
+{
+    auto& mode = gui.setViewTextMode();
+    mode.setText(sms.text);
+
+    gui.setAcceptCallback([] {});
+
+    gui.setRejectCallback([this, &mode] {
+        mode.setText("");
+        handler->handleShowSmsList();
+    });
+}
+
+} // namespace ue

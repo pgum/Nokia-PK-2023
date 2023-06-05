@@ -7,17 +7,15 @@
 namespace ue
 {
 
+class Sms;
+
 class BaseState : public IEventsHandler
 {
 public:
     BaseState(Context& context, const std::string& name);
     ~BaseState() override;
 
-    // ITimerEventsHandler interface
     void handleTimeout() override;
-
-    // IBtsEventsHandler interface
-    //attach, re-attach
     void handleSib(common::BtsId btsId) override;
     void handleAttachAccept() override;
     void handleAttachReject() override;
@@ -38,6 +36,12 @@ public:
     //call talk
     void handleRecieveTalkMessage(std::string message) override;
     void handleComposeMessage() override;
+    void handleShowSmsList() override;
+    void handleShowSms(IUeGui::IListViewMode::Selection) override;
+    void handleComposeSms() override;
+    void handleSendSms(const Sms& sms) override;
+    void handleSmsDrop() override;
+    void handleSms(const Sms& sms) override;
 
 protected:
     Context& context;

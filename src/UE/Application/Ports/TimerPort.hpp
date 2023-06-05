@@ -1,7 +1,8 @@
 #pragma once
 
-#include <future>
 #include <thread>
+#include <mutex>
+#include <condition_variable>
 
 #include "ITimerPort.hpp"
 #include "Logger/PrefixedLogger.hpp"

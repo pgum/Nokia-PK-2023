@@ -41,4 +41,3 @@ jobs:
     
     - name: run UE ut
       run: ./UE/Tests/Application/UeApplicationUT
-

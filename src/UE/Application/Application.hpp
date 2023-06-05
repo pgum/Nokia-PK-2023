@@ -18,14 +18,11 @@ public:
                 ILogger& iLogger,
                 IBtsPort& bts,
                 IUserPort& user,
-                ITimerPort& timer);
+                ITimerPort& timer,
+                ISmsDb& smsDb);
     ~Application();
 
-    // ITimerEventsHandler interface
     void handleTimeout() override;
-
-    // IBtsEventsHandler interface
-    //attach, re-attach
     void handleSib(common::BtsId btsId) override;
     void handleAttachAccept() override;
     void handleAttachReject() override;
@@ -36,7 +33,6 @@ public:
     void handleBTSCallAccept(common::PhoneNumber from) override;
     void handleBTSCallDrop(common::PhoneNumber from) override;
 
-    //IUserEventsHandler interface
     //call
     void handleCallAccept() override;
     void handleCallDrop() override;
@@ -47,9 +43,16 @@ public:
     void handleRecieveTalkMessage(std::string message) override;
     void handleComposeMessage() override;
 
+    void handleShowSmsList() override;
+    void handleShowSms(IUeGui::IListViewMode::Selection) override;
+    void handleSmsDrop() override;
+    void handleComposeSms() override;
+    void handleSendSms(const Sms& sms) override;
+    void handleSms(const Sms& sms) override;
+
 private:
     Context context;
     common::PrefixedLogger logger;
 };
 
-}
+} // namespace ue

@@ -7,10 +7,13 @@
 #include "Mocks/IUserPortMock.hpp"
 #include "Mocks/ITimerPortMock.hpp"
 #include "Messages/PhoneNumber.hpp"
+#include "Mocks/ISmsDbMock.hpp"
+#include "Sms.hpp"
 #include <memory>
 
 namespace ue
 {
+
 using namespace ::testing;
 
 class ApplicationTestSuite : public Test
@@ -20,20 +23,23 @@ protected:
     common::PhoneNumber PHONE_NUMBER_CALLER{ 115 };
 
     const common::BtsId btsId{ 333 };
+    static constexpr common::PhoneNumber PHONE_NUMBER{ 112 };
+    static constexpr common::BtsId btsId{ 333 };
 
     NiceMock<common::ILoggerMock> loggerMock;
     StrictMock<IBtsPortMock> btsPortMock;
     StrictMock<IUserPortMock> userPortMock;
     StrictMock<ITimerPortMock> timerPortMock;
+    StrictMock<ISmsDbMock> smsDbMock;
 
     Application objectUnderTest{PHONE_NUMBER,
-                loggerMock,
-                btsPortMock,
-                userPortMock,
-                timerPortMock};
+                                loggerMock,
+                                btsPortMock,
+                                userPortMock,
+                                timerPortMock,
+                                smsDbMock };
 };
 
-//********************************************************************************************
 struct ApplicationNotConnectedTestSuite : ApplicationTestSuite
 {
     void sendAttachRequestOnSib();
@@ -41,14 +47,15 @@ struct ApplicationNotConnectedTestSuite : ApplicationTestSuite
 
 void ApplicationNotConnectedTestSuite::sendAttachRequestOnSib()
 {
-    using Duration = std::chrono::milliseconds;
-    Duration timeForBtsResponse = Duration(500);
+    constexpr long bts_response_time_ms = 500;
+
+    ITimerPort::Duration timerDuration =
+        ITimerPort::Duration(bts_response_time_ms);
 
     EXPECT_CALL(btsPortMock, sendAttachRequest(btsId));
     EXPECT_CALL(userPortMock, showConnecting());
-    EXPECT_CALL(timerPortMock, startTimer(timeForBtsResponse));
+    EXPECT_CALL(timerPortMock, startTimer(timerDuration));
     objectUnderTest.handleSib(btsId);
-
 }
 
 TEST_F(ApplicationNotConnectedTestSuite, shallSendAttachRequestOnSib)
@@ -56,7 +63,6 @@ TEST_F(ApplicationNotConnectedTestSuite, shallSendAttachRequestOnSib)
     sendAttachRequestOnSib();
 }
 
-//********************************************************************************************
 struct ApplicationConnectingTestSuite : ApplicationNotConnectedTestSuite
 {
     ApplicationConnectingTestSuite();
@@ -80,6 +86,13 @@ TEST_F(ApplicationConnectingTestSuite, shallConnectOnAttachAccept)
     connectOnAttachAccept();
 }
 
+TEST_F(ApplicationConnectingTestSuite, shallNotConnectOnConnectionDrop)
+{
+        EXPECT_CALL(userPortMock, showNotConnected());
+        EXPECT_CALL(timerPortMock, stopTimer());
+        objectUnderTest.handleBTSDisconnected();
+}
+
 TEST_F(ApplicationConnectingTestSuite, shallNotConnectOnAttachReject)
 {
     EXPECT_CALL(userPortMock, showNotConnected());
@@ -87,14 +100,6 @@ TEST_F(ApplicationConnectingTestSuite, shallNotConnectOnAttachReject)
     objectUnderTest.handleAttachReject();
 }
 
-//RE-ATTACH
-TEST_F(ApplicationConnectingTestSuite, shallNotConnectOnConnectionDrop)
-{
-    EXPECT_CALL(userPortMock, showNotConnected());
-    EXPECT_CALL(timerPortMock, stopTimer());
-    objectUnderTest.handleBTSDisconnected();
-}
-//********************************************************************************************
 struct ApplicationConnectedTestSuite : ApplicationConnectingTestSuite
 {
     ApplicationConnectedTestSuite();
