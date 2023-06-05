@@ -26,7 +26,11 @@ public:
     void showPartnerNotAvailable() override;
     std::string getOutgoingMessage() override;
     void displayMessage(std::string message) override;
+<<<<<<< HEAD
     void showCallEnded() override;
+=======
+    PhoneNumber getEnteredPhoneNumber() override;
+>>>>>>> remotes/origin/call_talking
 
 
 private:

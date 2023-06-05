@@ -136,6 +136,9 @@
 		<Unit filename="/home/student/Pulpit/PZST/branches/call/Nokia-PK-2023/src/UE/Application/States/ReceivingState.hpp">
 			<Option target="UeApplication"/>
 		</Unit>
+		<Unit filename="/home/student/Pulpit/PZST/branches/call/Nokia-PK-2023/src/UE/Application/States/SendingsSate.cpp">
+			<Option target="UeApplication"/>
+		</Unit>
 		<Unit filename="/home/student/Pulpit/PZST/branches/call/Nokia-PK-2023/src/UE/Application/States/TalkingState.cpp">
 			<Option target="UeApplication"/>
 		</Unit>

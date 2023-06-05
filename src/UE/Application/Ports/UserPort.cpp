@@ -17,6 +17,7 @@ void UserPort::start(IUserEventsHandler &handler)
     this->handler = &handler;
     gui.setAcceptCallback([this]{this->handler->handleCallAccept();});
     gui.setRejectCallback([this]{this->handler->handleCallDrop();});
+    gui.setDialModeActionCallback([this]{this->handler->handleDialModeAction();});
     gui.setTitle("Nokia " + to_string(phoneNumber));
 }
 
@@ -57,7 +58,7 @@ void UserPort::showConnected()
 void UserPort::showCalling(common::PhoneNumber from)
 {
     IUeGui::ITextMode& textMode = gui.setViewTextMode();
-    textMode.setText(common::to_string(from));
+    textMode.setText("Calling: " + common::to_string(from));
 }
 
 void UserPort::showTalking()
@@ -85,10 +86,15 @@ void UserPort::displayMessage(std::string message)
     IUeGui::ICallMode& callView = gui.setCallMode();
     callView.appendIncomingText(message);
 }
-
-void UserPort::showCallEnded() {
+void UserPort::showCallEnded()
+{
     //TODO: if possible, display some dialog, informing that call has ended before going back to menu
     showConnected();
+}
+
+PhoneNumber UserPort::getEnteredPhoneNumber()
+{
+    return gui.getPhoneNumber();
 }
 
 }
