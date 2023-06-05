@@ -37,7 +37,7 @@ public:
 
     //call talk
     void handleRecieveTalkMessage(std::string message) override;
-    void handleSendTalkMessage(common::PhoneNumber destNumber, std::string message) override;
+    void handleComposeMessage() override;
 
 protected:
     Context& context;

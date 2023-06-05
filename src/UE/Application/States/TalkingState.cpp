@@ -6,7 +6,7 @@ namespace ue
 {
 TalkingState::TalkingState(Context &context) : CallState(context, "TalkingState")
 {
-
+    //TODO: stop timer
 }
 
 void TalkingState::handleUnknownRecipient()
@@ -23,20 +23,23 @@ void TalkingState::handleUnknownRecipient()
 
 void TalkingState::handleRecieveTalkMessage(std::string message)
 {
+    logger.logInfo("Recieved message: ");
+    logger.logInfo(message);
+
     //should get invoked by BTS
     //takes care of displaying Message on gui as part of converstaion
     context.user.displayMessage(message);
 }
 
 
-void TalkingState::handleSendTalkMessage(common::PhoneNumber destNumber, std::string message)
+void TalkingState::handleComposeMessage()
 {
     //should get invoked by gui somehow
     //takes care of both displaying Message on gui as part of conversation
     //+ takes care of sending message via BTS via CallTalk()
     //TODO: cancel???
-
     context.bts.callTalk(context.user.getCallerNumber(), context.user.getOutgoingMessage());
+
 }
 
 void TalkingState::handleCallDrop()

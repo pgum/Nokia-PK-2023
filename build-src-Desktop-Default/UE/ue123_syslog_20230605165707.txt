@@ -1,0 +1,30 @@
+#1,tid:3022085760[DEBUG]: [phone:123]GUI: setConnectedStateSlot()
+#2,tid:3022085760[DEBUG]: [phone:123]GUI: setNewMessageSlot(0)
+#3,tid:3022085760[DEBUG]: [phone:123][TRANSPORT]Selected configuration localhost:8181
+#4,tid:3022085760: [phone:123][APP] Started
+#5,tid:3022085760[DEBUG]: [phone:123][NotConnectedState]entry
+#6,tid:3022085760[DEBUG]: [phone:123][TIMER PORT]Started
+#7,tid:3022085760[DEBUG]: [phone:123][BTS-PORT]sendAttachRequest: 215319165
+#8,tid:3022085760[DEBUG]: [phone:123]GUI: setConnectedStateSlot(Connecting)
+#9,tid:3022085760[DEBUG]: [phone:123][TIMER PORT]Start timer: 500ms
+#10,tid:3022085760[DEBUG]: [phone:123][ConnectingState]entry
+#11,tid:3022085760[DEBUG]: [phone:123][NotConnectedState]exit
+#12,tid:3022085760[DEBUG]: [phone:123][TRANSPORT]Send message of size: 9
+#13,tid:3022085760[DEBUG]: [phone:123][TIMER PORT]Stop timer
+#14,tid:3022085760[DEBUG]: [phone:123][ConnectedState]entry
+#15,tid:3022085760[DEBUG]: [phone:123][ConnectingState]exit
+#16,tid:3022085760[DEBUG]: [phone:123][TIMER PORT]Start timer: 30000ms
+#17,tid:3022085760[DEBUG]: [phone:123][ReceivingState]entry
+#18,tid:3022085760[DEBUG]: [phone:123][ConnectedState]exit
+#19,tid:3022085760[DEBUG]: [phone:123][BTS-PORT]sendCallAccepted: 
+#20,tid:3022085760[DEBUG]: [phone:123][TIMER PORT]Stop timer
+#21,tid:3022085760[DEBUG]: [phone:123][TIMER PORT]Start timer: 15000ms
+#22,tid:3022085760[DEBUG]: [phone:123][TalkingState]entry
+#23,tid:3022085760[DEBUG]: [phone:123][ReceivingState]exit
+#24,tid:3022085760[DEBUG]: [phone:123][TRANSPORT]Send message of size: 5
+#25,tid:2817866560[ERROR]: [phone:123][TalkingState]Uexpected: handleTimeout
+#26,tid:3022085760[DEBUG]: [phone:123][TIMER PORT]Stoped
+#27,tid:3022085760: [phone:123][APP] Stopped
+#28,tid:3022085760[DEBUG]: [phone:123][TalkingState]exit
+#29,tid:3022085760[DEBUG]: [phone:123][TRANSPORT]Bye
+#30,tid:3022085760: [phone:123][TRANSPORT]Connection lost!

@@ -206,6 +206,11 @@ void QtUeGui::setAcceptCallback(Callback callback)
     acceptCallback = callback;
 }
 
+void QtUeGui::setSmsComposeCallback(Callback callback)
+{
+    homeCallback = callback;
+}
+
 void QtUeGui::setDialModeActionCallback(Callback callback)
 {
     startDialCallback = callback;

@@ -66,9 +66,9 @@ void BaseState::handleRecieveTalkMessage(std::string message)
     logger.logError("Unexcepted: handleRecieveCallMessage()");
 }
 
-void BaseState::handleSendTalkMessage(common::PhoneNumber destNumber, std::string message)
+void BaseState::handleComposeMessage()
 {
-    logger.logError("Unexcepted: handleSendCallMessage()");
+    logger.logError("Unexcepted: handleComposeMessage()");
 }
 
 void BaseState::handleBTSCallDrop(common::PhoneNumber number)
@@ -79,22 +79,11 @@ void BaseState::handleBTSCallDrop(common::PhoneNumber number)
 void BaseState::handleBTSCallAccept(common::PhoneNumber number)
 {
     logger.logError("Unexcepted: handleBTSCallAccept()");
-}
-
-void BaseState::handleBTSCallDrop(common::PhoneNumber number)
-{
-    logger.logError("Unexcepted: handleBTSCallDrop()");
 }
 
 void BaseState::handleDialModeAction()
 {
     logger.logError("Unexcepted: handleDialModeAction()");
 }
-
-void BaseState::handleBTSCallAccept(common::PhoneNumber number)
-{
-    logger.logError("Unexcepted: handleBTSCallAccept()");
-}
-
 
 }

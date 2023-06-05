@@ -1,0 +1,22 @@
+#1,tid:3021840000[DEBUG]: [phone:5]GUI: setConnectedStateSlot()
+#2,tid:3021840000[DEBUG]: [phone:5]GUI: setNewMessageSlot(0)
+#3,tid:3021840000[DEBUG]: [phone:5][TRANSPORT]Selected configuration localhost:8181
+#4,tid:3021840000: [phone:5][APP] Started
+#5,tid:3021840000[DEBUG]: [phone:5][NotConnectedState]entry
+#6,tid:3021840000[DEBUG]: [phone:5][TIMER PORT]Started
+#7,tid:3021840000[DEBUG]: [phone:5][BTS-PORT]sendAttachRequest: 2105367752
+#8,tid:3021840000[DEBUG]: [phone:5]GUI: setConnectedStateSlot(Connecting)
+#9,tid:3021840000[DEBUG]: [phone:5][TIMER PORT]Start timer: 500ms
+#10,tid:3021840000[DEBUG]: [phone:5][ConnectingState]entry
+#11,tid:3021840000[DEBUG]: [phone:5][NotConnectedState]exit
+#12,tid:3021840000[DEBUG]: [phone:5][TRANSPORT]Send message of size: 9
+#13,tid:3021840000[DEBUG]: [phone:5][TIMER PORT]Stop timer
+#14,tid:3021840000[DEBUG]: [phone:5][ConnectedState]entry
+#15,tid:3021840000[DEBUG]: [phone:5][ConnectingState]exit
+#16,tid:3021840000[DEBUG]: [phone:5][USER-PORT]setAcceptCallback
+#17,tid:3021840000[DEBUG]: [phone:5][USER-PORT]setRejectCallback
+#18,tid:3021840000[DEBUG]: [phone:5][TIMER PORT]Stoped
+#19,tid:3021840000: [phone:5][APP] Stopped
+#20,tid:3021840000[DEBUG]: [phone:5][ConnectedState]exit
+#21,tid:3021840000[DEBUG]: [phone:5][TRANSPORT]Bye
+#22,tid:3021840000: [phone:5][TRANSPORT]Connection lost!
