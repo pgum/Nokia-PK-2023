@@ -33,5 +33,16 @@ void ReceivingState::handleTimeout()
     context.user.showConnected();
     context.setState<ConnectedState>();
 }
+void ReceivingState::handleBTSCallDrop(common::PhoneNumber from){
+    if(from==context.user.getCallerNumber())
+    {
+        context.user.showConnected();
+        context.timer.stopTimer();
+        context.setState<ConnectedState>();
+
+    }
+
+
+}
 
 }

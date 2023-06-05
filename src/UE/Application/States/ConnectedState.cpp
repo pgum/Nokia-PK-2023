@@ -1,8 +1,8 @@
 #include "ConnectedState.hpp"
 #include "NotConnectedState.hpp"
 #include "ReceivingState.hpp"
-#include "SendingState.hpp"
 #include "TalkingState.hpp"
+#include "SendingsSate.cpp"
 
 namespace ue
 {

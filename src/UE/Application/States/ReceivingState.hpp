@@ -12,6 +12,7 @@ public:
     void handleTimeout() override;
     void handleCallAccept() override;
     void handleCallDrop() override;
+    void handleBTSCallDrop(common::PhoneNumber from) override;
 };
 
 }

@@ -55,5 +55,21 @@ void SendingState::handleUnknownRecipient()
    context.user.showConnected();
    context.setState<ConnectedState>();
 }
+void SendingState::handleTimeout()
+{
+      logger.logInfo("handleTimeout:User call dropped");
+      context.timer.stopTimer();
+      context.bts.callDrop(context.user.getCallerNumber());
+      context.user.showConnected();
+      context.setState<ConnectedState>();
+}
+void SendingState::handleCallDrop()
+{
+    logger.logInfo("handleResignation:");
+    context.timer.stopTimer();
+    context.bts.callDrop(context.user.getCallerNumber());
+    context.user.showConnected();
+    context.setState<ConnectedState>();
+}
 
 }
