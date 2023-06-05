@@ -1,0 +1,44 @@
+#1,tid:3039896576[DEBUG]:[Application]started
+#2,tid:3039896576[DEBUG]:[SPAWNER]Listen to new connections
+#3,tid:3039896576[DEBUG]:[Console]Add: `a` for "Show address"
+#4,tid:3039896576[DEBUG]:[Console]Add: `s` for "Show status"
+#6,tid:3039896576[DEBUG]:[Console]Add: `l` for "List attached ue"
+#5,tid:3036531520[DEBUG]:[SIB]started
+#7,tid:3039896576[DEBUG]:[Console]Add close: `q` for "quit"
+#8,tid:3039896576[DEBUG]:[Console]Add help: `h` for "help"
+#9,tid:3039896576[DEBUG]:[Console]Add: `t` for "Test commands - details in implementation"
+#10,tid:3039896576[DEBUG]:Application loop started
+#11,tid:3026189120[DEBUG]:Console loop started
+#12,tid:3039896576[DEBUG]:Session opened
+#13,tid:3039896576:server started, port: 8181
+#14,tid:3039896576[DEBUG]:New connection from: ::ffff:127.0.0.1-52380
+#15,tid:3039896576[DEBUG]:[SPAWNER]new connection: ::ffff:127.0.0.1-52380
+#16,tid:3039896576[DEBUG]:Send message to: ::ffff:127.0.0.1-52380
+#17,tid:3039896576[DEBUG]:Message received from: ::ffff:127.0.0.1-52380 body: 017a000cd5827d
+#18,tid:3039896576[DEBUG]:[RELAY]Attached: ::ffff:127.0.0.1-52380:000:I
+#19,tid:3039896576:[UE:::ffff:127.0.0.1-52380:122:A]Attached
+#20,tid:3039896576[DEBUG]:Send message to: ::ffff:127.0.0.1-52380
+#21,tid:3039896576[DEBUG]:New connection from: ::ffff:127.0.0.1-52382
+#22,tid:3039896576[DEBUG]:[SPAWNER]new connection: ::ffff:127.0.0.1-52382
+#23,tid:3039896576[DEBUG]:Send message to: ::ffff:127.0.0.1-52382
+#24,tid:3039896576[DEBUG]:Message received from: ::ffff:127.0.0.1-52382 body: 017b000cd5827d
+#25,tid:3039896576[DEBUG]:[RELAY]Attached: ::ffff:127.0.0.1-52382:000:I
+#26,tid:3039896576:[UE:::ffff:127.0.0.1-52382:123:A]Attached
+#27,tid:3039896576[DEBUG]:Send message to: ::ffff:127.0.0.1-52382
+#28,tid:3039896576[DEBUG]:Message received from: ::ffff:127.0.0.1-52380 body: 067a7b
+#29,tid:3039896576[DEBUG]:Send message to: ::ffff:127.0.0.1-52382
+#30,tid:3039896576[DEBUG]:[UE:::ffff:127.0.0.1-52380:122:A]Forwarded: message: CallRequest, from: 122, to: 123
+#31,tid:3039896576[DEBUG]:Message received from: ::ffff:127.0.0.1-52382 body: 077b7a
+#32,tid:3039896576[DEBUG]:Send message to: ::ffff:127.0.0.1-52380
+#33,tid:3039896576[DEBUG]:[UE:::ffff:127.0.0.1-52382:123:A]Forwarded: message: CallAccepted, from: 123, to: 122
+#34,tid:3039896576[DEBUG]:Message received from: ::ffff:127.0.0.1-52380 body: 097a7b
+#35,tid:3039896576[DEBUG]:Send message to: ::ffff:127.0.0.1-52382
+#36,tid:3039896576[DEBUG]:[UE:::ffff:127.0.0.1-52380:122:A]Forwarded: message: CallTalk, from: 122, to: 123
+#37,tid:3039896576[DEBUG]:Connection lost from: ::ffff:127.0.0.1-52382
+#38,tid:3039896576:[UE:::ffff:127.0.0.1-52382:123:A]Disconnected
+#39,tid:3039896576[DEBUG]:[RELAY]Removed attached: ::ffff:127.0.0.1-52382:123:A
+#40,tid:3039896576[DEBUG]:QtTransport: bye
+#41,tid:3039896576[DEBUG]:Connection lost from: ::ffff:127.0.0.1-52380
+#42,tid:3039896576:[UE:::ffff:127.0.0.1-52380:122:A]Disconnected
+#43,tid:3039896576[DEBUG]:[RELAY]Removed attached: ::ffff:127.0.0.1-52380:122:A
+#44,tid:3039896576[DEBUG]:QtTransport: bye

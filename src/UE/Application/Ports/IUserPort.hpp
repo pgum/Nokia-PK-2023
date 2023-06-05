@@ -12,6 +12,7 @@ public:
     virtual void handleCallAccept() = 0;
     virtual void handleCallDrop() = 0;
     virtual void handleDialModeAction() = 0;
+    virtual void handleComposeMessage() = 0;
 };
 
 class IUserPort

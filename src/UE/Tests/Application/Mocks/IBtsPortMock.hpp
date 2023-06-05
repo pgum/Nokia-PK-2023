@@ -20,9 +20,11 @@ public:
     MOCK_METHOD(void, handleCallRequest, (common::PhoneNumber), (final));
     MOCK_METHOD(void, handleUnknownRecipient, (), (final));
     MOCK_METHOD(void, handleRecieveTalkMessage, (std::string), (final));
-    MOCK_METHOD(void, handleSendTalkMessage, (common::PhoneNumber, std::string), (final));
+    //MOCK_METHOD(void, handleSendTalkMessage, (common::PhoneNumber, std::string), (final));
     MOCK_METHOD(void, handleBTSCallAccept, (common::PhoneNumber), (final));
     MOCK_METHOD(void, handleBTSCallDrop, (common::PhoneNumber), (final));
+    //MOCK_METHOD(void, handleSendTalkMessage, (std::string), (final));
+
 };
 
 class IBtsPortMock : public IBtsPort

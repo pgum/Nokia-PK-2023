@@ -15,9 +15,11 @@ UserPort::UserPort(common::ILogger &logger, IUeGui &gui, common::PhoneNumber pho
 void UserPort::start(IUserEventsHandler &handler)
 {
     this->handler = &handler;
+
     gui.setAcceptCallback([this]{this->handler->handleCallAccept();});
     gui.setRejectCallback([this]{this->handler->handleCallDrop();});
     gui.setDialModeActionCallback([this]{this->handler->handleDialModeAction();});
+    gui.setSmsComposeCallback([this]{this->handler->handleComposeMessage();}); //-> ustaw zamiast tego odpowiedni callback
     gui.setTitle("Nokia " + to_string(phoneNumber));
 }
 
@@ -73,16 +75,18 @@ void UserPort::showPartnerNotAvailable()
 
 std::string UserPort::getOutgoingMessage()
 {
-    //TODO: consider caching callView instead of getting it from gui.setCallMode() every time
     IUeGui::ICallMode& callView = gui.setCallMode();
+    std::string msg = callView.getOutgoingText();
     callView.clearOutgoingText();
 
-    return callView.getOutgoingText();
+    return msg;
 }
 
 void UserPort::displayMessage(std::string message)
 {
+    logger.logInfo("Recieved message: " + message);
     IUeGui::ICallMode& callView = gui.setCallMode();
+
     callView.appendIncomingText(message);
 }
 void UserPort::showCallEnded()

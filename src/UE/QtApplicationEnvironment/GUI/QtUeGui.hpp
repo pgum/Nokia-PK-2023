@@ -43,6 +43,7 @@ public:
     void setCloseGuard(CloseGuard closeGuard) override;
     void setAcceptCallback(Callback) override;
     void setRejectCallback(Callback) override;
+    void setSmsComposeCallback(Callback) override;
     void setDialModeActionCallback(Callback) override;
 
 

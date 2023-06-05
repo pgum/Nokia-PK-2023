@@ -66,9 +66,9 @@ void BaseState::handleRecieveTalkMessage(std::string message)
     logger.logError("Unexcepted: handleRecieveCallMessage()");
 }
 
-void BaseState::handleSendTalkMessage(common::PhoneNumber destNumber, std::string message)
+void BaseState::handleComposeMessage()
 {
-    logger.logError("Unexcepted: handleSendCallMessage()");
+    logger.logError("Unexcepted: handleComposeMessage()");
 }
 
 void BaseState::handleBTSCallDrop(common::PhoneNumber number)

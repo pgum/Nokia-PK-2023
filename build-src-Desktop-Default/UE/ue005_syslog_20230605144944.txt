@@ -1,0 +1,56 @@
+#1,tid:3021897344[DEBUG]: [phone:5]GUI: setConnectedStateSlot()
+#2,tid:3021897344[DEBUG]: [phone:5]GUI: setNewMessageSlot(0)
+#3,tid:3021897344[DEBUG]: [phone:5][TRANSPORT]Selected configuration localhost:8181
+#4,tid:3021897344: [phone:5][APP] Started
+#5,tid:3021897344[DEBUG]: [phone:5][NotConnectedState]entry
+#6,tid:3021897344[DEBUG]: [phone:5][TIMER PORT]Started
+#7,tid:3021897344[DEBUG]: [phone:5][BTS-PORT]sendAttachRequest: 2105367752
+#8,tid:3021897344[DEBUG]: [phone:5]GUI: setConnectedStateSlot(Connecting)
+#9,tid:3021897344[DEBUG]: [phone:5][TIMER PORT]Start timer: 500ms
+#10,tid:3021897344[DEBUG]: [phone:5][ConnectingState]entry
+#11,tid:3021897344[DEBUG]: [phone:5][NotConnectedState]exit
+#12,tid:3021897344[DEBUG]: [phone:5][TRANSPORT]Send message of size: 9
+#13,tid:3021897344[DEBUG]: [phone:5][TIMER PORT]Stop timer
+#14,tid:3021897344[DEBUG]: [phone:5][ConnectedState]entry
+#15,tid:3021897344[DEBUG]: [phone:5][ConnectingState]exit
+#16,tid:3021897344: [phone:5]CALL CLIDKED
+#17,tid:3021897344[DEBUG]: [phone:5][SendingState]entry
+#18,tid:3021897344[DEBUG]: [phone:5][ConnectedState]exit
+#19,tid:3021897344[DEBUG]: [phone:5][BTS-PORT]sendCallRequest: 
+#20,tid:3021897344[DEBUG]: [phone:5][TIMER PORT]Start timer: 60000ms
+#21,tid:3021897344[DEBUG]: [phone:5][TRANSPORT]Send message of size: 5
+#22,tid:3021897344: [phone:5][SendingState]RECEIVED CALL REQUSET
+#23,tid:3021897344[DEBUG]: [phone:5][TIMER PORT]Stop timer
+#24,tid:3021897344[DEBUG]: [phone:5][ConnectedState]entry
+#25,tid:3021897344[DEBUG]: [phone:5][SendingState]exit
+#26,tid:3021897344: [phone:5]CALL CLIDKED
+#27,tid:3021897344[DEBUG]: [phone:5][SendingState]entry
+#28,tid:3021897344[DEBUG]: [phone:5][ConnectedState]exit
+#29,tid:3021897344[DEBUG]: [phone:5][BTS-PORT]sendCallRequest: 
+#30,tid:3021897344[DEBUG]: [phone:5][TIMER PORT]Start timer: 60000ms
+#31,tid:3021897344[DEBUG]: [phone:5][TRANSPORT]Send message of size: 5
+#32,tid:3021897344: [phone:5][SendingState]RECEIVED CALL REQUSET
+#33,tid:3021897344[DEBUG]: [phone:5][TIMER PORT]Stop timer
+#34,tid:3021897344[DEBUG]: [phone:5][TalkingState]entry
+#35,tid:3021897344[DEBUG]: [phone:5][SendingState]exit
+#36,tid:3021897344[DEBUG]: [phone:5][ConnectedState]entry
+#37,tid:3021897344[DEBUG]: [phone:5][TalkingState]exit
+#38,tid:3021897344: [phone:5]CALL CLIDKED
+#39,tid:3021897344[DEBUG]: [phone:5][SendingState]entry
+#40,tid:3021897344[DEBUG]: [phone:5][ConnectedState]exit
+#41,tid:3021897344[DEBUG]: [phone:5][BTS-PORT]sendCallRequest: 
+#42,tid:3021897344[DEBUG]: [phone:5][TIMER PORT]Start timer: 60000ms
+#43,tid:3021897344[DEBUG]: [phone:5][TRANSPORT]Send message of size: 5
+#44,tid:3021897344: [phone:5][SendingState]RECEIVED CALL REQUSET
+#45,tid:3021897344[DEBUG]: [phone:5][TIMER PORT]Stop timer
+#46,tid:3021897344[DEBUG]: [phone:5][TalkingState]entry
+#47,tid:3021897344[DEBUG]: [phone:5][SendingState]exit
+#48,tid:3021897344[DEBUG]: [phone:5][BTS-PORT]send callDropped
+#49,tid:3021897344[DEBUG]: [phone:5][ConnectedState]entry
+#50,tid:3021897344[DEBUG]: [phone:5][TalkingState]exit
+#51,tid:3021897344[DEBUG]: [phone:5][TRANSPORT]Send message of size: 5
+#52,tid:3021897344[DEBUG]: [phone:5][TIMER PORT]Stoped
+#53,tid:3021897344: [phone:5][APP] Stopped
+#54,tid:3021897344[DEBUG]: [phone:5][ConnectedState]exit
+#55,tid:3021897344[DEBUG]: [phone:5][TRANSPORT]Bye
+#56,tid:3021897344: [phone:5][TRANSPORT]Connection lost!

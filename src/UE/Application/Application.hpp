@@ -45,7 +45,7 @@ public:
 
     //callTalk
     void handleRecieveTalkMessage(std::string message) override;
-    void handleSendTalkMessage(common::PhoneNumber destNumber, std::string message) override; //TODO: remove arguments, they are pointless currently
+    void handleComposeMessage() override;
 
 private:
     Context context;

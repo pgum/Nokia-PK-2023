@@ -27,6 +27,7 @@ public:
     virtual void setCloseGuard(CloseGuard closeGuard) = 0;
     virtual void setAcceptCallback(Callback) = 0;
     virtual void setRejectCallback(Callback) = 0;
+    virtual void setSmsComposeCallback(Callback) = 0;
     virtual void setDialModeActionCallback(Callback) = 0;
 
     virtual void setTitle(const std::string& title) = 0;

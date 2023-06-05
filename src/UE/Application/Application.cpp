@@ -71,10 +71,6 @@ void Application::handleRecieveTalkMessage(std::string message)
     context.state->handleRecieveTalkMessage(message);
 }
 
-void Application::handleSendTalkMessage(common::PhoneNumber destNumber, std::string message)
-{
-    context.logger.logError("Application is handling handleSendTalkMessage, this should not happen");
-}
 
 void Application::handleDialModeAction()
 {
@@ -89,6 +85,11 @@ void Application::handleBTSCallAccept(common::PhoneNumber from)
 void Application::handleBTSCallDrop(common::PhoneNumber from)
 {
     context.state->handleBTSCallDrop(from);
+}
+
+void Application::handleComposeMessage()
+{
+    context.state->handleComposeMessage();
 }
 
 }
