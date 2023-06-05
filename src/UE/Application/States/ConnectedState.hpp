@@ -13,8 +13,6 @@ public:
     void handleBTSDisconnected() override;
     void handleCallRequest(common::PhoneNumber from) override;
     void handleDialModeAction() override;
-
-    void handleBTSDisconnected() override;
     
     void handleSms(const Sms& sms) final;
     void handleShowSmsList() final;

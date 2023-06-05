@@ -56,6 +56,27 @@ void UserPort::showConnected()
     menu.addSelectionListItem("Compose SMS", "");
     menu.addSelectionListItem("View SMS", "");
     menu.addSelectionListItem("Call", "");
+
+    gui.setAcceptCallback([this, &menu] {
+        const auto [isSelected, index] = menu.getCurrentItemIndex();
+
+        if (isSelected)
+        {
+            switch (index)
+            {
+            case 0:
+                handler->handleComposeSms();
+                break;
+            case 1:
+                handler->handleShowSmsList();
+                break;
+            default:
+                break;
+            }
+        }
+    });
+
+    gui.setRejectCallback([] {});
 }
 
 void UserPort::showCalling(common::PhoneNumber from)
@@ -100,27 +121,6 @@ void UserPort::showCallEnded()
 PhoneNumber UserPort::getEnteredPhoneNumber()
 {
     return gui.getPhoneNumber();
-    
-    gui.setAcceptCallback([this, &menu] {
-        const auto [isSelected, index] = menu.getCurrentItemIndex();
-
-        if (isSelected)
-        {
-            switch (index)
-            {
-            case 0:
-                handler->handleComposeSms();
-                break;
-            case 1:
-                handler->handleShowSmsList();
-                break;
-            default:
-                break;
-            }
-        }
-    });
-
-    gui.setRejectCallback([] {});
 }
 
 void UserPort::showNewSmsNotification()

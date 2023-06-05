@@ -44,7 +44,6 @@ public:
     MOCK_METHOD(void, showCallEnded, (), (final));
     MOCK_METHOD(common::PhoneNumber, getEnteredPhoneNumber, (), (final));
 
-
     MOCK_METHOD(void, showNewSmsNotification, (), (final));
     MOCK_METHOD(void, showNewSmsToEdit, (), (final));
     MOCK_METHOD(void, viewSmsList, (const std::vector<Sms>& messages), (final));

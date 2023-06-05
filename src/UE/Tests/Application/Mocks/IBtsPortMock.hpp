@@ -42,7 +42,7 @@ public:
     MOCK_METHOD(void, callTalk, (common::PhoneNumber, std::string), (final));
     MOCK_METHOD(void, callDrop, (common::PhoneNumber), (final));
     MOCK_METHOD(void, sendCallRequest,  (common::PhoneNumber), (final));
-    MOCK_METHOD(void, sendSms, (const Sms&), (final));};
+    MOCK_METHOD(void, sendSms, (const Sms&), (final));
 };
 
 } // namsespace ue
