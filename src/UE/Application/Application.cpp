@@ -86,4 +86,9 @@ void Application::handleBTSCallAccept(common::PhoneNumber from)
     context.state->handleBTSCallAccept(from);
 }
 
+void Application::handleBTSCallDrop(common::PhoneNumber from)
+{
+    context.state->handleBTSCallDrop(from);
+}
+
 }

@@ -10,6 +10,7 @@ public:
     SendingState(Context& context);
     void handleCallAccept() override;
     void handleBTSCallAccept(common::PhoneNumber number) override;
+    void handleBTSCallDrop(common::PhoneNumber number) override;
 };
 
 }

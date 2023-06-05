@@ -34,4 +34,15 @@ void SendingState::handleBTSCallAccept(common::PhoneNumber from)
     }
 }
 
+void SendingState::handleBTSCallDrop(common::PhoneNumber from)
+{
+    logger.logInfo("RECEIVED CALL REQUSET");
+    if(from == context.user.getCallerNumber())
+    {
+        context.user.showConnected();
+        context.timer.stopTimer();
+        context.setState<ConnectedState>();
+    }
+}
+
 }

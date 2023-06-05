@@ -80,4 +80,10 @@ void BaseState::handleBTSCallAccept(common::PhoneNumber number)
 {
     logger.logError("Unexcepted: handleBTSCallAccept()");
 }
+
+void BaseState::handleBTSCallDrop(common::PhoneNumber number)
+{
+    logger.logError("Unexcepted: handleBTSCallDrop()");
+}
+
 }

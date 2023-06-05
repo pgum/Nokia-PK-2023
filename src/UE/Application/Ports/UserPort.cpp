@@ -58,7 +58,7 @@ void UserPort::showConnected()
 void UserPort::showCalling(common::PhoneNumber from)
 {
     IUeGui::ITextMode& textMode = gui.setViewTextMode();
-    textMode.setText(common::to_string(from));
+    textMode.setText("Calling: " + common::to_string(from));
 }
 
 void UserPort::showTalking()

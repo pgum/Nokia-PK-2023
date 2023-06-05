@@ -34,6 +34,7 @@ public:
     //call
     void handleCallRequest(common::PhoneNumber from) override;
     void handleBTSCallAccept(common::PhoneNumber from) override;
+    void handleBTSCallDrop(common::PhoneNumber from) override;
 
     //IUserEventsHandler interface
     //call

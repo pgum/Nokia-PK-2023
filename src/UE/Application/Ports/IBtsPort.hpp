@@ -17,6 +17,7 @@ public:
     virtual void handleBTSDisconnected() = 0;
     virtual void handleCallRequest(common::PhoneNumber from) = 0;
     virtual void handleBTSCallAccept(common::PhoneNumber from) = 0;
+    virtual void handleBTSCallDrop(common::PhoneNumber from) = 0;
     virtual void handleUnknownRecipient() = 0;
     virtual void handleRecieveTalkMessage(std::string message) = 0;
     virtual void handleSendTalkMessage(common::PhoneNumber destNumber, std::string message) = 0;
