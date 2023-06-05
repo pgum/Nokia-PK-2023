@@ -114,8 +114,6 @@ void BtsPort::sendCallReject(common::PhoneNumber destNumber)
     transport.sendMessage(msg.getMessage());
 }
 
-<<<<<<< HEAD
-=======
 void BtsPort::sendCallRequest(common::PhoneNumber destNumber)
 {
     logger.logDebug("sendCallRequest: ");
@@ -124,7 +122,6 @@ void BtsPort::sendCallRequest(common::PhoneNumber destNumber)
 }
 
 //TODO: change this into CallTalk
->>>>>>> remotes/origin/call_talking
 void BtsPort::callTalk(common::PhoneNumber destNumber, std::string message)
 {
     logger.logDebug("sendMessage: "); //TODO: add message content to log info?

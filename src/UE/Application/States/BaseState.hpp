@@ -39,9 +39,6 @@ public:
     void handleRecieveTalkMessage(std::string message) override;
     void handleSendTalkMessage(common::PhoneNumber destNumber, std::string message) override;
 
-    //call drop
-    void handleBTSCallDrop(common::PhoneNumber) override;
-
 protected:
     Context& context;
     common::PrefixedLogger logger;

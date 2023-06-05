@@ -47,9 +47,6 @@ public:
     void handleRecieveTalkMessage(std::string message) override;
     void handleSendTalkMessage(common::PhoneNumber destNumber, std::string message) override; //TODO: remove arguments, they are pointless currently
 
-    //callDrop
-    void handleBTSCallDrop(common::PhoneNumber) override;
-
 private:
     Context context;
     common::PrefixedLogger logger;

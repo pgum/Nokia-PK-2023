@@ -21,7 +21,6 @@ public:
     virtual void handleUnknownRecipient() = 0;
     virtual void handleRecieveTalkMessage(std::string message) = 0;
     virtual void handleSendTalkMessage(common::PhoneNumber destNumber, std::string message) = 0;
-    virtual void handleBTSCallDrop(common::PhoneNumber) = 0;
 };
 
 class IBtsPort
