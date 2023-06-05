@@ -18,7 +18,8 @@ public:
                 ILogger& iLogger,
                 IBtsPort& bts,
                 IUserPort& user,
-                ITimerPort& timer);
+                ITimerPort& timer,
+                ISmsDb& smsDb);
     ~Application();
 
     // ITimerEventsHandler interface
@@ -28,6 +29,7 @@ public:
     void handleSib(common::BtsId btsId) override;
     void handleAttachAccept() override;
     void handleAttachReject() override;
+    void handleSms(const Sms& sms) override;
     void handleBTSDisconnected() override;
 
 private:
@@ -36,4 +38,4 @@ private:
 
 };
 
-}
+} // namespace ue

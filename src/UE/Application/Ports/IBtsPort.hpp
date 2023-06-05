@@ -5,6 +5,7 @@
 
 namespace ue
 {
+class Sms;
 
 class IBtsEventsHandler
 {
@@ -14,6 +15,7 @@ public:
     virtual void handleSib(common::BtsId) = 0;
     virtual void handleAttachAccept() = 0;
     virtual void handleAttachReject() = 0;
+    virtual void handleSms(const Sms& sms) = 0;
     virtual void handleBTSDisconnected() = 0;
 };
 

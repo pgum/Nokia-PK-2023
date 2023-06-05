@@ -1,6 +1,7 @@
 #include "BtsPort.hpp"
 #include "Messages/IncomingMessage.hpp"
 #include "Messages/OutgoingMessage.hpp"
+#include "Sms.hpp"
 
 namespace ue
 {
@@ -49,6 +50,11 @@ void BtsPort::handleMessage(BinaryMessage msg)
             else
                 handler->handleAttachReject();
             break;
+        }
+        case common::MessageId::Sms:
+        {
+            const auto sms = Sms { from, reader.readRemainingText() };
+            handler->handleSms(sms);
         }
         default:
             logger.logError("unknow message: ", msgId, ", from: ", from);
