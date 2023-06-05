@@ -86,4 +86,9 @@ void UserPort::displayMessage(std::string message)
     callView.appendIncomingText(message);
 }
 
+void UserPort::showCallEnded() {
+    //TODO: if possible, display some dialog, informing that call has ended before going back to menu
+    showConnected();
+}
+
 }

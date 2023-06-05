@@ -1,0 +1,63 @@
+#1,tid:3021569664[DEBUG]: [phone:123]GUI: setConnectedStateSlot()
+#2,tid:3021569664[DEBUG]: [phone:123]GUI: setNewMessageSlot(0)
+#3,tid:3021569664[DEBUG]: [phone:123][TRANSPORT]Selected configuration localhost:8181
+#4,tid:3021569664: [phone:123][APP] Started
+#5,tid:3021569664[DEBUG]: [phone:123][NotConnectedState]entry
+#6,tid:3021569664[DEBUG]: [phone:123][TIMER PORT]Started
+#7,tid:3021569664[DEBUG]: [phone:123][BTS-PORT]sendAttachRequest: 1415981034
+#8,tid:3021569664[DEBUG]: [phone:123]GUI: setConnectedStateSlot(Connecting)
+#9,tid:3021569664[DEBUG]: [phone:123][TIMER PORT]Start timer: 500ms
+#10,tid:3021569664[DEBUG]: [phone:123][ConnectingState]entry
+#11,tid:3021569664[DEBUG]: [phone:123][NotConnectedState]exit
+#12,tid:3021569664[DEBUG]: [phone:123][TRANSPORT]Send message of size: 9
+#13,tid:3021569664[DEBUG]: [phone:123]GUI: setConnectedStateSlot(Not connected)
+#14,tid:3021569664[DEBUG]: [phone:123][TIMER PORT]Stop timer
+#15,tid:3021569664[DEBUG]: [phone:123][NotConnectedState]entry
+#16,tid:3021569664[DEBUG]: [phone:123][ConnectingState]exit
+#17,tid:3021569664[DEBUG]: [phone:123][BTS-PORT]sendAttachRequest: 1415981034
+#18,tid:3021569664[DEBUG]: [phone:123]GUI: setConnectedStateSlot(Connecting)
+#19,tid:3021569664[DEBUG]: [phone:123][TIMER PORT]Start timer: 500ms
+#20,tid:3021569664[DEBUG]: [phone:123][ConnectingState]entry
+#21,tid:3021569664[DEBUG]: [phone:123][NotConnectedState]exit
+#22,tid:3021569664[DEBUG]: [phone:123][TRANSPORT]Send message of size: 9
+#23,tid:3021569664[DEBUG]: [phone:123]GUI: setConnectedStateSlot(Not connected)
+#24,tid:3021569664[DEBUG]: [phone:123][TIMER PORT]Stop timer
+#25,tid:3021569664[DEBUG]: [phone:123][NotConnectedState]entry
+#26,tid:3021569664[DEBUG]: [phone:123][ConnectingState]exit
+#27,tid:3021569664[ERROR]: [phone:123][NotConnectedState]Unexcepted: handleCallAccept
+#28,tid:3021569664[DEBUG]: [phone:123][BTS-PORT]sendAttachRequest: 1415981034
+#29,tid:3021569664[DEBUG]: [phone:123]GUI: setConnectedStateSlot(Connecting)
+#30,tid:3021569664[DEBUG]: [phone:123][TIMER PORT]Start timer: 500ms
+#31,tid:3021569664[DEBUG]: [phone:123][ConnectingState]entry
+#32,tid:3021569664[DEBUG]: [phone:123][NotConnectedState]exit
+#33,tid:3021569664[DEBUG]: [phone:123][TRANSPORT]Send message of size: 9
+#34,tid:3021569664[DEBUG]: [phone:123]GUI: setConnectedStateSlot(Not connected)
+#35,tid:3021569664[DEBUG]: [phone:123][TIMER PORT]Stop timer
+#36,tid:3021569664[DEBUG]: [phone:123][NotConnectedState]entry
+#37,tid:3021569664[DEBUG]: [phone:123][ConnectingState]exit
+#38,tid:3021569664[DEBUG]: [phone:123][BTS-PORT]sendAttachRequest: 1415981034
+#39,tid:3021569664[DEBUG]: [phone:123]GUI: setConnectedStateSlot(Connecting)
+#40,tid:3021569664[DEBUG]: [phone:123][TIMER PORT]Start timer: 500ms
+#41,tid:3021569664[DEBUG]: [phone:123][ConnectingState]entry
+#42,tid:3021569664[DEBUG]: [phone:123][NotConnectedState]exit
+#43,tid:3021569664[DEBUG]: [phone:123][TRANSPORT]Send message of size: 9
+#44,tid:3021569664[DEBUG]: [phone:123]GUI: setConnectedStateSlot(Not connected)
+#45,tid:3021569664[DEBUG]: [phone:123][TIMER PORT]Stop timer
+#46,tid:3021569664[DEBUG]: [phone:123][NotConnectedState]entry
+#47,tid:3021569664[DEBUG]: [phone:123][ConnectingState]exit
+#48,tid:3021569664[ERROR]: [phone:123][NotConnectedState]Unexcepted: handleCallDrop
+#49,tid:3021569664[DEBUG]: [phone:123][BTS-PORT]sendAttachRequest: 1415981034
+#50,tid:3021569664[DEBUG]: [phone:123]GUI: setConnectedStateSlot(Connecting)
+#51,tid:3021569664[DEBUG]: [phone:123][TIMER PORT]Start timer: 500ms
+#52,tid:3021569664[DEBUG]: [phone:123][ConnectingState]entry
+#53,tid:3021569664[DEBUG]: [phone:123][NotConnectedState]exit
+#54,tid:3021569664[DEBUG]: [phone:123][TRANSPORT]Send message of size: 9
+#55,tid:3021569664[DEBUG]: [phone:123]GUI: setConnectedStateSlot(Not connected)
+#56,tid:3021569664[DEBUG]: [phone:123][TIMER PORT]Stop timer
+#57,tid:3021569664[DEBUG]: [phone:123][NotConnectedState]entry
+#58,tid:3021569664[DEBUG]: [phone:123][ConnectingState]exit
+#59,tid:3021569664[DEBUG]: [phone:123][TIMER PORT]Stoped
+#60,tid:3021569664: [phone:123][APP] Stopped
+#61,tid:3021569664[DEBUG]: [phone:123][NotConnectedState]exit
+#62,tid:3021569664[DEBUG]: [phone:123][TRANSPORT]Bye
+#63,tid:3021569664: [phone:123][TRANSPORT]Connection lost!

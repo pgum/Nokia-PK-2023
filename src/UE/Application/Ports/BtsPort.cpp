@@ -65,8 +65,14 @@ void BtsPort::handleMessage(BinaryMessage msg)
             handler->handleRecieveTalkMessage(reader.readRemainingText()); //TODO consider changing readRemainingText to readText, and pass message size somehow
             break;
         }
+        case common::MessageId::CallDropped:
+        {
+            //handler->handleRecieveCallDropped();
+            handler->handleBTSCallDrop(from);
+            break;
+        }
         default:
-            logger.logError("unknow message: ", msgId, ", from: ", from);
+            logger.logError("unknown message: ", msgId, ", from: ", from);
 
         }
         //TODO: case common::MessageId::CallTalk
@@ -104,12 +110,18 @@ void BtsPort::sendCallReject(common::PhoneNumber destNumber)
     transport.sendMessage(msg.getMessage());
 }
 
-//TODO: change this into CallTalk
 void BtsPort::callTalk(common::PhoneNumber destNumber, std::string message)
 {
     logger.logDebug("sendMessage: "); //TODO: add message content to log info?
     common::OutgoingMessage msg{common::MessageId::CallTalk, phoneNumber, destNumber};
     msg.writeText(message);
+    transport.sendMessage(msg.getMessage());
+}
+
+void BtsPort::callDrop(common::PhoneNumber destNumber)
+{
+    logger.logDebug("send callDropped");
+    common::OutgoingMessage msg{common::MessageId::CallDropped, phoneNumber, destNumber};
     transport.sendMessage(msg.getMessage());
 }
 

@@ -39,5 +39,29 @@ void TalkingState::handleSendTalkMessage(common::PhoneNumber destNumber, std::st
     context.bts.callTalk(context.user.getCallerNumber(), context.user.getOutgoingMessage());
 }
 
+void TalkingState::handleCallDrop()
+{
+    //handleCallDrop is recieved from UE, by pressing disconnect buton while talking
+
+    //TODO: send CallDropped(from=myPhoneNumber, to=partnerPhoneNumber) to BTS
+     context.bts.callDrop(context.user.getCallerNumber());
+
+    //show main menu
+    context.user.showCallEnded();
+
+    //change state to Connected
+    context.setState<ConnectedState>();
+}
+
+void TalkingState::handleBTSCallDrop(common::PhoneNumber from)
+{
+    //is recieved from BTS
+
+    context.user.showCallEnded();
+
+    context.setState<ConnectedState>();
+}
+
+
 }
 

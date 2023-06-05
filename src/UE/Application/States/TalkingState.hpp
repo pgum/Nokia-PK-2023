@@ -13,5 +13,7 @@ public:
     void handleUnknownRecipient() override;
     void handleRecieveTalkMessage(std::string message) override;
     void handleSendTalkMessage(common::PhoneNumber destNumber, std::string message) override;
+    void handleCallDrop() override;
+    void handleBTSCallDrop(common::PhoneNumber) override;
 };
 }

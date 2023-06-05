@@ -32,6 +32,7 @@ public:
     MOCK_METHOD(void, showPartnerNotAvailable, (), (final));
     MOCK_METHOD(std::string, getOutgoingMessage, (), (final));
     MOCK_METHOD(void, displayMessage, (std::string), (final));
+    MOCK_METHOD(void, showCallEnded, (), (final));
 };
 
 }

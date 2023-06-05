@@ -1,0 +1,240 @@
+#1,tid:3039532032[DEBUG]:[Application]started
+#2,tid:3039532032[DEBUG]:[SPAWNER]Listen to new connections
+#3,tid:3039532032[DEBUG]:[Console]Add: `a` for "Show address"
+#4,tid:3039532032[DEBUG]:[Console]Add: `s` for "Show status"
+#6,tid:3039532032[DEBUG]:[Console]Add: `l` for "List attached ue"
+#7,tid:3039532032[DEBUG]:[Console]Add close: `q` for "quit"
+#8,tid:3039532032[DEBUG]:[Console]Add help: `h` for "help"
+#5,tid:3036166976[DEBUG]:[SIB]started
+#9,tid:3039532032[DEBUG]:[Console]Add: `t` for "Test commands - details in implementation"
+#10,tid:3039532032[DEBUG]:Application loop started
+#11,tid:3026189120[DEBUG]:Console loop started
+#12,tid:3039532032[DEBUG]:Session opened
+#13,tid:3039532032:server started, port: 8181
+#14,tid:3039532032[DEBUG]:New connection from: ::ffff:127.0.0.1-33186
+#15,tid:3039532032[DEBUG]:[SPAWNER]new connection: ::ffff:127.0.0.1-33186
+#16,tid:3039532032[DEBUG]:Send message to: ::ffff:127.0.0.1-33186
+#17,tid:3039532032[DEBUG]:Message received from: ::ffff:127.0.0.1-33186 body: 017b00546627ea
+#18,tid:3039532032[DEBUG]:[RELAY]Attached: ::ffff:127.0.0.1-33186:000:I
+#19,tid:3039532032:[UE:::ffff:127.0.0.1-33186:123:A]Attached
+#20,tid:3039532032[DEBUG]:Send message to: ::ffff:127.0.0.1-33186
+#21,tid:3039532032[DEBUG]:Connection lost from: ::ffff:127.0.0.1-33186
+#22,tid:3039532032:[UE:::ffff:127.0.0.1-33186:123:A]Disconnected
+#23,tid:3039532032[DEBUG]:[RELAY]Removed attached: ::ffff:127.0.0.1-33186:123:A
+#24,tid:3039532032[DEBUG]:QtTransport: bye
+#25,tid:3039532032[DEBUG]:New connection from: ::ffff:127.0.0.1-33190
+#26,tid:3039532032[DEBUG]:[SPAWNER]new connection: ::ffff:127.0.0.1-33190
+#27,tid:3039532032[DEBUG]:Send message to: ::ffff:127.0.0.1-33190
+#28,tid:3039532032[DEBUG]:Message received from: ::ffff:127.0.0.1-33190 body: 017b00546627ea
+#29,tid:3039532032[DEBUG]:[RELAY]Attached: ::ffff:127.0.0.1-33190:000:I
+#30,tid:3039532032:[UE:::ffff:127.0.0.1-33190:123:A]Attached
+#31,tid:3039532032[DEBUG]:Send message to: ::ffff:127.0.0.1-33190
+#32,tid:3039532032[DEBUG]:New connection from: ::ffff:127.0.0.1-33192
+#33,tid:3039532032[DEBUG]:[SPAWNER]new connection: ::ffff:127.0.0.1-33192
+#34,tid:3039532032[DEBUG]:Send message to: ::ffff:127.0.0.1-33192
+#35,tid:3039532032[DEBUG]:Message received from: ::ffff:127.0.0.1-33192 body: 017b00546627ea
+#36,tid:3039532032[ERROR]:[RELAY]While attaching: other connection exists for: 123
+#37,tid:3039532032[ERROR]:[UE:::ffff:127.0.0.1-33192:000:I]Attach failed for number: 123
+#38,tid:3039532032[DEBUG]:Send message to: ::ffff:127.0.0.1-33192
+#39,tid:3036166976[DEBUG]:[SIB]send to [0]: ::ffff:127.0.0.1-33192:000:I
+#40,tid:3039532032[DEBUG]:Send message to: ::ffff:127.0.0.1-33192
+#41,tid:3039532032[DEBUG]:Message received from: ::ffff:127.0.0.1-33192 body: 017b00546627ea
+#42,tid:3039532032[ERROR]:[RELAY]While attaching: other connection exists for: 123
+#43,tid:3039532032[ERROR]:[UE:::ffff:127.0.0.1-33192:000:I]Attach failed for number: 123
+#44,tid:3039532032[DEBUG]:Send message to: ::ffff:127.0.0.1-33192
+#45,tid:3036166976[DEBUG]:[SIB]send to [0]: ::ffff:127.0.0.1-33192:000:I
+#46,tid:3039532032[DEBUG]:Send message to: ::ffff:127.0.0.1-33192
+#47,tid:3039532032[DEBUG]:Message received from: ::ffff:127.0.0.1-33192 body: 017b00546627ea
+#48,tid:3039532032[ERROR]:[RELAY]While attaching: other connection exists for: 123
+#49,tid:3039532032[ERROR]:[UE:::ffff:127.0.0.1-33192:000:I]Attach failed for number: 123
+#50,tid:3039532032[DEBUG]:Send message to: ::ffff:127.0.0.1-33192
+#51,tid:3036166976[DEBUG]:[SIB]send to [0]: ::ffff:127.0.0.1-33192:000:I
+#52,tid:3039532032[DEBUG]:Send message to: ::ffff:127.0.0.1-33192
+#53,tid:3039532032[DEBUG]:Message received from: ::ffff:127.0.0.1-33192 body: 017b00546627ea
+#54,tid:3039532032[ERROR]:[RELAY]While attaching: other connection exists for: 123
+#55,tid:3039532032[ERROR]:[UE:::ffff:127.0.0.1-33192:000:I]Attach failed for number: 123
+#56,tid:3039532032[DEBUG]:Send message to: ::ffff:127.0.0.1-33192
+#57,tid:3036166976[DEBUG]:[SIB]send to [0]: ::ffff:127.0.0.1-33192:000:I
+#58,tid:3039532032[DEBUG]:Send message to: ::ffff:127.0.0.1-33192
+#59,tid:3039532032[DEBUG]:Message received from: ::ffff:127.0.0.1-33192 body: 017b00546627ea
+#60,tid:3039532032[ERROR]:[RELAY]While attaching: other connection exists for: 123
+#61,tid:3039532032[ERROR]:[UE:::ffff:127.0.0.1-33192:000:I]Attach failed for number: 123
+#62,tid:3039532032[DEBUG]:Send message to: ::ffff:127.0.0.1-33192
+#63,tid:3039532032[DEBUG]:Connection lost from: ::ffff:127.0.0.1-33192
+#64,tid:3039532032:[UE:::ffff:127.0.0.1-33192:000:I]Disconnected
+#65,tid:3039532032[DEBUG]:[RELAY]Removed not attached: ::ffff:127.0.0.1-33192:000:I
+#66,tid:3039532032[DEBUG]:QtTransport: bye
+#67,tid:3039532032[DEBUG]:New connection from: ::ffff:127.0.0.1-33194
+#68,tid:3039532032[DEBUG]:[SPAWNER]new connection: ::ffff:127.0.0.1-33194
+#69,tid:3039532032[DEBUG]:Send message to: ::ffff:127.0.0.1-33194
+#70,tid:3039532032[DEBUG]:Message received from: ::ffff:127.0.0.1-33194 body: 017b00546627ea
+#71,tid:3039532032[ERROR]:[RELAY]While attaching: other connection exists for: 123
+#72,tid:3039532032[ERROR]:[UE:::ffff:127.0.0.1-33194:000:I]Attach failed for number: 123
+#73,tid:3039532032[DEBUG]:Send message to: ::ffff:127.0.0.1-33194
+#74,tid:3036166976[DEBUG]:[SIB]send to [0]: ::ffff:127.0.0.1-33194:000:I
+#75,tid:3039532032[DEBUG]:Send message to: ::ffff:127.0.0.1-33194
+#76,tid:3039532032[DEBUG]:Message received from: ::ffff:127.0.0.1-33194 body: 017b00546627ea
+#77,tid:3039532032[ERROR]:[RELAY]While attaching: other connection exists for: 123
+#78,tid:3039532032[ERROR]:[UE:::ffff:127.0.0.1-33194:000:I]Attach failed for number: 123
+#79,tid:3039532032[DEBUG]:Send message to: ::ffff:127.0.0.1-33194
+#80,tid:3036166976[DEBUG]:[SIB]send to [0]: ::ffff:127.0.0.1-33194:000:I
+#81,tid:3039532032[DEBUG]:Send message to: ::ffff:127.0.0.1-33194
+#82,tid:3039532032[DEBUG]:Message received from: ::ffff:127.0.0.1-33194 body: 017b00546627ea
+#83,tid:3039532032[ERROR]:[RELAY]While attaching: other connection exists for: 123
+#84,tid:3039532032[ERROR]:[UE:::ffff:127.0.0.1-33194:000:I]Attach failed for number: 123
+#85,tid:3039532032[DEBUG]:Send message to: ::ffff:127.0.0.1-33194
+#86,tid:3039532032[DEBUG]:Connection lost from: ::ffff:127.0.0.1-33194
+#87,tid:3039532032:[UE:::ffff:127.0.0.1-33194:000:I]Disconnected
+#88,tid:3039532032[DEBUG]:[RELAY]Removed not attached: ::ffff:127.0.0.1-33194:000:I
+#89,tid:3039532032[DEBUG]:QtTransport: bye
+#90,tid:3039532032[DEBUG]:New connection from: ::ffff:127.0.0.1-33198
+#91,tid:3039532032[DEBUG]:[SPAWNER]new connection: ::ffff:127.0.0.1-33198
+#92,tid:3039532032[DEBUG]:Send message to: ::ffff:127.0.0.1-33198
+#93,tid:3039532032[DEBUG]:Message received from: ::ffff:127.0.0.1-33198 body: 017c00546627ea
+#94,tid:3039532032[DEBUG]:[RELAY]Attached: ::ffff:127.0.0.1-33198:000:I
+#95,tid:3039532032:[UE:::ffff:127.0.0.1-33198:124:A]Attached
+#96,tid:3039532032[DEBUG]:Send message to: ::ffff:127.0.0.1-33198
+#97,tid:3039532032[DEBUG]:Connection lost from: ::ffff:127.0.0.1-33198
+#98,tid:3039532032:[UE:::ffff:127.0.0.1-33198:124:A]Disconnected
+#99,tid:3039532032[DEBUG]:[RELAY]Removed attached: ::ffff:127.0.0.1-33198:124:A
+#100,tid:3039532032[DEBUG]:QtTransport: bye
+#101,tid:3039532032[DEBUG]:Connection lost from: ::ffff:127.0.0.1-33190
+#102,tid:3039532032:[UE:::ffff:127.0.0.1-33190:123:A]Disconnected
+#103,tid:3039532032[DEBUG]:[RELAY]Removed attached: ::ffff:127.0.0.1-33190:123:A
+#104,tid:3039532032[DEBUG]:QtTransport: bye
+#105,tid:3039532032[DEBUG]:New connection from: ::ffff:127.0.0.1-33204
+#106,tid:3039532032[DEBUG]:[SPAWNER]new connection: ::ffff:127.0.0.1-33204
+#107,tid:3039532032[DEBUG]:Send message to: ::ffff:127.0.0.1-33204
+#108,tid:3039532032[DEBUG]:Message received from: ::ffff:127.0.0.1-33204 body: 017b00546627ea
+#109,tid:3039532032[DEBUG]:[RELAY]Attached: ::ffff:127.0.0.1-33204:000:I
+#110,tid:3039532032:[UE:::ffff:127.0.0.1-33204:123:A]Attached
+#111,tid:3039532032[DEBUG]:Send message to: ::ffff:127.0.0.1-33204
+#112,tid:3039532032[DEBUG]:New connection from: ::ffff:127.0.0.1-33216
+#113,tid:3039532032[DEBUG]:[SPAWNER]new connection: ::ffff:127.0.0.1-33216
+#114,tid:3039532032[DEBUG]:Send message to: ::ffff:127.0.0.1-33216
+#115,tid:3039532032[DEBUG]:Message received from: ::ffff:127.0.0.1-33216 body: 017b00546627ea
+#116,tid:3039532032[ERROR]:[RELAY]While attaching: other connection exists for: 123
+#117,tid:3039532032[ERROR]:[UE:::ffff:127.0.0.1-33216:000:I]Attach failed for number: 123
+#118,tid:3039532032[DEBUG]:Send message to: ::ffff:127.0.0.1-33216
+#119,tid:3036166976[DEBUG]:[SIB]send to [0]: ::ffff:127.0.0.1-33216:000:I
+#120,tid:3039532032[DEBUG]:Send message to: ::ffff:127.0.0.1-33216
+#121,tid:3039532032[DEBUG]:Message received from: ::ffff:127.0.0.1-33216 body: 017b00546627ea
+#122,tid:3039532032[ERROR]:[RELAY]While attaching: other connection exists for: 123
+#123,tid:3039532032[ERROR]:[UE:::ffff:127.0.0.1-33216:000:I]Attach failed for number: 123
+#124,tid:3039532032[DEBUG]:Send message to: ::ffff:127.0.0.1-33216
+#125,tid:3039532032[DEBUG]:Connection lost from: ::ffff:127.0.0.1-33216
+#126,tid:3039532032:[UE:::ffff:127.0.0.1-33216:000:I]Disconnected
+#127,tid:3039532032[DEBUG]:[RELAY]Removed not attached: ::ffff:127.0.0.1-33216:000:I
+#128,tid:3039532032[DEBUG]:QtTransport: bye
+#129,tid:3039532032[DEBUG]:Connection lost from: ::ffff:127.0.0.1-33204
+#130,tid:3039532032:[UE:::ffff:127.0.0.1-33204:123:A]Disconnected
+#131,tid:3039532032[DEBUG]:[RELAY]Removed attached: ::ffff:127.0.0.1-33204:123:A
+#132,tid:3039532032[DEBUG]:QtTransport: bye
+#133,tid:3039532032[DEBUG]:New connection from: ::ffff:127.0.0.1-33218
+#134,tid:3039532032[DEBUG]:[SPAWNER]new connection: ::ffff:127.0.0.1-33218
+#135,tid:3039532032[DEBUG]:Send message to: ::ffff:127.0.0.1-33218
+#136,tid:3039532032[DEBUG]:Message received from: ::ffff:127.0.0.1-33218 body: 017b00546627ea
+#137,tid:3039532032[DEBUG]:[RELAY]Attached: ::ffff:127.0.0.1-33218:000:I
+#138,tid:3039532032:[UE:::ffff:127.0.0.1-33218:123:A]Attached
+#139,tid:3039532032[DEBUG]:Send message to: ::ffff:127.0.0.1-33218
+#140,tid:3039532032[DEBUG]:Connection lost from: ::ffff:127.0.0.1-33218
+#141,tid:3039532032:[UE:::ffff:127.0.0.1-33218:123:A]Disconnected
+#142,tid:3039532032[DEBUG]:[RELAY]Removed attached: ::ffff:127.0.0.1-33218:123:A
+#143,tid:3039532032[DEBUG]:QtTransport: bye
+#144,tid:3039532032[DEBUG]:New connection from: ::ffff:127.0.0.1-33220
+#145,tid:3039532032[DEBUG]:[SPAWNER]new connection: ::ffff:127.0.0.1-33220
+#146,tid:3039532032[DEBUG]:Send message to: ::ffff:127.0.0.1-33220
+#147,tid:3039532032[DEBUG]:Message received from: ::ffff:127.0.0.1-33220 body: 017b00546627ea
+#148,tid:3039532032[DEBUG]:[RELAY]Attached: ::ffff:127.0.0.1-33220:000:I
+#149,tid:3039532032:[UE:::ffff:127.0.0.1-33220:123:A]Attached
+#150,tid:3039532032[DEBUG]:Send message to: ::ffff:127.0.0.1-33220
+#151,tid:3039532032[DEBUG]:Connection lost from: ::ffff:127.0.0.1-33220
+#152,tid:3039532032:[UE:::ffff:127.0.0.1-33220:123:A]Disconnected
+#153,tid:3039532032[DEBUG]:[RELAY]Removed attached: ::ffff:127.0.0.1-33220:123:A
+#154,tid:3039532032[DEBUG]:QtTransport: bye
+#155,tid:3039532032[DEBUG]:New connection from: ::ffff:127.0.0.1-33224
+#156,tid:3039532032[DEBUG]:[SPAWNER]new connection: ::ffff:127.0.0.1-33224
+#157,tid:3039532032[DEBUG]:Send message to: ::ffff:127.0.0.1-33224
+#158,tid:3039532032[DEBUG]:Message received from: ::ffff:127.0.0.1-33224 body: 017b00546627ea
+#159,tid:3039532032[DEBUG]:[RELAY]Attached: ::ffff:127.0.0.1-33224:000:I
+#160,tid:3039532032:[UE:::ffff:127.0.0.1-33224:123:A]Attached
+#161,tid:3039532032[DEBUG]:Send message to: ::ffff:127.0.0.1-33224
+#162,tid:3039532032[DEBUG]:Connection lost from: ::ffff:127.0.0.1-33224
+#163,tid:3039532032:[UE:::ffff:127.0.0.1-33224:123:A]Disconnected
+#164,tid:3039532032[DEBUG]:[RELAY]Removed attached: ::ffff:127.0.0.1-33224:123:A
+#165,tid:3039532032[DEBUG]:QtTransport: bye
+#166,tid:3039532032[DEBUG]:New connection from: ::ffff:127.0.0.1-33320
+#167,tid:3039532032[DEBUG]:[SPAWNER]new connection: ::ffff:127.0.0.1-33320
+#168,tid:3039532032[DEBUG]:Send message to: ::ffff:127.0.0.1-33320
+#169,tid:3039532032[DEBUG]:Message received from: ::ffff:127.0.0.1-33320 body: 017b00546627ea
+#170,tid:3039532032[DEBUG]:[RELAY]Attached: ::ffff:127.0.0.1-33320:000:I
+#171,tid:3039532032:[UE:::ffff:127.0.0.1-33320:123:A]Attached
+#172,tid:3039532032[DEBUG]:Send message to: ::ffff:127.0.0.1-33320
+#173,tid:3039532032[DEBUG]:New connection from: ::ffff:127.0.0.1-33322
+#174,tid:3039532032[DEBUG]:[SPAWNER]new connection: ::ffff:127.0.0.1-33322
+#175,tid:3039532032[DEBUG]:Send message to: ::ffff:127.0.0.1-33322
+#176,tid:3039532032[DEBUG]:Message received from: ::ffff:127.0.0.1-33322 body: 017b00546627ea
+#177,tid:3039532032[ERROR]:[RELAY]While attaching: other connection exists for: 123
+#178,tid:3039532032[ERROR]:[UE:::ffff:127.0.0.1-33322:000:I]Attach failed for number: 123
+#179,tid:3039532032[DEBUG]:Send message to: ::ffff:127.0.0.1-33322
+#180,tid:3036166976[DEBUG]:[SIB]send to [0]: ::ffff:127.0.0.1-33322:000:I
+#181,tid:3039532032[DEBUG]:Send message to: ::ffff:127.0.0.1-33322
+#182,tid:3039532032[DEBUG]:Message received from: ::ffff:127.0.0.1-33322 body: 017b00546627ea
+#183,tid:3039532032[ERROR]:[RELAY]While attaching: other connection exists for: 123
+#184,tid:3039532032[ERROR]:[UE:::ffff:127.0.0.1-33322:000:I]Attach failed for number: 123
+#185,tid:3039532032[DEBUG]:Send message to: ::ffff:127.0.0.1-33322
+#186,tid:3036166976[DEBUG]:[SIB]send to [0]: ::ffff:127.0.0.1-33322:000:I
+#187,tid:3039532032[DEBUG]:Send message to: ::ffff:127.0.0.1-33322
+#188,tid:3039532032[DEBUG]:Message received from: ::ffff:127.0.0.1-33322 body: 017b00546627ea
+#189,tid:3039532032[ERROR]:[RELAY]While attaching: other connection exists for: 123
+#190,tid:3039532032[ERROR]:[UE:::ffff:127.0.0.1-33322:000:I]Attach failed for number: 123
+#191,tid:3039532032[DEBUG]:Send message to: ::ffff:127.0.0.1-33322
+#192,tid:3036166976[DEBUG]:[SIB]send to [0]: ::ffff:127.0.0.1-33322:000:I
+#193,tid:3039532032[DEBUG]:Send message to: ::ffff:127.0.0.1-33322
+#194,tid:3039532032[DEBUG]:Message received from: ::ffff:127.0.0.1-33322 body: 017b00546627ea
+#195,tid:3039532032[ERROR]:[RELAY]While attaching: other connection exists for: 123
+#196,tid:3039532032[ERROR]:[UE:::ffff:127.0.0.1-33322:000:I]Attach failed for number: 123
+#197,tid:3039532032[DEBUG]:Send message to: ::ffff:127.0.0.1-33322
+#198,tid:3036166976[DEBUG]:[SIB]send to [0]: ::ffff:127.0.0.1-33322:000:I
+#199,tid:3039532032[DEBUG]:Send message to: ::ffff:127.0.0.1-33322
+#200,tid:3039532032[DEBUG]:Message received from: ::ffff:127.0.0.1-33322 body: 017b00546627ea
+#201,tid:3039532032[ERROR]:[RELAY]While attaching: other connection exists for: 123
+#202,tid:3039532032[ERROR]:[UE:::ffff:127.0.0.1-33322:000:I]Attach failed for number: 123
+#203,tid:3039532032[DEBUG]:Send message to: ::ffff:127.0.0.1-33322
+#204,tid:3036166976[DEBUG]:[SIB]send to [0]: ::ffff:127.0.0.1-33322:000:I
+#205,tid:3039532032[DEBUG]:Send message to: ::ffff:127.0.0.1-33322
+#206,tid:3039532032[DEBUG]:Message received from: ::ffff:127.0.0.1-33322 body: 017b00546627ea
+#207,tid:3039532032[ERROR]:[RELAY]While attaching: other connection exists for: 123
+#208,tid:3039532032[ERROR]:[UE:::ffff:127.0.0.1-33322:000:I]Attach failed for number: 123
+#209,tid:3039532032[DEBUG]:Send message to: ::ffff:127.0.0.1-33322
+#210,tid:3036166976[DEBUG]:[SIB]send to [0]: ::ffff:127.0.0.1-33322:000:I
+#211,tid:3039532032[DEBUG]:Send message to: ::ffff:127.0.0.1-33322
+#212,tid:3039532032[DEBUG]:Message received from: ::ffff:127.0.0.1-33322 body: 017b00546627ea
+#213,tid:3039532032[ERROR]:[RELAY]While attaching: other connection exists for: 123
+#214,tid:3039532032[ERROR]:[UE:::ffff:127.0.0.1-33322:000:I]Attach failed for number: 123
+#215,tid:3039532032[DEBUG]:Send message to: ::ffff:127.0.0.1-33322
+#216,tid:3036166976[DEBUG]:[SIB]send to [0]: ::ffff:127.0.0.1-33322:000:I
+#217,tid:3039532032[DEBUG]:Send message to: ::ffff:127.0.0.1-33322
+#218,tid:3039532032[DEBUG]:Message received from: ::ffff:127.0.0.1-33322 body: 017b00546627ea
+#219,tid:3039532032[ERROR]:[RELAY]While attaching: other connection exists for: 123
+#220,tid:3039532032[ERROR]:[UE:::ffff:127.0.0.1-33322:000:I]Attach failed for number: 123
+#221,tid:3039532032[DEBUG]:Send message to: ::ffff:127.0.0.1-33322
+#222,tid:3039532032[DEBUG]:Connection lost from: ::ffff:127.0.0.1-33320
+#223,tid:3039532032:[UE:::ffff:127.0.0.1-33320:123:A]Disconnected
+#224,tid:3039532032[DEBUG]:[RELAY]Removed attached: ::ffff:127.0.0.1-33320:123:A
+#225,tid:3039532032[DEBUG]:QtTransport: bye
+#226,tid:3039532032[DEBUG]:Connection lost from: ::ffff:127.0.0.1-33322
+#227,tid:3039532032:[UE:::ffff:127.0.0.1-33322:000:I]Disconnected
+#228,tid:3039532032[DEBUG]:[RELAY]Removed not attached: ::ffff:127.0.0.1-33322:000:I
+#229,tid:3039532032[DEBUG]:QtTransport: bye
+#230,tid:3039532032[DEBUG]:New connection from: ::ffff:127.0.0.1-33524
+#231,tid:3039532032[DEBUG]:[SPAWNER]new connection: ::ffff:127.0.0.1-33524
+#232,tid:3039532032[DEBUG]:Send message to: ::ffff:127.0.0.1-33524
+#233,tid:3039532032[DEBUG]:Message received from: ::ffff:127.0.0.1-33524 body: 017b00546627ea
+#234,tid:3039532032[DEBUG]:[RELAY]Attached: ::ffff:127.0.0.1-33524:000:I
+#235,tid:3039532032:[UE:::ffff:127.0.0.1-33524:123:A]Attached
+#236,tid:3039532032[DEBUG]:Send message to: ::ffff:127.0.0.1-33524
+#237,tid:3039532032[DEBUG]:Connection lost from: ::ffff:127.0.0.1-33524
+#238,tid:3039532032:[UE:::ffff:127.0.0.1-33524:123:A]Disconnected
+#239,tid:3039532032[DEBUG]:[RELAY]Removed attached: ::ffff:127.0.0.1-33524:123:A
+#240,tid:3039532032[DEBUG]:QtTransport: bye

@@ -28,6 +28,7 @@ public:
     virtual void showPartnerNotAvailable() = 0;
     virtual std::string getOutgoingMessage() = 0;
     virtual void displayMessage(std::string message) = 0;
+    virtual void showCallEnded() = 0;
 
 };
 

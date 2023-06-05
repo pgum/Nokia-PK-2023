@@ -1,0 +1,25 @@
+#1,tid:3022114432[DEBUG]: [phone:124]GUI: setConnectedStateSlot()
+#2,tid:3022114432[DEBUG]: [phone:124]GUI: setNewMessageSlot(0)
+#3,tid:3022114432[DEBUG]: [phone:124][TRANSPORT]Selected configuration localhost:8181
+#4,tid:3022114432: [phone:124][APP] Started
+#5,tid:3022114432[DEBUG]: [phone:124][NotConnectedState]entry
+#6,tid:3022114432[DEBUG]: [phone:124][TIMER PORT]Started
+#7,tid:3022114432[DEBUG]: [phone:124][BTS-PORT]sendAttachRequest: 1415981034
+#8,tid:3022114432[DEBUG]: [phone:124]GUI: setConnectedStateSlot(Connecting)
+#9,tid:3022114432[DEBUG]: [phone:124][TIMER PORT]Start timer: 500ms
+#10,tid:3022114432[DEBUG]: [phone:124][ConnectingState]entry
+#11,tid:3022114432[DEBUG]: [phone:124][NotConnectedState]exit
+#12,tid:3022114432[DEBUG]: [phone:124][TRANSPORT]Send message of size: 9
+#13,tid:3022114432[DEBUG]: [phone:124][TIMER PORT]Stop timer
+#14,tid:3022114432[DEBUG]: [phone:124][ConnectedState]entry
+#15,tid:3022114432[DEBUG]: [phone:124][ConnectingState]exit
+#16,tid:3022114432: [phone:124]CALL CLIDKED
+#17,tid:3022114432[ERROR]: [phone:124][ConnectedState]Unexcepted: handleCallDrop
+#18,tid:3022114432[ERROR]: [phone:124][ConnectedState]Unexcepted: handleCallDrop
+#19,tid:3022114432[ERROR]: [phone:124][ConnectedState]Unexcepted: handleCallAccept
+#20,tid:3022114432[ERROR]: [phone:124][ConnectedState]Unexcepted: handleCallDrop
+#21,tid:3022114432[DEBUG]: [phone:124][TIMER PORT]Stoped
+#22,tid:3022114432: [phone:124][APP] Stopped
+#23,tid:3022114432[DEBUG]: [phone:124][ConnectedState]exit
+#24,tid:3022114432[DEBUG]: [phone:124][TRANSPORT]Bye
+#25,tid:3022114432: [phone:124][TRANSPORT]Connection lost!
