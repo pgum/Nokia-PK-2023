@@ -15,15 +15,15 @@ public:
     BaseState(Context& context, const std::string& name);
     ~BaseState() override;
 
-    // ITimerEventsHandler interface
     void handleTimeout() override;
-
-    // IBtsEventsHandler interface
     void handleSib(common::BtsId btsId) override;
     void handleAttachAccept() override;
     void handleAttachReject() override;
-    void handleSms(const Sms& sms) override;
     void handleBTSDisconnected() override;
+    void handleSms(const Sms& sms) override;
+    void handleComposeSms() override;
+    void handleSendSms() override;
+    void handleShowSmsList() override;
 
 protected:
     Context& context;

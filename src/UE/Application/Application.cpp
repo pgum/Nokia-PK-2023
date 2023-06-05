@@ -41,15 +41,30 @@ void Application::handleAttachReject()
 {
     context.state->handleAttachReject();
 }
+  
+void Application::handleBTSDisconnected()
+{
+    context.state->handleBTSDisconnected();
+}
 
 void Application::handleSms(const Sms& sms)
 {
     context.state->handleSms(sms);
 }
-  
-void Application::handleBTSDisconnected()
+
+void Application::handleComposeSms()
 {
-    context.state->handleBTSDisconnected();
+    context.state->handleComposeSms();
+}
+
+void Application::handleSendSms() 
+{
+    context.state->handleSendSms();
+}
+
+void Application::handleShowSmsList()
+{
+    context.state->handleShowSmsList();
 }
 
 } // namespace ue

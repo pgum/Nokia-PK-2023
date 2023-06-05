@@ -34,15 +34,30 @@ void BaseState::handleAttachReject()
 {
     logger.logError("Uexpected: handleAttachReject");
 }
+  
+void BaseState::handleBTSDisconnected()
+{
+    logger.logError("Uexpected: handleBTSDisconnected");
+}
 
 void BaseState::handleSms(const Sms& sms)
 {
     logger.logError("Uexpected: handleSms");
 }
-  
-void BaseState::handleBTSDisconnected()
+
+void BaseState::handleComposeSms()
 {
-    logger.logError("Uexpected: handleBTSDisconnected");
+    logger.logError("Unexpected: handleComposeSms");
+}
+
+void BaseState::handleSendSms()
+{
+    logger.logError("Unexpected: handleSendSms");
+}
+
+void BaseState::handleShowSmsList()
+{
+    logger.logError("Unexpected: handleShowSmsList");
 }
 
 } // namespace ue

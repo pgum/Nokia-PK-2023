@@ -11,7 +11,10 @@ public:
     ConnectedState(Context& context);
 
     void handleBTSDisconnected() override;
-    void handleSms(const Sms& sms) override;
+    void handleSms(const Sms& sms) final;
+    void handleComposeSms() final;
+    void handleSendSms() final;
+    void handleShowSmsList() final;
 };
 
 }

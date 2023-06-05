@@ -114,4 +114,26 @@ TEST_F(ApplicationConnectedTestSuite, shallHandleSms)
     objectUnderTest.handleSms(sms);
 }
 
+TEST_F(ApplicationConnectedTestSuite, shallHandleComposeSms)
+{
+    EXPECT_CALL(userPortMock, showNewSmsToEdit());
+    objectUnderTest.handleComposeSms();
+}
+
+TEST_F(ApplicationConnectedTestSuite, shallHandleSendSms)
+{
+    std::pair<common::PhoneNumber, std::string> sms;
+    EXPECT_CALL(userPortMock, getSms()).WillOnce(Return(sms));
+    EXPECT_CALL(btsPortMock, sendSms(common::PhoneNumber{}, ""));
+    EXPECT_CALL(smsDbMock, addSms(common::PhoneNumber{}, ""));
+    EXPECT_CALL(userPortMock, showConnected());
+    objectUnderTest.handleSendSms();
+}
+
+TEST_F(ApplicationConnectedTestSuite, shallHandleSmsList)
+{
+    EXPECT_CALL(userPortMock, viewSmsList());
+    objectUnderTest.handleShowSmsList();
+}
+
 } // namespace ue
