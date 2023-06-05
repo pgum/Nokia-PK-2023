@@ -27,13 +27,18 @@ public:
     virtual void setCloseGuard(CloseGuard closeGuard) = 0;
     virtual void setAcceptCallback(Callback) = 0;
     virtual void setRejectCallback(Callback) = 0;
+    virtual void setSmsComposeCallback(Callback) = 0;
+    virtual void setDialModeActionCallback(Callback) = 0;
 
     virtual void setTitle(const std::string& title) = 0;
     virtual void showConnected() = 0;
     virtual void showConnecting() = 0;
     virtual void showNotConnected() = 0;
+    virtual void showNotAvailable() = 0;
+
     virtual void showNewSms(bool present) = 0;
     virtual void showPeerUserNotAvailable(PhoneNumber) = 0;
+    virtual PhoneNumber getPhoneNumber() = 0;
 
     virtual IListViewMode& setListViewMode() = 0;
     virtual ISmsComposeMode& setSmsComposeMode() = 0;

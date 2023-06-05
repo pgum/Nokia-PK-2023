@@ -8,6 +8,7 @@
 #include "Mocks/ITransportMock.hpp"
 #include "Messages/OutgoingMessage.hpp"
 #include "Messages/IncomingMessage.hpp"
+#include "Sms.hpp"
 
 namespace ue
 {
@@ -22,6 +23,7 @@ protected:
     StrictMock<IBtsEventsHandlerMock> handlerMock;
     StrictMock<common::ITransportMock> transportMock;
     common::ITransport::MessageCallback messageCallback;
+    common::ITransport::DisconnectedCallback disconnectedCallback;
 
     BtsPort objectUnderTest{loggerMock, transportMock, PHONE_NUMBER};
 
@@ -29,11 +31,12 @@ protected:
     {
         EXPECT_CALL(transportMock, registerMessageCallback(_))
                 .WillOnce(SaveArg<0>(&messageCallback));
+        EXPECT_CALL(transportMock, registerDisconnectedCallback(_))
+                .WillOnce(SaveArg<0>(&disconnectedCallback));
         objectUnderTest.start(handlerMock);
     }
     ~BtsPortTestSuite()
     {
-
         EXPECT_CALL(transportMock, registerMessageCallback(IsNull()));
         objectUnderTest.stop();
     }
@@ -93,4 +96,18 @@ TEST_F(BtsPortTestSuite, shallSendAttachRequest)
     ASSERT_NO_THROW(reader.checkEndOfMessage());
 }
 
+TEST_F(BtsPortTestSuite, shallSendSms)
+{
+    common::BinaryMessage msg;
+    const auto receiverPhoneNumber = common::PhoneNumber{113};
+    EXPECT_CALL(transportMock, sendMessage(_)).WillOnce([&msg](auto param) { msg = std::move(param); return true; });
+    objectUnderTest.sendSms(Sms{receiverPhoneNumber,"example"});
+    common::IncomingMessage reader(msg);
+    ASSERT_NO_THROW(EXPECT_EQ(common::MessageId::Sms, reader.readMessageId()));
+    ASSERT_NO_THROW(EXPECT_EQ(PHONE_NUMBER, reader.readPhoneNumber()));
+    ASSERT_NO_THROW(EXPECT_EQ(receiverPhoneNumber, reader.readPhoneNumber()));
+    ASSERT_NO_THROW(EXPECT_EQ("example", reader.readRemainingText()));
+    ASSERT_NO_THROW(reader.checkEndOfMessage());
 }
+
+} // namespace ue

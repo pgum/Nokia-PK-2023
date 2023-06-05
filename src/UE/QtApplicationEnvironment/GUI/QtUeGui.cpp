@@ -177,7 +177,18 @@ void QtUeGui::onHomeClicked()
 
 void QtUeGui::onItemSelected()
 {
-    onAcceptClicked();
+    IUeGui::IListViewMode::OptionalSelection selected = listViewMode.getCurrentItemIndex();
+    std::string selectedItemLabel = listViewMode.getLabelNameFromIndex(selected.second);
+    if(selectedItemLabel == "Call")
+    {
+        logger.logInfo("CALL CLIDKED");
+        startDialCallback();
+        setDialMode();
+
+    } else if(selectedItemLabel == "Compose SMS")
+    {
+        logger.logInfo("Compose SMS");
+    }
 }
 
 void QtUeGui::onTextEntered()
@@ -195,6 +206,16 @@ void QtUeGui::setAcceptCallback(Callback callback)
     acceptCallback = callback;
 }
 
+void QtUeGui::setSmsComposeCallback(Callback callback)
+{
+    homeCallback = callback;
+}
+
+void QtUeGui::setDialModeActionCallback(Callback callback)
+{
+    startDialCallback = callback;
+}
+
 void QtUeGui::setRejectCallback(Callback callback)
 {
     rejectCallback = callback;
@@ -208,6 +229,12 @@ void QtUeGui::setTitle(const std::string& title)
 void QtUeGui::showConnected()
 {
     setAlertMode().setText("Connected");
+    emit setConnectedStateSignal("Connected", true);
+}
+
+void QtUeGui::showNotAvailable()
+{
+    setAlertMode().setText("Not Available");
     emit setConnectedStateSignal("Connected", true);
 }
 
@@ -231,6 +258,11 @@ void QtUeGui::showNewSms(bool present)
 void QtUeGui::showPeerUserNotAvailable(PhoneNumber peer)
 {
     setAlertMode().setText("Not available: " + to_string(peer));
+}
+
+PhoneNumber QtUeGui::getPhoneNumber()
+{
+    return phoneNumberEdit.getPhoneNumber();
 }
 
 void QtUeGui::setConnectedStateSlot(QString text, bool connected)

@@ -8,8 +8,9 @@ Application::Application(common::PhoneNumber phoneNumber,
                          common::ILogger &iLogger,
                          IBtsPort &bts,
                          IUserPort &user,
-                         ITimerPort &timer)
-    : context{iLogger, bts, user, timer},
+                         ITimerPort &timer,
+                         ISmsDb& smsDb)
+    : context { iLogger, bts, user, timer, smsDb },
       logger(iLogger, "[APP] ")
 {
     logger.logInfo("Started");
@@ -40,5 +41,85 @@ void Application::handleAttachReject()
 {
     context.state->handleAttachReject();
 }
-
+  
+void Application::handleBTSDisconnected()
+{
+    context.state->handleBTSDisconnected();
 }
+
+void Application::handleCallRequest(common::PhoneNumber from)
+{
+    context.state->handleCallRequest(from);
+}
+
+void Application::handleCallAccept()
+{
+    context.state->handleCallAccept();
+}
+
+void Application::handleCallDrop()
+{
+    context.state->handleCallDrop();
+}
+
+void Application::handleUnknownRecipient()
+{
+    context.state->handleUnknownRecipient();
+}
+
+void Application::handleRecieveTalkMessage(std::string message)
+{
+    context.state->handleRecieveTalkMessage(message);
+}
+
+void Application::handleDialModeAction()
+{
+    context.state->handleDialModeAction();
+}
+
+void Application::handleBTSCallAccept(common::PhoneNumber from)
+{
+    context.state->handleBTSCallAccept(from);
+}
+
+void Application::handleBTSCallDrop(common::PhoneNumber from)
+{
+    context.state->handleBTSCallDrop(from);
+}
+
+void Application::handleComposeMessage()
+{
+    context.state->handleComposeMessage();
+}
+
+void Application::handleSms(const Sms& sms)
+{
+    context.state->handleSms(sms);
+}
+
+void Application::handleShowSmsList()
+{
+    context.state->handleShowSmsList();
+}
+
+void Application::handleShowSms(IUeGui::IListViewMode::Selection idx)
+{
+    context.state->handleShowSms(idx);
+}
+
+void Application::handleComposeSms()
+{
+    context.state->handleComposeSms();
+}
+
+void Application::handleSendSms(const Sms& sms)
+{
+    context.state->handleSendSms(sms);
+}
+
+void Application::handleSmsDrop()
+{
+    context.state->handleSmsDrop();
+}
+
+} // namespace ue

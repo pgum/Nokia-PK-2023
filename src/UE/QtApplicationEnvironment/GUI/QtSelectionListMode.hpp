@@ -19,6 +19,8 @@ public:
     OptionalSelection getCurrentItemIndex() const override;
     void addSelectionListItem(const std::string& label, const std::string& tooltip) override;
     void clearSelectionList() override;
+    std::string getLabelNameFromIndex(int);
+
 
 private:
     void constructGui();
@@ -26,6 +28,7 @@ private:
     QFont getItemFont();
 
     QListWidget listWidget;
+    std::map<int, std::string> listIndexes;
 
 signals:
     void itemDoubleClicked();

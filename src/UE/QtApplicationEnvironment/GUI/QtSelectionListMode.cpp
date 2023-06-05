@@ -33,6 +33,7 @@ void QtSelectionListMode::addSelectionListItemSlot(QString label, QString toolti
     {
         newItem->setToolTip(tooltip);
     }
+    listIndexes.insert({listWidget.row(newItem), label.toStdString()});
 }
 
 void QtSelectionListMode::clearSelectionListSlot()
@@ -80,6 +81,14 @@ void QtSelectionListMode::addSelectionListItem(const std::string &label, const s
 void QtSelectionListMode::clearSelectionList()
 {
     emit clearSelectionListSignal();
+}
+
+std::string QtSelectionListMode::getLabelNameFromIndex(int index)
+{
+    if(listIndexes.count(index))
+        return listIndexes[index];
+    else
+        return "";
 }
 
 }
