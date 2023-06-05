@@ -21,6 +21,8 @@ void TalkingState::handleUnknownRecipient()
     context.setState<ConnectedState>();
 }
 
+void TalkingState::handleTimeout() {}
+
 void TalkingState::handleRecieveTalkMessage(std::string message)
 {
     logger.logInfo("Recieved message: ");
@@ -64,7 +66,6 @@ void TalkingState::handleBTSCallDrop(common::PhoneNumber from)
 
     context.setState<ConnectedState>();
 }
-
 
 }
 

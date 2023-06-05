@@ -15,5 +15,6 @@ public:
     void handleComposeMessage() override;
     void handleCallDrop() override;
     void handleBTSCallDrop(common::PhoneNumber) override;
+    void handleTimeout() override;
 };
 }
