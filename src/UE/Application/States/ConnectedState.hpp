@@ -15,6 +15,7 @@ public:
     void handleComposeSms() final;
     void handleSendSms() final;
     void handleShowSmsList() final;
+    void handleShowSms(std::size_t) final;
 };
 
 }

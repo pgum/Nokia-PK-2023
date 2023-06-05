@@ -31,6 +31,7 @@ public:
     void handleSms(const Sms& sms) override;
     void handleComposeSms() override;
     void handleSendSms() override;
+    void handleShowSms(std::size_t) override;
 
 private:
     Context context;

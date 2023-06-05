@@ -34,7 +34,15 @@ void ConnectedState::handleSendSms()
 
 void ConnectedState::handleShowSmsList()
 {
-    context.user.viewSmsList();
+    const auto& smsMessages = context.smsDb.getSmsMessages();
+    context.user.viewSmsList(smsMessages);
+}
+
+void ConnectedState::handleShowSms(std::size_t idx)
+{
+    context.smsDb.updateSmsState(idx);
+    const auto& retrivedSms = context.smsDb.getSms(idx);
+    context.user.viewSms(retrivedSms);
 }
 
 } // namespace ue

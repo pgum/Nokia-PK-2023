@@ -130,9 +130,29 @@ TEST_F(ApplicationConnectedTestSuite, shallHandleSendSms)
     objectUnderTest.handleSendSms();
 }
 
-TEST_F(ApplicationConnectedTestSuite, shallHandleSmsList)
+TEST_F(ApplicationConnectedTestSuite, shallHandleShowSms)
 {
-    EXPECT_CALL(userPortMock, viewSmsList());
+    Sms sms { PHONE_NUMBER, "sms message" };
+
+    constexpr std::size_t idx = 0;
+    EXPECT_CALL(smsDbMock, updateSmsState(idx));
+    EXPECT_CALL(smsDbMock, getSms(idx)).WillOnce(ReturnRef(sms));
+    EXPECT_CALL(userPortMock, viewSms(sms));
+
+    objectUnderTest.handleShowSms(idx);
+}
+
+TEST_F(ApplicationConnectedTestSuite, shallHandleShowSmsList)
+{
+    using smsT = std::pair<Sms, smsState>;
+    std::vector<smsT> messages;
+    Sms sms { PHONE_NUMBER, "sms message" };
+    smsT msg { sms, smsState::Pending };
+    messages.push_back(msg);
+
+    EXPECT_CALL(smsDbMock, getSmsMessages()).WillOnce(ReturnRef(messages));
+    EXPECT_CALL(userPortMock, viewSmsList(messages));
+
     objectUnderTest.handleShowSmsList();
 }
 

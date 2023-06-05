@@ -67,4 +67,9 @@ void Application::handleShowSmsList()
     context.state->handleShowSmsList();
 }
 
+void Application::handleShowSms(std::size_t idx)
+{
+    context.state->handleShowSms(idx);
+}
+
 } // namespace ue

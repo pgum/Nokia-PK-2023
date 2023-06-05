@@ -60,4 +60,9 @@ void BaseState::handleShowSmsList()
     logger.logError("Unexpected: handleShowSmsList");
 }
 
+void BaseState::handleShowSms(std::size_t)
+{
+    logger.logError("Unexpected: handleShowSms");
+}
+
 } // namespace ue

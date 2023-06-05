@@ -1,6 +1,7 @@
 #include "UserPort.hpp"
 #include "UeGui/IListViewMode.hpp"
 #include "UeGui/ISmsComposeMode.hpp"
+#include "UeGui/ITextMode.hpp"
 
 namespace ue
 {
@@ -41,14 +42,13 @@ void UserPort::showConnected()
     menu.addSelectionListItem("Send SMS", "");
     gui.setAcceptCallback([this, &menu]
     {
-        switch (menu.getCurrentItemIndex().second)
-        {
-        case 0:
-        {
-            handler->handleComposeSms();
-            break;
+        switch (menu.getCurrentItemIndex().second) {
+            case 0:
+                break;
+            case 1:
+                handler->handleShowSmsList();
+                break;
         }
-        };
     });
 }
 
@@ -73,9 +73,38 @@ std::pair<common::PhoneNumber, std::string> UserPort::getSms()
     return std::make_pair(phoneNum, smsText);
 }
 
-void UserPort::viewSmsList()
+void UserPort::viewSmsList(const std::vector<std::pair<Sms, smsState>>& smsList)
 {
+    auto& menu = gui.setListViewMode();
+    menu.clearSelectionList();
+    for(const auto& sms : smsList){
+        std::string label =
+            sms.second == smsState::Viewed ? to_string(sms.first.from)
+                            : "[New] " +to_string(sms.first.from);
+        menu.addSelectionListItem(label, "");
+    }
+    gui.setAcceptCallback([this, &menu]
+    {
+        const auto idx = menu.getCurrentItemIndex().second;
+        handler->handleShowSms(idx);
+    });
 
+    gui.setRejectCallback([this]
+    {
+        showConnected();
+    });
+}
+
+void UserPort::viewSms(const Sms& sms)
+{
+    auto& display = gui.setViewTextMode();
+
+    display.setText(sms.text);
+
+    gui.setRejectCallback([this]
+    {
+        handler->handleShowSmsList();
+    });
 }
 
 } // namespace ue

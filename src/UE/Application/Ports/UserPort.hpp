@@ -4,6 +4,7 @@
 #include "Logger/PrefixedLogger.hpp"
 #include "IUeGui.hpp"
 #include "Messages/PhoneNumber.hpp"
+#include "SmsDb.hpp"
 
 namespace ue
 {
@@ -20,7 +21,8 @@ public:
     void showConnected() override;
     void showNewSmsNotification() override;
     void showNewSmsToEdit() override;
-    void viewSmsList() override;
+    void viewSmsList(const std::vector<std::pair<Sms, smsState>>&) override;
+    void viewSms(const Sms&) override;
     std::pair<common::PhoneNumber, std::string> getSms() override;
 
 private:

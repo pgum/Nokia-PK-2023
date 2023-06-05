@@ -20,6 +20,7 @@ protected:
     StrictMock<IUeGuiMock> guiMock;
     StrictMock<IListViewModeMock> listViewModeMock;
     StrictMock<ISmsComposeModeMock> smsComposeModeMock;
+    StrictMock<ITextModeMock> textModeMock;
 
     UserPort objectUnderTest{loggerMock, guiMock, PHONE_NUMBER};
 
@@ -64,6 +65,28 @@ TEST_F(UserPortTestSuite, shallShowSmsEditMode)
     EXPECT_CALL(guiMock, setSmsComposeMode()).WillOnce(ReturnRef(smsComposeModeMock));
     EXPECT_CALL(guiMock, setAcceptCallback(_));
     objectUnderTest.showNewSmsToEdit();
+}
+
+TEST_F(UserPortTestSuite, shallViewSmsList)
+{
+    const std::vector<std::pair<Sms, smsState>> messages;
+
+    EXPECT_CALL(guiMock, setListViewMode()).WillOnce(ReturnRef(listViewModeMock));
+    EXPECT_CALL(listViewModeMock, clearSelectionList());
+    EXPECT_CALL(listViewModeMock, addSelectionListItem(_, _)).Times(AtLeast(0));
+    EXPECT_CALL(guiMock, setAcceptCallback(_));
+    EXPECT_CALL(guiMock, setRejectCallback(_));
+    objectUnderTest.viewSmsList(messages);
+}
+
+TEST_F(UserPortTestSuite, shallViewSms)
+{
+    const Sms sms { common::PhoneNumber { 112 }, "sms message" };
+
+    EXPECT_CALL(guiMock, setViewTextMode()).WillOnce(ReturnRef(textModeMock));
+    EXPECT_CALL(textModeMock, setText(_));
+    EXPECT_CALL(guiMock, setRejectCallback(_));
+    objectUnderTest.viewSms(sms);
 }
 
 }

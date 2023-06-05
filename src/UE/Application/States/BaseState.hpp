@@ -24,6 +24,7 @@ public:
     void handleComposeSms() override;
     void handleSendSms() override;
     void handleShowSmsList() override;
+    void handleShowSms(std::size_t) override;
 
 protected:
     Context& context;
